@@ -3,126 +3,130 @@
 <target name="Target Platform" sequenceNumber="1">
 	<locations>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<unit id="org.objectweb.asm" version="7.2.0.v20191010-1910"/>
-			<repository location="http://download.eclipse.org/releases/2020-06/202006171000/"/>
+			<unit id="org.objectweb.asm" version="0.0.0"/>
+			<repository location="http://download.eclipse.org/releases/2020-12/202012161000/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.pcm" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.pcm" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.pcm" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.pcm" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.pcm.edit" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.pcm.edit" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.pcm.edit" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.pcm.edit" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-intbiis/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-intbiis/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="tools.mdsd.library.standalone.initialization.log4j.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="tools.mdsd.library.standalone.initialization.log4j.feature.feature.group" version="0.0.0"/>
 			<unit id="tools.mdsd.library.standalone.initialization.emfprofiles.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/library-standaloneinitialization/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="tools.mdsd.library.standalone.initialization.log4j.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="tools.mdsd.library.standalone.initialization.log4j.feature.feature.group" version="0.0.0"/>
 			<unit id="tools.mdsd.library.standalone.initialization.emfprofiles.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/library-standaloneinitialization/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/releases/latest"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.supporting.prolog.ui.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-prolog/nightly/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.supporting.prolog.ui.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.supporting.prolog.ui.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-prolog/releases/latest/release"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.supporting.prolog.ui.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/releases/latest/release"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-dataflowdiagram/nightly/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-dataflowdiagram/releases/latest/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagram/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="tbd"/>
-			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-dataflowdiagramconfidentiality/nightly/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="tbd"/>
-			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-dataflowdiagramconfidentiality/releases/latest/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.prolog4j.swicli.feature.feature.group" version="tbd"/>
-			<unit id="org.prolog4j.swicli.enabler.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-prolog4j/nightly/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.prolog4j.swicli.feature.feature.group" version="0.0.0"/>
+			<unit id="org.prolog4j.swicli.enabler.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.prolog4j.swicli.feature.feature.group" version="tbd"/>
-			<unit id="org.prolog4j.swicli.enabler.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-prolog4j/releases/latest/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.prolog4j.swicli.feature.feature.group" version="0.0.0"/>
+			<unit id="org.prolog4j.swicli.enabler.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog4j/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<unit id="tools.mdsd.license.epl2.feature.group" version="1.0.0"/>
-			<repository location="https://updatesite.mdsd.tools/build-licensefeature/releases/1.0.0/"/>
+			<unit id="tools.mdsd.license.epl2.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.mdsd.tools/build-licensefeature/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-mdsdprofiles/nightly/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-			<unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="tbd"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-mdsdprofiles/releases/latest/"/>
 		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-			<unit id="org.palladiosimulator.indirections.editor.tree.feature.feature.group" version="tbd"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/branches/dev-dataChannelAsComponent/"/>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.indirections.editor.tree.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.indirections.editor.tree.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/releases/latest/"/>
 		</location>
 	</locations>
 </target>

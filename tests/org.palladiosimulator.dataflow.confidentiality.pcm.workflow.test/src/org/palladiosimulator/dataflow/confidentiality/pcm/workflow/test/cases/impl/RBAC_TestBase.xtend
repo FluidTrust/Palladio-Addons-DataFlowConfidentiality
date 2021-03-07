@@ -37,7 +37,7 @@ class RBAC_TestBase extends TestBase {
 		usageModelModifier.accept(usageModel)
 		
 		val job = new TransformPCMDFDToPrologJobBuilder().addSerializeModelToString.addUsageModels(usageModel).
-			addAllocationModel(allocationModel).useDefaultCharacteristics(false).build
+			addAllocationModel(allocationModel).build
 		val workflow = TransformPCMDFDToPrologWorkflowFactory.createWorkflow(job)
 		workflow.run
 		

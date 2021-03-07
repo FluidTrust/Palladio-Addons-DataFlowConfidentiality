@@ -2,7 +2,8 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.workflow.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Objects;
+import java.util.Collections;
+import java.util.Optional;
 import java.util.Stack;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -13,6 +14,7 @@ import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCMSingleTraceElement;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCMTraceElement;
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.TransitiveTransformationTrace;
+import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.DFD2PrologTransformationTrace;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.CharacteristicType;
@@ -23,10 +25,10 @@ import de.uka.ipd.sdq.identifier.Identifier;
 public class TransitiveTransformationTraceImpl implements TransitiveTransformationTrace {
 
     private final PCM2DFDTransformationTrace pcm2dfdTrace;
-    private final org.palladiosimulator.dataflow.confidentiality.transformation.workflow.DFD2PrologTransformationTrace dfd2prologTrace;
+    private final DFD2PrologTransformationTrace dfd2prologTrace;
 
     public TransitiveTransformationTraceImpl(PCM2DFDTransformationTrace pcm2dfdTrace,
-            org.palladiosimulator.dataflow.confidentiality.transformation.workflow.DFD2PrologTransformationTrace dfd2prologTrace) {
+            DFD2PrologTransformationTrace dfd2prologTrace) {
         this.pcm2dfdTrace = pcm2dfdTrace;
         this.dfd2prologTrace = dfd2prologTrace;
     }
@@ -44,23 +46,23 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
     }
 
     protected Collection<String> getFactIds(Collection<DFDTraceElement> dfdElements) {
-        Collection<String> result = new ArrayList<>();
-        for (var dfdElement : dfdElements) {
-            result.add(dfd2prologTrace.getFactId((Component) dfdElement.getElement()));
-        }
-        return result;
+        return dfdElements.stream()
+            .map(dfdElement -> dfd2prologTrace.getFactId((Component) dfdElement.getElement()))
+            .filter(Optional::isPresent)
+            .map(Optional::get)
+            .collect(Collectors.toList());
     }
 
     @Override
     public Collection<PCMTraceElement> getPCMEntries(String factId) {
-        Identifier dfdElement = dfd2prologTrace.getDfdComponent(factId);
-        if (dfdElement == null) {
-            dfdElement = dfd2prologTrace.getCharacteristicType(factId);
+        Optional<String> dfdId = dfd2prologTrace.getDfdId(factId);
+        if (dfdId.isEmpty()) {
+            return Collections.emptyList();
         }
-        if (dfdElement == null) {
-            dfdElement = dfd2prologTrace.getLiteral(factId);
-        }
-        return pcm2dfdTrace.getPCMEntries(dfdElement)
+        Optional<Identifier> dfdElement = dfdId.flatMap(id -> dfd2prologTrace.resolveDfdElement(id, Identifier.class));
+
+        return dfdElement.map(pcm2dfdTrace::getPCMEntries)
+            .orElse(Collections.emptyList())
             .stream()
             .map(PCMTraceElement.class::cast)
             .collect(Collectors.toList());
@@ -74,17 +76,18 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
     @Override
     public Collection<String> getLiteralFactIds(EObject pcmElement) {
         var dfdElements = pcm2dfdTrace.getDFDEntries(pcmElement);
-        Collection<String> result = new ArrayList<>();
+        Collection<Optional<String>> result = new ArrayList<>();
         for (var dfdElement : dfdElements) {
             var realElement = dfdElement.getElement();
             if (realElement instanceof Component) {
-                result.add(dfd2prologTrace.getLiteralFactId((Component) realElement));
+                result.add(dfd2prologTrace.getFactId((Component) realElement));
             } else if (realElement instanceof Literal) {
                 result.add(dfd2prologTrace.getFactId((Literal) realElement));
             }
         }
         return result.stream()
-            .filter(Objects::nonNull)
+            .filter(Optional::isPresent)
+            .map(Optional::get)
             .collect(Collectors.toList());
     }
 
@@ -107,13 +110,11 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
             .filter(CharacteristicType.class::isInstance)
             .map(CharacteristicType.class::cast)
             .map(dfd2prologTrace::getFactId)
+            .filter(Optional::isPresent)
+            .map(Optional::get)
             .collect(Collectors.toList());
 
-        if (!foundIds.isEmpty()) {
-            return foundIds;
-        }
-
-        return dfd2prologTrace.getFactId(predicate);
+        return foundIds;
     }
 
 }

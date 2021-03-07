@@ -13,4 +13,5 @@ Require-Bundle: org.eclipse.emf.compare;bundle-version="3.5.3",
  de.uhd.ifi.se.pcm.bppcm;bundle-version="1.0.0",
  tools.mdsd.library.standalone.initialization;bundle-version="0.1.0",
  tools.mdsd.library.standalone.initialization.log4j;bundle-version="0.1.0",
- org.palladiosimulator.dataflow.confidentiality.pcm.testmodels;bundle-version="0.1.0"
+ org.palladiosimulator.dataflow.confidentiality.pcm.testmodels;bundle-version="0.1.0",
+ de.uka.ipd.sdq.stoex.analyser;bundle-version="5.0.0"

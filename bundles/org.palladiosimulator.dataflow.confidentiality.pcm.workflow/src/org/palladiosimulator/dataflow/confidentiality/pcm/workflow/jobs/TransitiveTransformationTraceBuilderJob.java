@@ -3,6 +3,7 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.workflow.jobs;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCM2DFDTransformationTrace;
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.impl.TransitiveTransformationTraceImpl;
+import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.DFD2PrologTransformationTrace;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.blackboards.KeyValueMDSDBlackboard;
 
 import de.uka.ipd.sdq.workflow.jobs.AbstractBlackboardInteractingJob;
@@ -33,8 +34,8 @@ public class TransitiveTransformationTraceBuilderJob extends AbstractBlackboardI
         monitor.worked(1);
 
         var dfdTrace = getBlackboard().get(dfdTraceKey)
-            .filter(org.palladiosimulator.dataflow.confidentiality.transformation.workflow.DFD2PrologTransformationTrace.class::isInstance)
-            .map(org.palladiosimulator.dataflow.confidentiality.transformation.workflow.DFD2PrologTransformationTrace.class::cast)
+            .filter(DFD2PrologTransformationTrace.class::isInstance)
+            .map(DFD2PrologTransformationTrace.class::cast)
             .orElseThrow(() -> new JobFailedException("The DFD2Prolog trace is not available."));
         monitor.worked(1);
 

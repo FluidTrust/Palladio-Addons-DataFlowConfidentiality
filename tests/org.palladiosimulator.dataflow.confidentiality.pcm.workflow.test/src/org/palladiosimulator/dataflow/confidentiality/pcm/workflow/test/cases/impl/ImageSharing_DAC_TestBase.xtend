@@ -51,32 +51,29 @@ class ImageSharing_DAC_TestBase extends TestBase {
 		val ctIdentity = trace.getFactId([ct|ct.name == "Identity"]).findFirst[true]
 		val ctReadPermission = trace.getFactId([ct|ct.name == "ReadPermission"]).findFirst[true]
 		val ctWritePermission = trace.getFactId([ct|ct.name == "WritePermission"]).findFirst[true]
-		val ctTraversedNodes = "TraversedNodes (_067sYYISEeqR5tyIqE6kZA)"
 
 		val queryRules = '''
 			readViolation(A, STORE, S) :-
 				CT_IDENTITY = '«ctIdentity»',
-				CT_TRAVERSEDNODES = '«ctTraversedNodes»',
 				CT_READ = '«ctReadPermission»',
 				store(STORE),
-				nodeLiteral(C_TRAVERSEDNODE, STORE),
-				(actor(A);actorProcess(A, _)),
-				inputPin(A, PIN),
+				(actor(A);actorProcess(A,_)),
 				nodeCharacteristic(A, CT_IDENTITY, C_IDENTITY),
-				characteristic(A, PIN, CT_TRAVERSEDNODES, C_TRAVERSEDNODE, S),
-				\+ nodeCharacteristic(STORE, CT_READ, C_IDENTITY).
+				\+ nodeCharacteristic(STORE, CT_READ, C_IDENTITY),
+				inputPin(A, PIN),
+				flowStack(A, PIN, S),
+				traversedNode(S, STORE).
 				
 			writeViolation(A, STORE, S) :-
 				CT_IDENTITY = '«ctIdentity»',
-				CT_TRAVERSEDNODES = '«ctTraversedNodes»',
 				CT_WRITE = '«ctWritePermission»',
 				store(STORE),
 				(actor(A);actorProcess(A,_)),
-				nodeLiteral(C_TRAVERSEDNODE, A),
 				inputPin(STORE, PIN),
 				nodeCharacteristic(A, CT_IDENTITY, C_IDENTITY),
-				characteristic(STORE, PIN, CT_TRAVERSEDNODES, C_TRAVERSEDNODE, S),
-				\+ nodeCharacteristic(STORE, CT_WRITE, C_IDENTITY).
+				\+ nodeCharacteristic(STORE, CT_WRITE, C_IDENTITY),
+				flowStack(STORE, PIN, S),
+				traversedNode(S, A).
 		'''
 		
 		var prologProgram = resultingProgram.get + System.lineSeparator + queryRules

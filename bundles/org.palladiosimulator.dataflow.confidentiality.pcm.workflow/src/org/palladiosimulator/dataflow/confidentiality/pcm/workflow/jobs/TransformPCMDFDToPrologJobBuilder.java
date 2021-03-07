@@ -10,10 +10,8 @@ import org.apache.commons.lang3.Validate;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.jobs.impl.TransformPCMDFDtoPrologJobImpl;
-import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.configuration.DefaultCharacteristicsUsage;
-import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.configuration.NameDerivationMethod;
+import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.NameGenerationStrategie;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.blackboards.KeyValueMDSDBlackboard;
-import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.DFDToPrologTraceCreationJob;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.InitPartitionJob;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.LoadExistingModelsJob;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.LoadExistingModelsJob.ModelContent;
@@ -36,9 +34,6 @@ public class TransformPCMDFDToPrologJobBuilder {
     private static final ModelLocation DEFAULT_PROLOG_LOCATION = new ModelLocation("prolog",
             URI.createFileURI("tmp/dfd.pl"));
     private static final String DEFAULT_PROLOG_KEY = "prologProgram";
-    private static final ModelLocation DEFAULT_DFDTRACE_LOCATION = new ModelLocation(
-            DEFAULT_PROLOG_LOCATION.getPartitionID(), DEFAULT_PROLOG_LOCATION.getModelID()
-                .appendFileExtension("trace"));
     private static final String DEFAULT_DFDTRACE_KEY = "dfdTrace";
     private static final String DEFAULT_PCMTRACE_KEY = "pcmTrace";
     private static final String DEFAULT_TRACE_KEY = "transitiveTrace";
@@ -47,7 +42,6 @@ public class TransformPCMDFDToPrologJobBuilder {
     private ModelContent allocationModel = null;
     private ModelLocation prologLocation = null;
     private boolean serializeToString = false;
-    private DefaultCharacteristicsUsage defaultCharacteristicsUsage = DefaultCharacteristicsUsage.TRUE;
     private String prologResultKey;
 
     public static TransformPCMDFDToPrologJobBuilder create() {
@@ -124,11 +118,6 @@ public class TransformPCMDFDToPrologJobBuilder {
         prologResultKey = blackboardKey;
         return this;
     }
-
-    public TransformPCMDFDToPrologJobBuilder useDefaultCharacteristics(boolean flag) {
-        defaultCharacteristicsUsage  = flag ? DefaultCharacteristicsUsage.TRUE : DefaultCharacteristicsUsage.FALSE;
-        return this;
-    }
     
     public TransformPCMDFDtoPrologJob<? extends KeyValueMDSDBlackboard> build() {
         // validate builder state
@@ -164,13 +153,9 @@ public class TransformPCMDFDToPrologJobBuilder {
         jobSequence.add(initPrologPartitionJob);
         
         // create DFD to prolog transformation job
-        IJob dfdToPrologJob = new TransformDFDToPrologJob(DEFAULT_DFD_LOCATION, prologLocation,
-                DEFAULT_DFDTRACE_LOCATION, NameDerivationMethod.NAME_AND_ID, defaultCharacteristicsUsage);
+        IJob dfdToPrologJob = new TransformDFDToPrologJob<KeyValueMDSDBlackboard>(DEFAULT_DFD_LOCATION, prologLocation, DEFAULT_DFDTRACE_KEY,
+                NameGenerationStrategie.SHORTED_ID);
         jobSequence.add(dfdToPrologJob);
-        
-        // create trace creation job
-        IJob dfdToPrologTracceJob = new DFDToPrologTraceCreationJob<>(DEFAULT_DFDTRACE_LOCATION, DEFAULT_DFDTRACE_KEY);
-        jobSequence.add(dfdToPrologTracceJob);
         
         // create transitive trace job
         IJob transitiveTraceJob = new TransitiveTransformationTraceBuilderJob(DEFAULT_PCMTRACE_KEY,

@@ -61,7 +61,7 @@ class ImageSharing_DAC_TestBase extends TestBase {
 				nodeCharacteristic(A, CT_IDENTITY, C_IDENTITY),
 				\+ nodeCharacteristic(STORE, CT_READ, C_IDENTITY),
 				inputPin(A, PIN),
-				flowStack(A, PIN, S),
+				flowTree(A, PIN, S),
 				traversedNode(S, STORE).
 				
 			writeViolation(A, STORE, S) :-
@@ -72,7 +72,7 @@ class ImageSharing_DAC_TestBase extends TestBase {
 				inputPin(STORE, PIN),
 				nodeCharacteristic(A, CT_IDENTITY, C_IDENTITY),
 				\+ nodeCharacteristic(STORE, CT_WRITE, C_IDENTITY),
-				flowStack(STORE, PIN, S),
+				flowTree(STORE, PIN, S),
 				traversedNode(S, A).
 		'''
 		

@@ -14,14 +14,14 @@
         <rhs xsi:type="expressions:True" id="_LOJ5sTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LONkEDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LONkEDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LONkFTDREeuyobfM2GaevA" name="CorrespondingActor">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LONkFTDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkEzDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LOOLIDDREeuyobfM2GaevA" name="SEFF Entry AC_CreditCardCenter.CreditCardCenterFacade.addCCD">
     <ownedBehavior id="_LOOLITDREeuyobfM2GaevA">
@@ -32,10 +32,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPOQsjDREeuyobfM2GaevA" pin="_LOPZQDDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPQs8DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPQs8DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedActorProcess" id="_LOQnYDDREeuyobfM2GaevA" name="UserAction Entry User.BookFlight.findFlights" actor="_LMXJ8DDREeuyobfM2GaevA">
     <ownedBehavior id="_LOQnYTDREeuyobfM2GaevA">
@@ -47,14 +47,14 @@
         <rhs xsi:type="expressions:True" id="_LOQnZTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LOR1gDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LOR1gDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LOR1gTDREeuyobfM2GaevA" name="CorrespondingActor">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LOR1gTDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkEzDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LOR1gjDREeuyobfM2GaevA" name="SEFF Entry AC_TravelPlanner.TravelPlannerFacade.findFlights">
     <ownedBehavior id="_LOR1gzDREeuyobfM2GaevA">
@@ -65,10 +65,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPq8ozDREeuyobfM2GaevA" pin="_LOR1hDDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPtY4DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPtY4DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedActorProcess" id="_LOR1hjDREeuyobfM2GaevA" name="UserAction Exit User.BookFlight.findFlights" actor="_LMXJ8DDREeuyobfM2GaevA">
     <ownedBehavior id="_LOR1hzDREeuyobfM2GaevA">
@@ -79,14 +79,14 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LOSckzDREeuyobfM2GaevA" pin="_LOSckDDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPA1UDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPA1UDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPA1UTDREeuyobfM2GaevA" name="CorrespondingActor">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPA1UTDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkEzDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LOURwDDREeuyobfM2GaevA" name="SEFF Exit AC_TravelPlanner.TravelPlannerFacade.findFlights">
     <ownedBehavior id="_LOURwTDREeuyobfM2GaevA">
@@ -97,10 +97,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPtY4zDREeuyobfM2GaevA" pin="_LPtY4TDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPv1IDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPv1IDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedActorProcess" id="_LPCDcDDREeuyobfM2GaevA" name="UserAction Exit User.BookFlight.getCCD" actor="_LMXJ8DDREeuyobfM2GaevA">
     <ownedBehavior id="_LPCDcTDREeuyobfM2GaevA">
@@ -118,14 +118,14 @@
         <rhs xsi:type="expressions:True" id="_LPCqhzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPD4oDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPD4oDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPD4oTDREeuyobfM2GaevA" name="CorrespondingActor">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPD4oTDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkEzDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPDRkDDREeuyobfM2GaevA" name="SEFF Exit AC_CreditCardCenter.CreditCardCenterFacade.getCCD">
     <ownedBehavior id="_LPDRkTDREeuyobfM2GaevA">
@@ -136,10 +136,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPbFAzDREeuyobfM2GaevA" pin="_LPbFATDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPdhQDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPdhQDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedActorProcess" id="_LPFGwDDREeuyobfM2GaevA" name="UserAction Entry User.BookFlight.bookFlight" actor="_LMXJ8DDREeuyobfM2GaevA">
     <ownedBehavior id="_LPFGwTDREeuyobfM2GaevA">
@@ -156,14 +156,14 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPFGyjDREeuyobfM2GaevA" pin="_LPFGwzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPGU4DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPGU4DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPG78DDREeuyobfM2GaevA" name="CorrespondingActor">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPG78DDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkEzDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPG78TDREeuyobfM2GaevA" name="SEFF Entry AC_TravelPlanner.TravelPlannerFacade.bookFlight">
     <ownedBehavior id="_LPG78jDREeuyobfM2GaevA">
@@ -180,10 +180,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQGadzDREeuyobfM2GaevA" pin="_LPG79TDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQLS8DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQLS8DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedExternalActor" id="_LPHjADDREeuyobfM2GaevA" name="FlightPlanner">
     <ownedBehavior id="_LPHjATDREeuyobfM2GaevA"/>
@@ -198,14 +198,14 @@
         <rhs xsi:type="expressions:True" id="_LPIKFTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPIxIDDREeuyobfM2GaevA" name="CorrespondingActor">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPIxIDDREeuyobfM2GaevA" name="CorrespondingActor">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LONkETDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LONkFDDREeuyobfM2GaevA"/>
-    </characteristics>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPIxITDREeuyobfM2GaevA" name="OwnedRoles">
+    </ownedCharacteristics>
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPIxITDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPIxIjDREeuyobfM2GaevA" name="SEFF Entry AC_Airline.AirlineFacade.addFlight">
     <ownedBehavior id="_LPIxIzDREeuyobfM2GaevA">
@@ -216,10 +216,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQc_wzDREeuyobfM2GaevA" pin="_LPIxJDDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQe08DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQe08DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPRUADDREeuyobfM2GaevA" name="Action CreditCardCenterLogic.addCCD.emit">
     <ownedBehavior id="_LPRUATDREeuyobfM2GaevA">
@@ -230,10 +230,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPRUBTDREeuyobfM2GaevA" pin="_LPRUAjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPWMgDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPWMgDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPSiIDDREeuyobfM2GaevA" name="DC AC_CreditCardCenter.CCDStorage.CCDStorage">
     <ownedBehavior id="_LPSiITDREeuyobfM2GaevA">
@@ -244,10 +244,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPmrMTDREeuyobfM2GaevA" pin="_LPSiIjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPpugDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPpugDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPXaoTDREeuyobfM2GaevA" name="Action CreditCardCenterLogic.addCCD.createCCDDate">
     <ownedBehavior id="_LPXaojDREeuyobfM2GaevA">
@@ -258,10 +258,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPYBsjDREeuyobfM2GaevA" pin="_LPXaozDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPbFADDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPbFADDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPeIUDDREeuyobfM2GaevA" name="Action CreditCardCenterLogic.getCCD.return">
     <ownedBehavior id="_LPeIUTDREeuyobfM2GaevA">
@@ -272,10 +272,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPhyszDREeuyobfM2GaevA" pin="_LPhysTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPk2ADDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPk2ADDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPevYTDREeuyobfM2GaevA" name="Action CreditCardCenterLogic.getCCD.consume">
     <ownedBehavior id="_LPevYjDREeuyobfM2GaevA">
@@ -286,10 +286,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPevZjDREeuyobfM2GaevA" pin="_LPevYzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LPhysDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LPhysDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPwcMDDREeuyobfM2GaevA" name="Action TravelPlannerFacade.findFlights.return">
     <ownedBehavior id="_LPwcMTDREeuyobfM2GaevA">
@@ -300,10 +300,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LP60QzDREeuyobfM2GaevA" pin="_LP60QTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQAT0DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQAT0DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPwcNDDREeuyobfM2GaevA" name="Action TravelPlannerFacade.findFlights.emitCriteria">
     <ownedBehavior id="_LPwcNTDREeuyobfM2GaevA">
@@ -314,10 +314,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LPwcOTDREeuyobfM2GaevA" pin="_LPwcNjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LP0toDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LP0toDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LPxDQDDREeuyobfM2GaevA" name="DC AC_TravelAgency.TravelAgencyQueryBuilder.TravelAgencyQueryBuilder">
     <ownedBehavior id="_LPxDQTDREeuyobfM2GaevA">
@@ -328,10 +328,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQ8vATDREeuyobfM2GaevA" pin="_LPxDQjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQ-kMDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQ-kMDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkTDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LP0toTDREeuyobfM2GaevA" name="Action TravelPlannerFacade.findFlights.createCriteriaDate">
     <ownedBehavior id="_LP0tojDREeuyobfM2GaevA">
@@ -342,10 +342,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQAT0zDREeuyobfM2GaevA" pin="_LQAT0TDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQGacDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQGacDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LP1UsjDREeuyobfM2GaevA" name="Action TravelPlannerFacade.findFlights.consumeflights">
     <ownedBehavior id="_LP1UszDREeuyobfM2GaevA">
@@ -356,10 +356,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LP1UtzDREeuyobfM2GaevA" pin="_LP1UtDDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LP60QDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LP60QDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQL6ADDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.emitflight">
     <ownedBehavior id="_LQL6ATDREeuyobfM2GaevA">
@@ -370,10 +370,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQL6BTDREeuyobfM2GaevA" pin="_LQL6AjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQPkYDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQPkYDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQL6BzDREeuyobfM2GaevA" name="DC AC_Airline.FlightMultiplexer.FlightMultiplexer">
     <ownedBehavior id="_LQL6CDDREeuyobfM2GaevA">
@@ -389,10 +389,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQy-BDDREeuyobfM2GaevA" pin="_LQL6CTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQ0zMDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQ0zMDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQPkYTDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.createFlightDate">
     <ownedBehavior id="_LQPkYjDREeuyobfM2GaevA">
@@ -403,10 +403,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQYHQzDREeuyobfM2GaevA" pin="_LQYHQTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQajgDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQajgDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQQLcTDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.emitccd">
     <ownedBehavior id="_LQQLcjDREeuyobfM2GaevA">
@@ -417,10 +417,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQQLdjDREeuyobfM2GaevA" pin="_LQQLczDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQSnsDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQSnsDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQQLeDDREeuyobfM2GaevA" name="DC AC_Airline.AirlineCreateBooking.AirlineCreateBooking">
     <ownedBehavior id="_LQQLeTDREeuyobfM2GaevA">
@@ -441,10 +441,10 @@
         </rhs>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQxI0DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQxI0DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQSnsTDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.createCCDDate">
     <ownedBehavior id="_LQSnsjDREeuyobfM2GaevA">
@@ -455,10 +455,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQajgzDREeuyobfM2GaevA" pin="_LQajgTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQc_wDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQc_wDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQTOwTDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.consumeconfirmation">
     <ownedBehavior id="_LQTOwjDREeuyobfM2GaevA">
@@ -469,10 +469,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQTOxjDREeuyobfM2GaevA" pin="_LQTOwzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQVrADDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQVrADDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQVrATDREeuyobfM2GaevA" name="Action TravelPlannerFacade.bookflight.return">
     <ownedBehavior id="_LQVrAjDREeuyobfM2GaevA">
@@ -483,10 +483,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQVrBjDREeuyobfM2GaevA" pin="_LQVrAzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQYHQDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQYHQDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkDDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQe08TDREeuyobfM2GaevA" name="Action AirlineFacade.addFlight.emit">
     <ownedBehavior id="_LQe08jDREeuyobfM2GaevA">
@@ -497,10 +497,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQe09jDREeuyobfM2GaevA" pin="_LQe08zDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQgqIDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQgqIDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQe0-DDREeuyobfM2GaevA" name="DC AC_Airline.FlightStorage.FlightStorage">
     <ownedBehavior id="_LQe0-TDREeuyobfM2GaevA">
@@ -511,10 +511,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQlioTDREeuyobfM2GaevA" pin="_LQe0-jDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQn-4DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQn-4DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQgqITDREeuyobfM2GaevA" name="Action AirlineFacade.addFlight.createFlightDate">
     <ownedBehavior id="_LQgqIjDREeuyobfM2GaevA">
@@ -525,10 +525,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQhRMTDREeuyobfM2GaevA" pin="_LQgqJTDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQkUgDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQkUgDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQn-4TDREeuyobfM2GaevA" name="DC AC_Airline.AirlineFlightSelector.AirlineFlightSelector">
     <ownedBehavior id="_LQn-4jDREeuyobfM2GaevA">
@@ -540,10 +540,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQpNATDREeuyobfM2GaevA" pin="_LQn-4zDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQrCMDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQrCMDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQrCMTDREeuyobfM2GaevA" name="DC AC_TravelAgency.TravelAgencyFlightsDelegator.TravelAgencyFlightsDelegator">
     <ownedBehavior id="_LQrCMjDREeuyobfM2GaevA">
@@ -554,10 +554,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQ_LQTDREeuyobfM2GaevA" pin="_LQrCMzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LRBAcDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LRBAcDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkTDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQrCNTDREeuyobfM2GaevA" name="DC AC_Airline.BookingStorage.BookingStorage">
     <ownedBehavior id="_LQrCNjDREeuyobfM2GaevA">
@@ -568,10 +568,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQsQUDDREeuyobfM2GaevA" pin="_LQrCNzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQuFgDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQuFgDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQ1aQTDREeuyobfM2GaevA" name="DC AC_Airline.AirlineCreateCommission.AirlineCreateCommission">
     <ownedBehavior id="_LQ1aQjDREeuyobfM2GaevA">
@@ -582,10 +582,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQ2BUTDREeuyobfM2GaevA" pin="_LQ1aQzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQ32gDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQ32gDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQ32gTDREeuyobfM2GaevA" name="DC AC_TravelAgency.CommissionMultiplexer.CommissionMultiplexer">
     <ownedBehavior id="_LQ32gjDREeuyobfM2GaevA">
@@ -601,10 +601,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LRF48zDREeuyobfM2GaevA" pin="_LQ32gzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LRHuIDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LRHuIDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkTDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LQ32hTDREeuyobfM2GaevA" name="DC AC_Airline.ConfirmationForwarder.ConfirmationForwarder">
     <ownedBehavior id="_LQ32hjDREeuyobfM2GaevA">
@@ -615,10 +615,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LQ5EoTDREeuyobfM2GaevA" pin="_LQ32hzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LQ7g4DDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LQ7g4DDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkjDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LRBngTDREeuyobfM2GaevA" name="DC AC_TravelAgency.CommissionStore.CommissionStore">
     <ownedBehavior id="_LRBngjDREeuyobfM2GaevA">
@@ -629,10 +629,10 @@
         <rhs xsi:type="expressions:DataCharacteristicReference" id="_LRCOkTDREeuyobfM2GaevA" pin="_LRBngzDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LREDwDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LREDwDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkTDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <nodes xsi:type="DataFlowDiagramCharacterized:CharacterizedProcess" id="_LRHuIjDREeuyobfM2GaevA" name="DC AC_TravelAgency.TravelAgencyConfirmCommission.TravelAgencyConfirmCommission">
     <ownedBehavior id="_LRHuIzDREeuyobfM2GaevA">
@@ -645,10 +645,10 @@
         <rhs xsi:type="expressions:True" id="_LRIVMjDREeuyobfM2GaevA"/>
       </assignments>
     </ownedBehavior>
-    <characteristics xsi:type="DataFlowDiagramCharacterized:EnumCharacteristic" id="_LRKKYDDREeuyobfM2GaevA" name="OwnedRoles">
+    <ownedCharacteristics xsi:type="DataDictionaryCharacterized:EnumCharacteristic" id="_LRKKYDDREeuyobfM2GaevA" name="OwnedRoles">
       <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="expected_dd.xmi#_LOM9ADDREeuyobfM2GaevA"/>
       <values href="expected_dd.xmi#_LOIrkTDREeuyobfM2GaevA"/>
-    </characteristics>
+    </ownedCharacteristics>
   </nodes>
   <edges xsi:type="DataFlowDiagramCharacterized:CharacterizedDataFlow" id="_LOPZQTDREeuyobfM2GaevA" name="data" target="_LOOLIDDREeuyobfM2GaevA" source="_LMXJ8jDREeuyobfM2GaevA" sourcePin="_LMcCcDDREeuyobfM2GaevA" targetPin="_LOPZQDDREeuyobfM2GaevA"/>
   <edges xsi:type="DataFlowDiagramCharacterized:CharacterizedDataFlow" id="_LOR1hTDREeuyobfM2GaevA" name="data" target="_LOR1gjDREeuyobfM2GaevA" source="_LOQnYDDREeuyobfM2GaevA" sourcePin="_LOQnYjDREeuyobfM2GaevA" targetPin="_LOR1hDDREeuyobfM2GaevA"/>

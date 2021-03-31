@@ -2,13 +2,14 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test.cases.i
 
 import java.util.function.Consumer
 import org.eclipse.emf.ecore.util.EcoreUtil
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.TransformPCMDFDToPrologWorkflowFactory
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.jobs.TransformPCMDFDToPrologJobBuilder
 import org.palladiosimulator.pcm.allocation.Allocation
 import org.palladiosimulator.pcm.usagemodel.UsageModel
+
 import static org.junit.jupiter.api.Assertions.*
 import static org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test.StandaloneUtil.getModelURI
-import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary
 
 class BankBranches_ABAC_TestBase extends TestBase {
 	

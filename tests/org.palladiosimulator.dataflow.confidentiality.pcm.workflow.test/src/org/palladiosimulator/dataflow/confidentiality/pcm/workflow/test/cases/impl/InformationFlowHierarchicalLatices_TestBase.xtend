@@ -1,6 +1,7 @@
 package org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test.cases.impl
 
 import java.util.function.Consumer
+import org.eclipse.emf.ecore.util.EcoreUtil
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.TransformPCMDFDToPrologWorkflowFactory
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.jobs.TransformPCMDFDToPrologJobBuilder
 import org.palladiosimulator.pcm.allocation.Allocation
@@ -8,7 +9,6 @@ import org.palladiosimulator.pcm.usagemodel.UsageModel
 
 import static org.junit.jupiter.api.Assertions.*
 import static org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test.StandaloneUtil.getModelURI
-import org.eclipse.emf.ecore.util.EcoreUtil
 
 class InformationFlowHierarchicalLatices_TestBase extends TestBase {
 	

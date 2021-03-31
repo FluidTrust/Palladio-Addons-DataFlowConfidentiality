@@ -430,7 +430,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		for (characteristic : characterisedElements.applicableCharacteristics) {
 			val ct = characteristic.type.characteristicType
 			val values = characteristic.determineLiterals
-			node.characteristics += createCharacteristic(ct, values)
+			node.ownedCharacteristics += createCharacteristic(ct, values)
 		}
 	}
 	

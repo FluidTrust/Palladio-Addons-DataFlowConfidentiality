@@ -13,7 +13,7 @@
   </system:System>
   <emfprofileapplication:ProfileApplication>
     <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_IZVaUD1WEeuNWouTGsQ1xw">
-      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_YMF8MBdpEeu98bd9ogearw"/>
+      <extension href="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_YMF8MBdpEeu98bd9ogearw"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.characteristics#_ByBSoD1XEeuNWouTGsQ1xw"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.characteristics#_FO1XwD1XEeuNWouTGsQ1xw"/>
     </stereotypeApplications>

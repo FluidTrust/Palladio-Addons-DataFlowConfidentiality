@@ -34,9 +34,33 @@
 			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-intbiis/nightly/"/>
 		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.editors.sirius.ui" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.custom" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.assembly" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-sirius/nightly/"/>
+		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
-			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="0.0.0"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-intbiis/releases/latest"/>
+			<unit id="org.palladiosimulator.editors.sirius.ui" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.custom" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.assembly" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-sirius/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.architecturaltemplates.api" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addon-architecturaltemplates/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.architecturaltemplates.api" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addon-architecturaltemplates/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.yakindu.base.xtext.utils.gmf.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-yakindustatecharts/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.yakindu.base.xtext.utils.gmf.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-yakindustatecharts/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="tools.mdsd.library.standalone.initialization.log4j.feature.feature.group" version="0.0.0"/>
@@ -74,12 +98,12 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="0.0.0"/>
-			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.dataflow.confidentiality.ui.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
 			<unit id="org.palladiosimulator.dataflow.confidentiality.transformation.feature.feature.group" version="0.0.0"/>
-			<unit id="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.dataflow.confidentiality.ui.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-dataflowdiagramconfidentiality/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
@@ -122,10 +146,12 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="org.palladiosimulator.indirections.editor.tree.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.indirections.editor.sirius.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
 			<unit id="org.palladiosimulator.indirections.editor.tree.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.indirections.editor.sirius.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/releases/latest/"/>
 		</location>
 	</locations>

@@ -6,28 +6,30 @@
    <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.tree.feature">
       <category name="org.palladiosimulator.dataflow.confidentiality.category"/>
    </feature>
+   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.feature">
+      <category name="org.palladiosimulator.dataflow.confidentiality.category"/>
+   </feature>
    <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.transformation.feature">
       <category name="org.palladiosimulator.dataflow.confidentiality.category"/>
    </feature>
-   <!--
-   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.datatypeusage.feature">
+   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.ui.feature">
       <category name="org.palladiosimulator.dataflow.confidentiality.category"/>
    </feature>
-   -->
-   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.model.feature.source">
+    <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.model.feature.source">
       <category name="org.palladiosimulator.dataflow.confidentiality.source.category"/>
    </feature>
    <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.tree.feature.source">
       <category name="org.palladiosimulator.dataflow.confidentiality.source.category"/>
    </feature>
+   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.feature.source">
+      <category name="org.palladiosimulator.dataflow.confidentiality.source.category"/>
+   </feature>
    <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.transformation.feature.source">
       <category name="org.palladiosimulator.dataflow.confidentiality.source.category"/>
    </feature>
-   <!--
-   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.datatypeusage.feature.source">
+   <feature id="org.palladiosimulator.dataflow.confidentiality.pcm.ui.feature.source">
       <category name="org.palladiosimulator.dataflow.confidentiality.source.category"/>
    </feature>
-   -->
    <category-def name="org.palladiosimulator.dataflow.confidentiality.pcm.category" label="PCM Data Flow Confidentiality">
    </category-def>
    <category-def name="org.palladiosimulator.dataflow.confidentiality.pcm.source.category" label="PCM Data Flow Confidentiality Developer Resources">

@@ -146,4 +146,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dataFlowConfidentiality -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.presentation.DictionaryModelWizardID"
+            name="%_UI_DictionaryModelWizard_label"
+            class="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.presentation.DictionaryModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DictionaryModelFile.gif">
+         <description>%_UI_DictionaryModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dataFlowConfidentiality -->
+      <editor
+            id="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.presentation.DictionaryEditorID"
+            name="%_UI_DictionaryEditor_label"
+            icon="icons/full/obj16/DictionaryModelFile.gif"
+            extensions="dictionary"
+            class="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.presentation.DictionaryEditor"
+            contributorClass="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.presentation.DictionaryActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

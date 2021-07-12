@@ -27,6 +27,8 @@ Export-Package: org.palladiosimulator.dataflow.confidentiality.pcm.model.confide
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics,
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.impl,
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.util,
+ org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary,
+ org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.util,
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.expression,
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.expression.impl,
  org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.expression.util,

@@ -1,13 +1,12 @@
 package org.palladiosimulator.dataflow.confidentiality.pcm.transformation.test.util;
 
 import org.eclipse.emf.common.util.URI;
-import org.modelversioning.emfprofile.registry.IProfileRegistry;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.profile.ProfileConstants;
 import org.palladiosimulator.dataflow.confidentiality.pcm.testmodels.Activator;
 
-import tools.mdsd.library.standalone.initialization.InitializationTask;
 import tools.mdsd.library.standalone.initialization.StandaloneInitializationException;
 import tools.mdsd.library.standalone.initialization.StandaloneInitializerBuilder;
+import tools.mdsd.library.standalone.initialization.emfprofiles.EMFProfileInitializationTask;
 import tools.mdsd.library.standalone.initialization.log4j.Log4jInitilizationTask;
 
 public class StandaloneUtils {
@@ -17,17 +16,8 @@ public class StandaloneUtils {
             .registerProjectURI(Activator.class, "org.palladiosimulator.dataflow.confidentiality.pcm.testmodels")
             .registerProjectURI(ProfileConstants.class,
                     "org.palladiosimulator.dataflow.confidentiality.pcm.model.profile")
-            .registerMetaModel("org.palladiosimulator.dataflow.confidentiality.pcm.model.profile", "profile.emfprofile_diagram")
             .addCustomTask(new Log4jInitilizationTask())
-            .addCustomTask(new InitializationTask() {
-                @Override
-                public void initilizationWithoutPlatform() throws StandaloneInitializationException {
-                }
-                @Override
-                public void initializationWithPlatform() throws StandaloneInitializationException {
-                    IProfileRegistry.eINSTANCE.getClass();
-                }
-            })
+            .addCustomTask(new EMFProfileInitializationTask("org.palladiosimulator.dataflow.confidentiality.pcm.model.profile", "profile.emfprofile_diagram"))
             .build()
             .init();
         

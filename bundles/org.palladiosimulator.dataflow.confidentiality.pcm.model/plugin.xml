@@ -46,4 +46,12 @@
             genModel="model/dataFlowConfidentiality.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dataFlowConfidentiality -->
+      <package
+            uri="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/dictionary"
+            class="org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.DictionaryPackage"
+            genModel="model/dataFlowConfidentiality.genmodel"/>
+   </extension>
+
 </plugin>

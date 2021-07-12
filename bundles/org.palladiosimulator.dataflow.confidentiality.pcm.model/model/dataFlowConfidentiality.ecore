@@ -58,7 +58,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Characteristics" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" upperBound="-1"
-          eType="#//characteristics/Characteristic" containment="true"/>
+          containment="true">
+        <eGenericType eClassifier="#//characteristics/Characteristic">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="expression" nsURI="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression"
@@ -174,5 +178,9 @@
         <details key="allSeffsAreEmpty" value="self.serviceEffectSpecifications__BasicComponent->selectByKind(pcm::seff::ResourceDemandingBehaviour)->forAll(seff | seff.steps_Behaviour->size() = 2)"/>
       </eAnnotations>
     </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="dictionary" nsURI="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/dictionary"
+      nsPrefix="dictionary">
+    <eClassifiers xsi:type="ecore:EClass" name="PCMDataDictionary" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//characteristics/CharacteristicTypeDictionary #//behaviour/Behaviours"/>
   </eSubpackages>
 </ecore:EPackage>

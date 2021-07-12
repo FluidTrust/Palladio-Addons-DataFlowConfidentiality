@@ -97,5 +97,8 @@
         childCreationExtenders="true" ecorePackage="dataFlowConfidentiality.ecore#//repository">
       <genClasses ecoreClass="dataFlowConfidentiality.ecore#//repository/OperationalDataStoreComponent"/>
     </nestedGenPackages>
+    <nestedGenPackages prefix="Dictionary" disposableProviderFactory="true" ecorePackage="dataFlowConfidentiality.ecore#//dictionary">
+      <genClasses ecoreClass="dataFlowConfidentiality.ecore#//dictionary/PCMDataDictionary"/>
+    </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

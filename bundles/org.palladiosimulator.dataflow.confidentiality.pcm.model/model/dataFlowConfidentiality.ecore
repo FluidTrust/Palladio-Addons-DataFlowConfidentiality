@@ -181,6 +181,6 @@
   </eSubpackages>
   <eSubpackages name="dictionary" nsURI="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/dictionary"
       nsPrefix="dictionary">
-    <eClassifiers xsi:type="ecore:EClass" name="PCMDataDictionary" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//characteristics/CharacteristicTypeDictionary #//behaviour/Behaviours"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PCMDataDictionary" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//characteristics/CharacteristicTypeDictionary #//characteristics/Characteristics #//behaviour/Behaviours"/>
   </eSubpackages>
 </ecore:EPackage>

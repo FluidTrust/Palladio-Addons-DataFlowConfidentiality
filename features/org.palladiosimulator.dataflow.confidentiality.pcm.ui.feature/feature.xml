@@ -15,6 +15,10 @@
          id="org.palladiosimulator.dataflow.confidentiality.pcm.transformation.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import feature="org.palladiosimulator.dataflow.confidentiality.ui.feature" version="1.0.0.qualifier"/>
+   </requires>
+
    <plugin
          id="org.palladiosimulator.dataflow.confidentiality.pcm.ui"
          download-size="0"

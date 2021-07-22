@@ -62,9 +62,9 @@ class DDDslFormatter extends CharacterizedDataDictionaryFormatter {
 	}
 
 	def dispatch void format(VariableUsage variableUsage, extension IFormattableDocument document) {
-		variableUsage.regionFor.keyword(variableUsageAccess.fullStopKeyword_1).prepend[noSpace].append[space = variableUsage.variableCharacterisation_VariableUsage.size > 1 ? " " : ""]
+		variableUsage.regionFor.keyword(variableUsageAccess.fullStopKeyword_1).prepend[noSpace].append[noSpace]
 		interior(
-			variableUsage.regionFor.keyword(variableUsageAccess.leftCurlyBracketKeyword_2_1_0).prepend[oneSpace].append[noSpace;newLine],
+			variableUsage.regionFor.keyword(variableUsageAccess.leftCurlyBracketKeyword_2_1_0).prepend[oneSpace; priority=2].append[noSpace;newLine], // conflict with oneSpace of fullStopKeyword
 			variableUsage.regionFor.keyword(variableUsageAccess.rightCurlyBracketKeyword_2_1_2).prepend[noSpace].append[noSpace],
 			[indent]
 		)

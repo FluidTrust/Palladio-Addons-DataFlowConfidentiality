@@ -131,6 +131,10 @@
 			<repository location="https://updatesite.mdsd.tools/library-emfeditutils/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="tools.mdsd.junit5utils.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.mdsd.tools/library-junit5utils/releases/latest/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="tools.mdsd.license.epl2.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.mdsd.tools/build-licensefeature/releases/latest/"/>
 		</location>

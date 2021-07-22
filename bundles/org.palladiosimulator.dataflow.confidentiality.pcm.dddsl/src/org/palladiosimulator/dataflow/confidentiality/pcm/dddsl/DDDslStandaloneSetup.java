@@ -4,8 +4,14 @@
 package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.BehaviourPackage;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.DictionaryPackage;
+import org.palladiosimulator.pcm.core.CorePackage;
+import org.palladiosimulator.pcm.parameter.ParameterPackage;
 
 import com.google.inject.Injector;
+
+import de.uka.ipd.sdq.stoex.StoexPackage;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -19,18 +25,15 @@ public class DDDslStandaloneSetup extends DDDslStandaloneSetupGenerated {
     @Override
     public void register(Injector injector) {
         super.register(injector);
+        register(DictionaryPackage.eINSTANCE);
+        register(BehaviourPackage.eINSTANCE);
+        register(StoexPackage.eINSTANCE);
+        register(ParameterPackage.eINSTANCE);
+        register(CorePackage.eINSTANCE);
+    }
 
-        if (!EPackage.Registry.INSTANCE.containsKey(
-                org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityPackage.eNS_URI)) {
-            EPackage.Registry.INSTANCE.put(
-                    org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityPackage.eNS_URI,
-                    org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityPackage.eINSTANCE);
-        }
-
-        if (!EPackage.Registry.INSTANCE.containsKey(de.uka.ipd.sdq.stoex.StoexPackage.eNS_URI)) {
-            EPackage.Registry.INSTANCE.put(de.uka.ipd.sdq.stoex.StoexPackage.eNS_URI,
-                    de.uka.ipd.sdq.stoex.StoexPackage.eINSTANCE);
-        }
+    protected static void register(EPackage pkg) {
+        EPackage.Registry.INSTANCE.putIfAbsent(pkg.getNsURI(), pkg);
     }
 
 }

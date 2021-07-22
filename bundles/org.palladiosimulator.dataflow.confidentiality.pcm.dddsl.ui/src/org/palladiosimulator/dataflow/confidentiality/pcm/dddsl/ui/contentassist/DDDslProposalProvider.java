@@ -3,10 +3,70 @@
  */
 package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.ui.contentassist;
 
+import java.util.Optional;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.services.DDDslGrammarAccess;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityVariableCharacterisation;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.ReusableBehaviour;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.expressions.Term;
+
+import com.google.inject.Inject;
+
+import de.uka.ipd.sdq.stoex.VariableReference;
 
 /**
- * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
- * on how to customize the content assistant.
+ * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist on how to
+ * customize the content assistant.
  */
 public class DDDslProposalProvider extends AbstractDDDslProposalProvider {
+
+    @Inject
+    private DDDslGrammarAccess grammarAccess;
+
+    @Override
+    public void complete_VariableReference(EObject model, RuleCall ruleCall, ContentAssistContext context,
+            ICompletionProposalAcceptor acceptor) {
+        super.complete_VariableReference(model, ruleCall, context, acceptor);
+
+        if (model instanceof ReusableBehaviour) {
+            if (context.getFirstSetGrammarElements()
+                .contains(grammarAccess.getVariableUsageAccess()
+                    .getNamedReference__VariableUsageAssignment_0())) {
+                // we are looking for a lhs variable name
+                var behaviour = (ReusableBehaviour) model;
+                behaviour.getOutputVariables()
+                    .stream()
+                    .map(VariableReference::getReferenceName)
+                    .forEach(name -> acceptor.accept(createCompletionProposal(name, context)));
+            }
+        }
+
+        if (model instanceof ConfidentialityVariableCharacterisation || model instanceof Term) {
+            // we are on the rhs
+            if (context.getFirstSetGrammarElements()
+                .contains(grammarAccess.getNamedEnumCharacteristicReferenceAccess()
+                    .getNamedReferenceAssignment_0())) {
+                findParentOfType(model, ReusableBehaviour.class).map(ReusableBehaviour::getInputVariables)
+                    .orElse(new BasicEList<>())
+                    .stream()
+                    .map(VariableReference::getReferenceName)
+                    .forEach(name -> acceptor.accept(createCompletionProposal(name, context)));
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    protected static <T extends EObject> Optional<T> findParentOfType(EObject obj, Class<T> type) {
+        EObject current = obj;
+        while (current != null && !type.isInstance(current)) {
+            current = current.eContainer();
+        }
+        return Optional.ofNullable((T) current);
+    }
+
 }

@@ -4,30 +4,46 @@
 package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.tests
 
 import com.google.inject.Inject
+import org.eclipse.ocl.ecore.OCL
+import org.eclipse.ocl.ecore.delegate.OCLDelegateDomain
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary
-import static org.hamcrest.MatcherAssert.*
+
 import static org.hamcrest.CoreMatchers.*
+import static org.hamcrest.MatcherAssert.*
+import static org.junit.jupiter.api.Assertions.*
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DDDslInjectorProvider)
 class DDDslParsingTest {
+
 	@Inject
 	ParseHelper<PCMDataDictionary> parseHelper
 
+	@BeforeAll
+	static def void init() {
+		OCL.initialize(null);
+		OCLDelegateDomain.initialize(null);
+	}
+
 	@Test
 	def void loadModel() {
-		val result = parseHelper.parse('''
+		val result = '''
 			dictionary id "123"
-		''')
-		Assertions.assertNotNull(result)
-		val errors = result.eResource.errors
-		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		'''.parse
 		assertThat(result.id, is("123"))
+	}
+
+	protected def parse(CharSequence text) {
+		val result = parseHelper.parse(text)
+		assertNotNull(result)
+		val errors = result.eResource.errors
+		assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		result
 	}
 }

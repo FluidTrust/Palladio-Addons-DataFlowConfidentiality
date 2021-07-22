@@ -3,23 +3,118 @@
  */
 package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.validation;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.validation.Check;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityVariableCharacterisation;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.BehaviourPackage;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.ReusableBehaviour;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.DictionaryPackage;
+import org.palladiosimulator.pcm.core.CorePackage;
+import org.palladiosimulator.pcm.parameter.ParameterPackage;
+import org.palladiosimulator.pcm.parameter.VariableUsage;
+
+import de.uka.ipd.sdq.stoex.AbstractNamedReference;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.stoex.VariableReference;
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class DDDslValidator extends AbstractDDDslValidator {
-	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					DDDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
-	
+
+    @Override
+    protected List<EPackage> getEPackages() {
+        var relevantPackages = new ArrayList<>(super.getEPackages());
+        relevantPackages.removeIf(Objects::isNull);
+        relevantPackages.add(DictionaryPackage.eINSTANCE);
+        relevantPackages.add(BehaviourPackage.eINSTANCE);
+        relevantPackages.add(StoexPackage.eINSTANCE);
+        relevantPackages.add(ParameterPackage.eINSTANCE);
+        relevantPackages.add(CorePackage.eINSTANCE);
+        return relevantPackages;
+    }
+
+    @Check
+    public void checkVariableUsages(ReusableBehaviour behaviour) {
+        var usedVariableNames = new HashSet<>();
+        for (var variableUsage : behaviour.getVariableUsages()) {
+            var variableName = Optional.ofNullable(variableUsage.getNamedReference__VariableUsage())
+                .map(AbstractNamedReference::getReferenceName);
+            if (variableName.isPresent()) {
+                if (!usedVariableNames.add(variableName.get())) {
+                    error("There must only be one specification for an output variable.", behaviour,
+                            BehaviourPackage.Literals.REUSABLE_BEHAVIOUR__VARIABLE_USAGES, behaviour.getVariableUsages()
+                                .indexOf(variableUsage));
+                }
+            }
+        }
+    }
+
+    @Check
+    public void checkReference(VariableReference reference) {
+        var variableName = reference.getReferenceName();
+        var behaviour = findParentOfType(reference, ReusableBehaviour.class);
+        boolean isLhs = reference.eContainer() instanceof VariableUsage;
+        if (isLhs) {
+            var outputVariables = getVariableNames(behaviour, ReusableBehaviour::getOutputVariables);
+            if (!outputVariables.contains(variableName)) {
+                error("The left-hand-side of an assignment must only refer to output variables.",
+                        reference.eContainer(),
+                        ParameterPackage.Literals.VARIABLE_USAGE__NAMED_REFERENCE_VARIABLE_USAGE);
+            }
+        } else {
+            var inputVariables = getVariableNames(behaviour, ReusableBehaviour::getInputVariables);
+            var isRhs = findParentOfType(reference, ConfidentialityVariableCharacterisation.class)
+                .map(e -> isTransitiveChild(e, reference))
+                .orElse(false);
+            if (isRhs && !inputVariables.contains(variableName)) {
+                error("The right-hand-side of an assignment must only refer to input variables.",
+                        reference.eContainer(), reference.eContainingFeature());
+            }
+        }
+    }
+
+    protected static Collection<String> getVariableNames(Optional<ReusableBehaviour> behaviour,
+            Function<ReusableBehaviour, Collection<VariableReference>> getter) {
+        return behaviour.map(b -> getter.apply(b))
+            .orElse(new BasicEList<>())
+            .stream()
+            .map(VariableReference::getReferenceName)
+            .collect(Collectors.toList());
+    }
+
+    @SuppressWarnings("unchecked")
+    protected static <T extends EObject> Optional<T> findParentOfType(EObject obj, Class<T> type) {
+        EObject current = obj;
+        while (current != null && !type.isInstance(current)) {
+            current = current.eContainer();
+        }
+        return Optional.ofNullable((T) current);
+    }
+
+    protected static boolean isTransitiveChild(EObject root, EObject child) {
+        if (root.equals(child)) {
+            return true;
+        }
+        for (var iter = root.eAllContents(); iter.hasNext();) {
+            if (child.equals(iter.next())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -33,7 +33,7 @@ public class TransformPCMDFDToPrologJobBuilder {
             URI.createFileURI("tmp/dfd.xmi"));
     private static final ModelLocation DEFAULT_PROLOG_LOCATION = new ModelLocation("prolog",
             URI.createFileURI("tmp/dfd.pl"));
-    private static final String DEFAULT_PROLOG_KEY = "prologProgram";
+    public static final String DEFAULT_PROLOG_KEY = "prologProgram";
     private static final String DEFAULT_DFDTRACE_KEY = "dfdTrace";
     private static final String DEFAULT_PCMTRACE_KEY = "pcmTrace";
     private static final String DEFAULT_TRACE_KEY = "transitiveTrace";

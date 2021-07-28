@@ -29,6 +29,10 @@ public class DDDslScopeProvider extends AbstractDDDslScopeProvider {
     protected IScope getScopeForLiteralInEnumCharacteristicReference(EObject context, EReference reference,
             IScope scope) {
         var newScope = super.getScopeForLiteralInEnumCharacteristicReference(context, reference, scope);
+        if (reference != ExpressionsPackage.Literals.ENUM_CHARACTERISTIC_REFERENCE__LITERAL) {
+            return newScope;
+        }
+
         Collection<Literal> literals = Optional.ofNullable(context)
             .filter(EnumCharacteristicReference.class::isInstance)
             .map(EnumCharacteristicReference.class::cast)
@@ -38,8 +42,7 @@ public class DDDslScopeProvider extends AbstractDDDslScopeProvider {
             .map(EnumCharacteristicType::getType)
             .map(Enumeration::getLiterals)
             .orElse(new BasicEList<>());
-        return newScope = new FilteringScope(newScope,
-                d -> literals.isEmpty() || literals.contains(d.getEObjectOrProxy()));
+        return new FilteringScope(newScope, d -> literals.isEmpty() || literals.contains(d.getEObjectOrProxy()));
     }
 
 }

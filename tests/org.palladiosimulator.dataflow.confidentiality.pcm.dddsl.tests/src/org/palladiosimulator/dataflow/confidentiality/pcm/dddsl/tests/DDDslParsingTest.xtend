@@ -6,17 +6,22 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.tests
 import com.google.inject.Inject
 import org.eclipse.ocl.ecore.OCL
 import org.eclipse.ocl.ecore.delegate.OCLDelegateDomain
+import org.eclipse.xtext.parser.IParser
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityVariableCharacterisation
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.expression.LhsEnumCharacteristicReference
 
 import static org.hamcrest.CoreMatchers.*
 import static org.hamcrest.MatcherAssert.*
 import static org.junit.jupiter.api.Assertions.*
+import java.io.StringReader
+import org.eclipse.xtext.parser.IParseResult
 
 @ExtendWith(InjectionExtension)
 @InjectWith(DDDslInjectorProvider)
@@ -24,6 +29,9 @@ class DDDslParsingTest {
 
 	@Inject
 	ParseHelper<PCMDataDictionary> parseHelper
+
+	@Inject
+	var IParser parser
 
 	@BeforeAll
 	static def void init() {
@@ -37,6 +45,55 @@ class DDDslParsingTest {
 			dictionary id "123"
 		'''.parse
 		assertThat(result.id, is("123"))
+	}
+	
+	@Test
+	def void testEnumCharacteristicReferences() {
+		val text = '''
+			dictionary id "_-LQBcO-pEeu6oK87dAHzHQ"
+			
+			enum Roles {
+				User
+				Airline
+			}
+			enumCharacteristicType AssignedRoles using Roles
+			enumCharacteristicType ReadAccess using Roles
+			
+			behavior foo {
+				input query
+				input flights
+				output filteredFlights
+			filteredFlights.ReadAccess.* := flights.ReadAccess.* & query.ReadAccess.*
+			}
+		'''
+		
+		var IParseResult result;
+		try (var reader = new StringReader(text)) {
+			result = parser.parse(reader)
+		}
+		
+//		val result = '''
+//			dictionary id "_-LQBcO-pEeu6oK87dAHzHQ"
+//			
+//			enum Roles {
+//				User
+//				Airline
+//			}
+//			enumCharacteristicType AssignedRoles using Roles
+//			enumCharacteristicType ReadAccess using Roles
+//			
+//			behavior foo {
+//				input query
+//				input flights
+//				output filteredFlights
+//			filteredFlights.ReadAccess.* := flights.ReadAccess.* & query.ReadAccess.*
+//			}
+//		'''.parse
+		var dict = result.rootASTElement as PCMDataDictionary
+		var characterisations = dict.reusableBehaviours.get(0).variableUsages.get(0).variableCharacterisation_VariableUsage;
+		var characterisation = characterisations.get(0) as ConfidentialityVariableCharacterisation
+		var lhs = characterisation.lhs as LhsEnumCharacteristicReference
+		assertNotNull(lhs.characteristicType)
 	}
 
 	protected def parse(CharSequence text) {

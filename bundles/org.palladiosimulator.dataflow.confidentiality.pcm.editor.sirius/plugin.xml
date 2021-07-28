@@ -7,4 +7,11 @@
 	       name="sirius">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.CreateVariableCharacterisationsViaEditor"
+           id="PCM-Confidentiality-CreateVariableCharacterisationsViaEditor">
+     </javaActions>
+  </extension>
 </plugin>

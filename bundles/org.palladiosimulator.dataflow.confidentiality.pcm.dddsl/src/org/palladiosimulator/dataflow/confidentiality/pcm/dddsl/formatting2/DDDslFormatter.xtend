@@ -45,7 +45,7 @@ class DDDslFormatter extends CharacterizedDataDictionaryFormatter {
 	}
 	
 	def dispatch void format(ReusableBehaviour behaviour, extension IFormattableDocument document) {
-		behaviour.prepend[newLine]
+		behaviour.prepend[newLines = 2]
 		behaviour.regionFor.keyword(reusableBehaviourAccess.behaviorKeyword_0).prepend[noSpace].append[oneSpace]
 		interior(
 			behaviour.regionFor.keyword(reusableBehaviourAccess.leftCurlyBracketKeyword_2).prepend[oneSpace].append[newLine],

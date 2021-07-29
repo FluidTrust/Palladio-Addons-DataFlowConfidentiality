@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.function.Consumer;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -141,16 +140,24 @@ public class AssignmentsEditorImpl extends TitleAreaDialog {
                 .add(variableUsageToEdit);
         });
         var serializedDict = serializationHelper.serializeDict(dict, Arrays.asList(dict));
-        var blockPattern = Pattern.compile("\\{([^}]+)\\}");
-        var matcher = blockPattern.matcher(serializedDict);
-        var blocks = matcher.results()
-            .collect(Collectors.toList());
-        var lastBlock = blocks.get(blocks.size() - 1);
-        var lastBlockContent = lastBlock.group(1);
 
-        var lastBlockWithoutInputOutput = lastBlockContent.replaceAll("\\s*((input)|(output))\\s+[^\\s]+", "");
+        var behaviorIndex = serializedDict.indexOf("behavior ");
+        var behaviorText = serializedDict.substring(behaviorIndex, serializedDict.length())
+            .trim();
+        var behaviorBlockOpenIndex = behaviorText.indexOf("{");
+        var behaviorContentText = behaviorText.substring(behaviorBlockOpenIndex + 1, behaviorText.length() - 1);
 
-        return lastBlockWithoutInputOutput.trim();
+        var assignments = behaviorContentText.replaceAll("\\s*((input)|(output))\\s+[^\\s]+", "")
+            .trim();
+        var assignmentLines = Arrays.asList(assignments.split("\r?\n"));
+        return assignmentLines.stream()
+            .map(line -> {
+                if (line.startsWith("\t")) {
+                    return line.substring(1);
+                }
+                return line;
+            })
+            .collect(Collectors.joining(System.lineSeparator()));
     }
 
     protected String getPostfix() {

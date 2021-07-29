@@ -109,11 +109,6 @@ public final class SerializationHelper {
     protected static void replaceCharacteristicTypes(VariableUsage variableUsage,
             Collection<PCMDataDictionary> dictionaries) {
 
-        // assign new ids to all elements
-        eAllContentsStream(variableUsage).filter(Identifier.class::isInstance)
-            .map(Identifier.class::cast)
-            .forEach(i -> i.setId(EcoreUtil.generateUUID()));
-
         // fix references to data dictionary
         eAllContentsStream(variableUsage).filter(EnumCharacteristicReference.class::isInstance)
             .map(EnumCharacteristicReference.class::cast)
@@ -139,6 +134,11 @@ public final class SerializationHelper {
                     }
                 }
             });
+
+        // assign new ids to all elements
+        eAllContentsStream(variableUsage).filter(Identifier.class::isInstance)
+            .map(Identifier.class::cast)
+            .forEach(i -> i.setId(EcoreUtil.generateUUID()));
     }
 
     protected static Optional<CharacteristicType> findCharacteristicTypeInDicts(String name,

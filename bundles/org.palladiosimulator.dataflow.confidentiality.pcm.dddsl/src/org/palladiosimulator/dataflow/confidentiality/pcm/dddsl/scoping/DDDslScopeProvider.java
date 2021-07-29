@@ -3,20 +3,6 @@
  */
 package org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.scoping;
 
-import java.util.Collection;
-import java.util.Optional;
-
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.impl.FilteringScope;
-import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.EnumCharacteristicType;
-import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Enumeration;
-import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Literal;
-import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.expressions.EnumCharacteristicReference;
-import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.expressions.ExpressionsPackage;
-
 /**
  * This class contains custom scoping description.
  * 
@@ -24,25 +10,5 @@ import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCha
  * to use it.
  */
 public class DDDslScopeProvider extends AbstractDDDslScopeProvider {
-
-    @Override
-    protected IScope getScopeForLiteralInEnumCharacteristicReference(EObject context, EReference reference,
-            IScope scope) {
-        var newScope = super.getScopeForLiteralInEnumCharacteristicReference(context, reference, scope);
-        if (reference != ExpressionsPackage.Literals.ENUM_CHARACTERISTIC_REFERENCE__LITERAL) {
-            return newScope;
-        }
-
-        Collection<Literal> literals = Optional.ofNullable(context)
-            .filter(EnumCharacteristicReference.class::isInstance)
-            .map(EnumCharacteristicReference.class::cast)
-            .map(r -> r.eGet(ExpressionsPackage.Literals.CHARACTERISTIC_REFERENCE__CHARACTERISTIC_TYPE, false))
-            .filter(EnumCharacteristicType.class::isInstance)
-            .map(EnumCharacteristicType.class::cast)
-            .map(EnumCharacteristicType::getType)
-            .map(Enumeration::getLiterals)
-            .orElse(new BasicEList<>());
-        return new FilteringScope(newScope, d -> literals.isEmpty() || literals.contains(d.getEObjectOrProxy()));
-    }
 
 }

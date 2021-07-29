@@ -55,7 +55,7 @@
               <subNodeMappings xsi:type="description_1:NodeMappingImport" name="VariableCharacterisationOutput" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))">
                 <importedMapping href="../../org.palladiosimulator.editors.sirius.seff/description/seff.odesign#//@ownedViewpoints[name='Seff']/@ownedRepresentations[name='Seff%20Diagram']/@defaultLayer/@containerMappings[name='ExternalCallAction']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='VariableCharacterisationOutput']"/>
               </subNodeMappings>
-              <subNodeMappings name="ConfidentialityVariableCharacterisationOutput" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" domainClass="ConfidentialityVariableCharacterisation">
+              <subNodeMappings name="ConfidentialityVariableCharacterisationOutput" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" doubleClickDescription="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@toolSections.0/@ownedTools[name='DC_ConfidentialityVariableCharacterisationInput_Edit']" domainClass="ConfidentialityVariableCharacterisation">
                 <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel" labelPosition="node" resizeKind="NSEW">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -76,7 +76,7 @@
             <subNodeMappings xsi:type="description_1:NodeMappingImport" name="VariableCharacterisationvariableSetter" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))">
               <importedMapping href="../../org.palladiosimulator.editors.sirius.seff/description/seff.odesign#//@ownedViewpoints[name='Seff']/@ownedRepresentations[name='Seff%20Diagram']/@defaultLayer/@containerMappings[name='SetVariableAction']/@subContainerMappings[name='LocalVariableUsageSetVariableAction']/@subNodeMappings[name='VariableCharacterisationvariableSetter']"/>
             </subNodeMappings>
-            <subNodeMappings name="ConfidentialityVariableCharacterisationOutputSetter" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" domainClass="ConfidentialityVariableCharacterisation">
+            <subNodeMappings name="ConfidentialityVariableCharacterisationOutputSetter" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" doubleClickDescription="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@toolSections.0/@ownedTools[name='DC_ConfidentialityVariableCharacterisationInput_Edit']" domainClass="ConfidentialityVariableCharacterisation">
               <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -100,7 +100,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DoubleClickDescription" name="DC_ConfidentialityVariableCharacterisationInput_Edit" mappings="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@containerMappings[name='ExternalCallAction']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='ConfidentialityVariableCharacterisationInput']">
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="DC_ConfidentialityVariableCharacterisationInput_Edit" mappings="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@containerMappings[name='ExternalCallAction']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='ConfidentialityVariableCharacterisationInput'] //@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@containerMappings[name='ExternalCallAction']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='ConfidentialityVariableCharacterisationOutput'] //@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20SEFF']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.seff']/@containerMappings[name='SetVariableAction']/@subContainerMappings[name='LocalVariableUsageSetVariableAction']/@subNodeMappings[name='ConfidentialityVariableCharacterisationOutputSetter']">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
@@ -118,58 +118,38 @@
           <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="scenarioBehavior" semanticCandidatesExpression="aql: self.scenarioBehaviour_UsageScenario" domainClass="usagemodel.ScenarioBehaviour">
             <reusedNodeMappings href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subNodeMappings[name='start']"/>
             <reusedNodeMappings href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subNodeMappings[name='stop']"/>
-            <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="entryLevelSystemCall" semanticCandidatesExpression="feature:actions_ScenarioBehaviour" domainClass="usagemodel.EntryLevelSystemCall">
-              <subContainerMappings name="VariableUsageInputCompartment" semanticCandidatesExpression="var:self" domainClass="usagemodel.EntryLevelSystemCall">
-                <subContainerMappings name="VariableUsageInput" semanticCandidatesExpression="feature:inputParameterUsages_EntryLevelSystemCall" domainClass="parameter.VariableUsage" childrenPresentation="List">
-                  <subNodeMappings xsi:type="description_1:NodeMappingImport" name="variableCharacterisation" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))" domainClass="parameter.VariableCharacterisation">
-                    <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='variableUsage']/@subNodeMappings[name='variableCharacterisation']"/>
+            <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="entryLevelSystemCall" semanticCandidatesExpression="feature:actions_ScenarioBehaviour" domainClass="usagemodel.EntryLevelSystemCall" childrenPresentation="VerticalStack">
+              <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="InputVariableUsageCompartment" semanticCandidatesExpression="var:self">
+                <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="InputVariableUsage" semanticCandidatesExpression="feature:inputParameterUsages_EntryLevelSystemCall" childrenPresentation="List">
+                  <subNodeMappings xsi:type="description_1:NodeMappingImport" name="VariableCharacterisationInput" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))">
+                    <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='VariableCharacterisationInput']"/>
                   </subNodeMappings>
-                  <subNodeMappings name="ConfidentialityVariableCharacterisation" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))" domainClass="ConfidentialityVariableCharacterisation">
-                    <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel()" labelPosition="node" resizeKind="NSEW">
+                  <subNodeMappings name="ConfidentialityVariableCharacterisationInput" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" doubleClickDescription="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@toolSections.0/@ownedTools[name='DC_ConfidentialityVariableCharacterisationInput_Edit']" domainClass="ConfidentialityVariableCharacterisation">
+                    <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel" labelPosition="node" resizeKind="NSEW">
                       <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                       <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                       <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
                     </style>
                   </subNodeMappings>
-                  <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="service:getFullName()">
-                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                    <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                  </style>
+                  <importedMapping href="../../org.palladiosimulator.editors.sirius.seff/description/seff.odesign#//@ownedViewpoints[name='Seff']/@ownedRepresentations[name='Seff%20Diagram']/@defaultLayer/@containerMappings[name='ExternalCallAction']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']"/>
                 </subContainerMappings>
-                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="InputVariableUsageCompartment">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-                </style>
+                <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='InputVariableUsageCompartment']"/>
               </subContainerMappings>
-              <subContainerMappings name="VariableUsageOutputCompartment" semanticCandidatesExpression="var:self" domainClass="usagemodel.EntryLevelSystemCall">
-                <subContainerMappings name="VariableUsageOutput" semanticCandidatesExpression="feature:outputParameterUsages_EntryLevelSystemCall" domainClass="parameter.VariableUsage" childrenPresentation="List">
-                  <subNodeMappings xsi:type="description_1:NodeMappingImport" name="variableCharacterisation" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))" domainClass="parameter.VariableCharacterisation">
-                    <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='variableUsage']/@subNodeMappings[name='variableCharacterisation']"/>
+              <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="OutputVariableUsageCompartment" semanticCandidatesExpression="var:self">
+                <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="OutputVariableUsage" semanticCandidatesExpression="feature:outputParameterUsages_EntryLevelSystemCall" childrenPresentation="List">
+                  <subNodeMappings xsi:type="description_1:NodeMappingImport" name="VariableCharacterisationOutput" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | not u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))">
+                    <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='VariableCharacterisationOutput']"/>
                   </subNodeMappings>
-                  <subNodeMappings name="ConfidentialityVariableCharacterisation" semanticCandidatesExpression="aql:self.variableCharacterisation_VariableUsage->select(u | u.oclIsKindOf(confidentiality::ConfidentialityVariableCharacterisation))" domainClass="ConfidentialityVariableCharacterisation">
-                    <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel()" labelPosition="node" resizeKind="NSEW">
+                  <subNodeMappings name="ConfidentialityVariableCharacterisationOutput" semanticCandidatesExpression="feature:variableCharacterisation_VariableUsage" doubleClickDescription="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@toolSections.0/@ownedTools[name='DC_ConfidentialityVariableCharacterisationInput_Edit']" domainClass="ConfidentialityVariableCharacterisation">
+                    <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="service:getConfidentialityVariableCharacterisationLabel" labelPosition="node" resizeKind="NSEW">
                       <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                       <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                       <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
                     </style>
                   </subNodeMappings>
-                  <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="service:getFullName()">
-                    <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                    <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                    <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-                  </style>
+                  <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']"/>
                 </subContainerMappings>
-                <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="OutputVariableUsageCompartment">
-                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                  <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-                  <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-                </style>
+                <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']"/>
               </subContainerMappings>
               <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']"/>
             </subContainerMappings>
@@ -182,6 +162,33 @@
           <reusedContainerMappings href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='openWorkload']"/>
           <importedMapping href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']"/>
         </containerMappings>
+        <toolSections name="Usage-PCM-Confidentiality" label="Confidentiality">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConfidentialityVariableCharacterisationCreationUsage" label="Confidentiality Variable Characterisation">
+            <nodeMappings href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='VariableCharacterisationInput']"/>
+            <nodeMappings href="../../org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='VariableCharacterisationOutput']"/>
+            <nodeMappings href="#//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='VariableCharacterisationInput']"/>
+            <nodeMappings href="#//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='VariableCharacterisationOutput']"/>
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="CreateVariableCharacterisationsViaEditor" id="PCM-Confidentiality-CreateVariableCharacterisationsViaEditor">
+                  <parameters name="container" value="var:container"/>
+                  <parameters name="containerView" value="var:containerView"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="DC_ConfidentialityVariableCharacterisationInput_Edit" mappings="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='InputVariableUsageCompartment']/@subContainerMappings[name='InputVariableUsage']/@subNodeMappings[name='ConfidentialityVariableCharacterisationInput'] //@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20UsageModel']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.usagemodel']/@containerMappings[name='usageScenario']/@subContainerMappings[name='scenarioBehavior']/@subContainerMappings[name='entryLevelSystemCall']/@subContainerMappings[name='OutputVariableUsageCompartment']/@subContainerMappings[name='OutputVariableUsage']/@subNodeMappings[name='ConfidentialityVariableCharacterisationOutput']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="CreateVariableCharacterisationsViaEditor" id="PCM-Confidentiality-CreateVariableCharacterisationsViaEditor"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </layers>
     </ownedRepresentationExtensions>
     <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="PCM Confidentiality Repository" viewpointURI="viewpoint:/org.palladiosimulator.editors.sirius.repository/Repository" representationName="Repository Diagram">

@@ -46,6 +46,7 @@ import org.palladiosimulator.pcm.usagemodel.Loop;
 import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour;
 import org.palladiosimulator.pcm.usagemodel.Start;
 import org.palladiosimulator.pcm.usagemodel.Stop;
+import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
 import org.palladiosimulator.pcm.usagemodel.util.UsagemodelSwitch;
 
 import de.uka.ipd.sdq.stoex.AbstractNamedReference;
@@ -90,7 +91,7 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
 
         // find dictionaries
         var dictionaries = QueryHelpers.findDictionariesInSemanticResources(variableUsage);
-        
+
         // find output variable name
         var outputName = variableUsage.getNamedReference__VariableUsage()
             .getReferenceName();
@@ -122,12 +123,26 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
     protected Collection<String> findInputs(VariableUsage variableUsage, ScenarioBehaviour behaviour) {
         var inputs = new ArrayList<String>();
 
+        // add variables exposed by previous actions
         var initialAction = findParentOfType(variableUsage, AbstractUserAction.class).get();
         var predecessorIter = new AbstractUserActionPredecessorIterator(initialAction);
         var variablesExtractor = new AbstractUserActionOutputVariablesSwitch();
         while (predecessorIter.hasNext()) {
             var action = predecessorIter.next();
             inputs.addAll(variablesExtractor.doSwitch(action));
+        }
+
+        // add result for output characterisations of ELSCs
+        var calledSignatureHasReturn = Optional.of(initialAction)
+            .filter(EntryLevelSystemCall.class::isInstance)
+            .map(EntryLevelSystemCall.class::cast)
+            .map(EntryLevelSystemCall::getOperationSignature__EntryLevelSystemCall)
+            .map(OperationSignature::getReturnType__OperationSignature)
+            .map(Objects::nonNull)
+            .orElse(false);
+        if (calledSignatureHasReturn && variableUsage
+            .eContainmentFeature() == UsagemodelPackage.Literals.ENTRY_LEVEL_SYSTEM_CALL__OUTPUT_PARAMETER_USAGES_ENTRY_LEVEL_SYSTEM_CALL) {
+            inputs.add("RESULT");
         }
 
         return inputs;
@@ -137,14 +152,12 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
         var inputs = new ArrayList<String>();
 
         // add parameters
-        var calledSignatureHasReturn = false;
         if (seff.getDescribedService__SEFF() instanceof OperationSignature) {
             var signature = (OperationSignature) seff.getDescribedService__SEFF();
             signature.getParameters__OperationSignature()
                 .stream()
                 .map(Parameter::getParameterName)
                 .forEach(inputs::add);
-            calledSignatureHasReturn = signature.getReturnType__OperationSignature() != null;
         }
 
         // add variables exposed by previous actions
@@ -157,6 +170,13 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
         }
 
         // add result for output characterisations of ECAs
+        var calledSignatureHasReturn = Optional.of(initialAction)
+            .filter(ExternalCallAction.class::isInstance)
+            .map(ExternalCallAction.class::cast)
+            .map(ExternalCallAction::getCalledService_ExternalService)
+            .map(OperationSignature::getReturnType__OperationSignature)
+            .map(Objects::nonNull)
+            .orElse(false);
         if (calledSignatureHasReturn && variableUsage
             .eContainmentFeature() == SeffPackage.Literals.CALL_RETURN_ACTION__RETURN_VARIABLE_USAGE_CALL_RETURN_ACTION) {
             inputs.add("RESULT");
@@ -377,6 +397,11 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
         @Override
         public Collection<String> caseEntryLevelSystemCall(EntryLevelSystemCall object) {
             return getNames(object.getOutputParameterUsages_EntryLevelSystemCall());
+        }
+
+        @Override
+        public Collection<String> defaultCase(EObject object) {
+            return Collections.emptyList();
         }
 
     }

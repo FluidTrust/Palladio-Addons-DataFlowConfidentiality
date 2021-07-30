@@ -13,5 +13,13 @@
            actionClass="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.CreateVariableCharacterisationsViaEditor"
            id="PCM-Confidentiality-CreateVariableCharacterisationsViaEditor">
      </javaActions>
+     <javaActions
+           actionClass="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.LinkEnumCharacteristic"
+           id="PCM-Confidentiality-LinkEnumCharacteristic">
+     </javaActions>
+     <javaActions
+           actionClass="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.UnlinkEnumCharacteristics"
+           id="PCM-Confidentiality-UnlinkEnumCharacteristic">
+     </javaActions>
   </extension>
 </plugin>

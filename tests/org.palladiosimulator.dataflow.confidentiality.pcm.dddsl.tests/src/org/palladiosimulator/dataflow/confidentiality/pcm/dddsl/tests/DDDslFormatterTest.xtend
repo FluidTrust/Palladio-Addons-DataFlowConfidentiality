@@ -112,6 +112,7 @@ class DDDslFormatterTest {
     		A
     	}
     	enumCharacteristicType Type1 using FirstEnum
+    	
     	behavior Behavior1 {
     		input in1
     		input in2

@@ -2,6 +2,7 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.model.profile;
 
 public class ProfileConstants {
 
+    public static String profileName = "PCMDataFlowConfidentiality";
     public static StereotypeDescription dataChannelBehavior = new StereotypeDescription("DataChannelBehaviour",
             "behaviour");
     public static StereotypeDescription characterisable = new StereotypeDescription("Characterisable",

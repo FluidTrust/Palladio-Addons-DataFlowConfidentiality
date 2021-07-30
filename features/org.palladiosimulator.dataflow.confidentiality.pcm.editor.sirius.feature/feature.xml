@@ -11,6 +11,15 @@
          id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.tree.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.feature"
+         version="0.0.0"/>
+
+   <requires>
+      <import feature="org.modelversioning.emfprofile.ui.feature" version="5.0.0.202107290029"/>
+      <import feature="org.palladiosimulator.mdsdprofiles.feature" version="5.0.0.202107290037"/>
+   </requires>
+
    <plugin
          id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius"
          download-size="0"

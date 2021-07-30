@@ -139,11 +139,11 @@
 			<repository location="https://updatesite.mdsd.tools/build-licensefeature/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
-			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="0.0.0"/>
+			<unit id="org.modelversioning.emfprofile.ui.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
-			<unit id="org.modelversioning.emfprofile.core.feature.feature.group" version="0.0.0"/>
+			<unit id="org.modelversioning.emfprofile.ui.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">

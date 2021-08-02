@@ -20,6 +20,7 @@
          <command
                commandId="org.palladiosimulator.dataflow.confidentiality.pcm.ui.command.new.ddc"
                icon="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.ui/icons/datadictionary.png"
+               id="pcmddc"
                label="Create a new Data Dictionary from scratch"
                style="push">
          </command>
@@ -33,5 +34,4 @@
             name="New Data Dictionary">
       </command>
    </extension>
-
 </plugin>

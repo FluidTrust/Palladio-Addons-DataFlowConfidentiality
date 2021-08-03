@@ -142,7 +142,7 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
             .orElse(false);
         if (calledSignatureHasReturn && variableUsage
             .eContainmentFeature() == UsagemodelPackage.Literals.ENTRY_LEVEL_SYSTEM_CALL__OUTPUT_PARAMETER_USAGES_ENTRY_LEVEL_SYSTEM_CALL) {
-            inputs.add("RESULT");
+            inputs.add("RETURN");
         }
 
         return inputs;
@@ -179,7 +179,7 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
             .orElse(false);
         if (calledSignatureHasReturn && variableUsage
             .eContainmentFeature() == SeffPackage.Literals.CALL_RETURN_ACTION__RETURN_VARIABLE_USAGE_CALL_RETURN_ACTION) {
-            inputs.add("RESULT");
+            inputs.add("RETURN");
         }
 
         return inputs;

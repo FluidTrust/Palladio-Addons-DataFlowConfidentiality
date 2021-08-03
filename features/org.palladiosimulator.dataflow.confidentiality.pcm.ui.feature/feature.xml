@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.palladiosimulator.dataflow.confidentiality.pcm.ui.feature"
-      label="Feature"
+      label="PCM Data Flow Confidentiality UI"
       version="0.1.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"
       license-feature-version="1.0.0">
 
    <includes
-         id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.tree.feature"
+         id="org.palladiosimulator.dataflow.confidentiality.pcm.transformation.feature"
          version="0.0.0"/>
 
    <includes
-         id="org.palladiosimulator.dataflow.confidentiality.pcm.transformation.feature"
+         id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.feature"
          version="0.0.0"/>
 
    <requires>

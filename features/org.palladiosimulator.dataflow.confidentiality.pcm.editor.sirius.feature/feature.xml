@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.feature"
-      label="Feature"
+      label="PCM Data Flow Confidentiality Sirius Editor"
       version="0.1.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license.epl2"

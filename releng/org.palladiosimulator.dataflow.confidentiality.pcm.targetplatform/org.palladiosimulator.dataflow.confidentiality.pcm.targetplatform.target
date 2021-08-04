@@ -6,11 +6,11 @@
 			<unit id="org.objectweb.asm" version="0.0.0"/>
 			<unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
 			<unit id="org.hamcrest.core" version="0.0.0"/>
-			<repository location="http://download.eclipse.org/releases/2020-12/202012161000/"/>
+			<repository location="https://download.eclipse.org/releases/2020-12/202012161000/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="de.itemis.xtext.antlr.feature.feature.group" version="0.0.0"/>
-			<repository location="http://download.itemis.com/updates/releases/2.1.1"/>
+			<repository location="https://download.itemis.com/updates/releases/2.1.1"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="0.0.0"/>
@@ -29,27 +29,19 @@
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/releases/latest"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
-			<unit id="org.palladiosimulator.pcm.edit" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.commons.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
-			<unit id="org.palladiosimulator.pcm.edit" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.commons.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-commons/releases/latest"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
-			<unit id="org.palladiosimulator.intbiis.model.feature.feature.group" version="0.0.0"/>
-			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-intbiis/nightly/"/>
-		</location>
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
-			<unit id="org.palladiosimulator.editors.sirius.ui" version="0.0.0"/>
-			<unit id="org.palladiosimulator.editors.sirius.custom" version="0.0.0"/>
-			<unit id="org.palladiosimulator.editors.sirius.assembly" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-sirius/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
-			<unit id="org.palladiosimulator.editors.sirius.ui" version="0.0.0"/>
-			<unit id="org.palladiosimulator.editors.sirius.custom" version="0.0.0"/>
-			<unit id="org.palladiosimulator.editors.sirius.assembly" version="0.0.0"/>
+			<unit id="org.palladiosimulator.editors.sirius.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-editors-sirius/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
@@ -164,5 +156,210 @@
 			<unit id="org.palladiosimulator.indirections.editor.sirius.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-indirections/releases/latest/"/>
 		</location>
+
+		<!-- transitively required by Palladio editors -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.edp2" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.edp2" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-edp2/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.jscience" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-wrapper/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.jscience" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-wrapper/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.measurementframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-measurementframework/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.measurementframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-measurementframework/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.metricspec" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-metricspecification/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.metricspec" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-metricspecification/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.analyzer.workflow" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-framework/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.analyzer.workflow" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-framework/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.featureconfig" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-featuremodel/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.featureconfig" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-featuremodel/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.codegen.simucontroller" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simucom/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.codegen.simucontroller" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simucom/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.recorderframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-recorderframework/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.recorderframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-recorderframework/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.reliability" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-reliability/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.reliability" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-reliability/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.simulation.abstractsimengine" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-simulation-abstractsimengine/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.simulation.abstractsimengine" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-simulation-abstractsimengine/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="de.uka.ipd.sdq.scheduler" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-simulation-scheduler/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="de.uka.ipd.sdq.scheduler" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-simulation-scheduler/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.probeframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-probeframework/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.probeframework" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-probeframework/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.simulizar.ui" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simulizar/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.simulizar.ui" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simulizar/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.monitorrepository" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.monitorrepository" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.servicelevelobjective" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-servicelevelobjectives/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.servicelevelobjective" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-servicelevelobjectives/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.experimentautomation.application" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-experimentautomation/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.experimentautomation.application" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-experimentautomation/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.cost.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-costefficiency/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.cost.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-costefficiency/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="com.google.dagger.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.mdsd.tools/thirdparty-library/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="com.google.dagger.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.mdsd.tools/thirdparty-library/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
+			<repository location="https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-09/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.palladiosimulator.examples.package.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-example-models-package/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.palladiosimulator.examples.package.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-example-models-package/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.scaledl.usageevolution" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-cloudscaleusageevolution/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.scaledl.usageevolution" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-cloudscaleusageevolution/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="LIMBO_DLIM.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-p2mirror-dlim/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="LIMBO_DLIM.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-p2mirror-dlim/releases/latest/"/>
+		</location>
+
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
+			<unit id="org.storydriven.storydiagrams" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/archive/storydiagraminterpreter/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
+			<unit id="org.storydriven.storydiagrams" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/archive/storydiagraminterpreter/releases/latest/"/>
+		</location>
+
 	</locations>
 </target>

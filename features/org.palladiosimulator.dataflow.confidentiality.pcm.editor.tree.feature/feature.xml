@@ -12,7 +12,9 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature" version="0.1.0.qualifier"/>
+      <import feature="org.palladiosimulator.dataflow.confidentiality.editor.tree.feature"/>
+      <import feature="org.palladiosimulator.indirections.editor.tree.feature"/>
+      <import feature="org.palladiosimulator.editors.sirius.feature"/>
    </requires>
 
    <plugin

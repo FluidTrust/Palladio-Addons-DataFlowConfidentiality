@@ -16,8 +16,9 @@
          version="0.0.0"/>
 
    <requires>
-      <import feature="org.modelversioning.emfprofile.ui.feature" version="5.0.0.202107290029"/>
-      <import feature="org.palladiosimulator.mdsdprofiles.feature" version="5.0.0.202107290037"/>
+      <import feature="org.modelversioning.emfprofile.ui.feature"/>
+      <import feature="org.palladiosimulator.mdsdprofiles.feature"/>
+      <import feature="org.palladiosimulator.indirections.editor.sirius.feature"/>
    </requires>
 
    <plugin

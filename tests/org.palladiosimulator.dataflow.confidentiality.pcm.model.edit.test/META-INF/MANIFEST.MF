@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PCM Confidentiality Edit Test
+Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.model.edit.test
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.model.edit.test
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.palladiosimulator.dataflow.confidentiality.pcm.model.edit;bundle-version="1.0.0",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro
+Import-Package: org.junit.jupiter.api;version="5.7.0",
+ org.junit.jupiter.api.function;version="5.7.0",
+ tools.mdsd.library.standalone.initialization,
+ tools.mdsd.library.standalone.initialization.core

@@ -63,7 +63,7 @@ class TMAC_TestBase extends TestBase {
 		val query = prover.query('''
 			inputPin(P, PIN),
 			setof(R, nodeCharacteristic(P, ?CTROLES, R), ROLES),
-			setof_characteristics(P, PIN, ?CTRIGHTS, REQ, S),
+			allCharacteristicValues(P, PIN, ?CTRIGHTS, REQ, S),
 			(intersection(REQ, ROLES, []);
 			(nodeCharacteristic(P, ?CTCRITICAL, ?CHIGH),
 			\+ characteristic(P, PIN, ?CTVALIDATION, ?CVALIDATED, S))).

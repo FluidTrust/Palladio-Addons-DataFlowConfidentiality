@@ -1,4 +1,3 @@
-target PCMDFD using CharacteristicTypeDictionary
 import "CharacteristicTypeDictionary.xmi"
 
 type allowedRoles:AllowedRoles

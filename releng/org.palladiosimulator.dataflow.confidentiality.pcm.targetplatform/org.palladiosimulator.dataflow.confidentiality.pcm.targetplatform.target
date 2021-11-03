@@ -320,11 +320,6 @@
 			<repository location="https://updatesite.mdsd.tools/thirdparty-library/releases/latest/"/>
 		</location>
 
-		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
-			<unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
-			<repository location="https://download.eclipse.org/sirius/updates/releases/6.4.0/2020-09/"/>
-		</location>
-
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="org.palladiosimulator.examples.package.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-example-models-package/nightly/"/>

@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Stack;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.DFDTraceElement;
@@ -17,6 +18,7 @@ import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.TransitiveTra
 import org.palladiosimulator.dataflow.confidentiality.transformation.prolog.DFD2PrologTransformationTrace;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Component;
 import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.DataFlowDiagram;
+import org.palladiosimulator.dataflow.diagram.DataFlowDiagram.Entity;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.CharacteristicType;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Literal;
 
@@ -46,8 +48,18 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
     }
 
     protected Collection<String> getFactIds(Collection<DFDTraceElement> dfdElements) {
-        return dfdElements.stream()
-            .map(dfdElement -> dfd2prologTrace.getFactId((Component) dfdElement.getElement()))
+        var elements = dfdElements.stream()
+            .map(dfdElement -> dfdElement.getElement())
+            .collect(Collectors.toList());
+        var dfdStream = elements.stream()
+            .filter(Entity.class::isInstance)
+            .map(Entity.class::cast)
+            .map(dfd2prologTrace::getFactId);
+        var ddStream = elements.stream()
+            .filter(org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Entity.class::isInstance)
+            .map(org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Entity.class::cast)
+            .map(dfd2prologTrace::getFactId);
+        return Stream.concat(dfdStream, ddStream)
             .filter(Optional::isPresent)
             .map(Optional::get)
             .collect(Collectors.toList());

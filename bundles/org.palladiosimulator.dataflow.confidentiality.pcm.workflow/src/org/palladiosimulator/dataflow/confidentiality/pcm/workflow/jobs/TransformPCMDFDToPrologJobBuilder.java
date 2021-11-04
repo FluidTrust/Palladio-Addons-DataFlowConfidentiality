@@ -162,6 +162,11 @@ public class TransformPCMDFDToPrologJobBuilder {
                 DEFAULT_DFDTRACE_KEY, DEFAULT_TRACE_KEY);
         jobSequence.add(transitiveTraceJob);
 
+        // extend generated prolog program
+        IJob prologExtensionJob = new AddPrologAnnotationEvaluationCodeJob(prologLocation, DEFAULT_PCMTRACE_KEY,
+                DEFAULT_TRACE_KEY);
+        jobSequence.add(prologExtensionJob);
+
         // create model saving job
         IJob serializeJob;
         if (serializeToString) {

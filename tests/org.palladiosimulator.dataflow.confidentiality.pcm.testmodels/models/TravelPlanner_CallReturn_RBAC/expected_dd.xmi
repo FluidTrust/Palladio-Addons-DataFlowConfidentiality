@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="ASCII"?>
-<DataDictionaryCharacterized:DataDictionaryCharacterized xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" id="_vf-cID6qEeuT0PCMHbsqGA">
-  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_vp5NID6qEeuT0PCMHbsqGA" name="AllowedRoles" type="_vp5NIT6qEeuT0PCMHbsqGA"/>
-  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_vp9ekD6qEeuT0PCMHbsqGA" name="CorrespondingActor" type="_vp9ekT6qEeuT0PCMHbsqGA"/>
-  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_vp9elT6qEeuT0PCMHbsqGA" name="OwnedRoles" type="_vp5NIT6qEeuT0PCMHbsqGA"/>
-  <enumerations id="_vp5NIT6qEeuT0PCMHbsqGA" name="AccessRights">
-    <literals id="_vp50MD6qEeuT0PCMHbsqGA" name="User"/>
-    <literals id="_vp50MT6qEeuT0PCMHbsqGA" name="TravelAgency"/>
-    <literals id="_vp50Mj6qEeuT0PCMHbsqGA" name="Airline"/>
+<DataDictionaryCharacterized:DataDictionaryCharacterized xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" id="_zVYr8T2ZEeyvQJX0RGda3g">
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_zX7ppT2ZEeyvQJX0RGda3g" name="AllowedRoles" type="_zX7ppj2ZEeyvQJX0RGda3g"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_zX8Qsj2ZEeyvQJX0RGda3g" name="CorrespondingActor" type="_zX8Qsz2ZEeyvQJX0RGda3g"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_zX8Qtz2ZEeyvQJX0RGda3g" name="OwnedRoles" type="_zX7ppj2ZEeyvQJX0RGda3g"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_zX8Quj2ZEeyvQJX0RGda3g" name="PCMActionType" type="_zX8Quz2ZEeyvQJX0RGda3g"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_zX83wj2ZEeyvQJX0RGda3g" name="PCMContainingType" type="_zX83wz2ZEeyvQJX0RGda3g"/>
+  <enumerations id="_zX7ppj2ZEeyvQJX0RGda3g" name="AccessRights">
+    <literals id="_zX7ppz2ZEeyvQJX0RGda3g" name="User"/>
+    <literals id="_zX7pqD2ZEeyvQJX0RGda3g" name="TravelAgency"/>
+    <literals id="_zX7pqT2ZEeyvQJX0RGda3g" name="Airline"/>
   </enumerations>
-  <enumerations id="_vp9ekT6qEeuT0PCMHbsqGA" name="Actors">
-    <literals id="_vp9ekj6qEeuT0PCMHbsqGA" name="User"/>
-    <literals id="_vp9ekz6qEeuT0PCMHbsqGA" name="FlightPlanner"/>
+  <enumerations id="_zX8Qsz2ZEeyvQJX0RGda3g" name="Actors">
+    <literals id="_zX8QtD2ZEeyvQJX0RGda3g" name="User"/>
+    <literals id="_zX8QtT2ZEeyvQJX0RGda3g" name="FlightPlanner"/>
+  </enumerations>
+  <enumerations id="_zX8Quz2ZEeyvQJX0RGda3g" name="PCMActionType">
+    <literals id="_zX8QuT2ZEeyvQJX0RGda3g" name="CallSending"/>
+    <literals id="_zX8QvD2ZEeyvQJX0RGda3g" name="CallReceiving"/>
+    <literals id="_zX8QvT2ZEeyvQJX0RGda3g" name="SEFFEntry"/>
+    <literals id="_zX8Qvj2ZEeyvQJX0RGda3g" name="SEFFExit"/>
+  </enumerations>
+  <enumerations id="_zX83wz2ZEeyvQJX0RGda3g" name="PCMContainingType">
+    <literals id="_zX83wT2ZEeyvQJX0RGda3g" name="ScenarioBehaviour"/>
+    <literals id="_zX83xD2ZEeyvQJX0RGda3g" name="Component"/>
+    <literals id="_zX83xT2ZEeyvQJX0RGda3g" name="DataChannel"/>
+    <literals id="_zX83xj2ZEeyvQJX0RGda3g" name="Store"/>
   </enumerations>
 </DataDictionaryCharacterized:DataDictionaryCharacterized>

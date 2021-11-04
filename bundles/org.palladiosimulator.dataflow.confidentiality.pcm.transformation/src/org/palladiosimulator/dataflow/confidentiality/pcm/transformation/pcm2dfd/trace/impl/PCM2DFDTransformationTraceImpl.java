@@ -2,6 +2,8 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2df
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -13,12 +15,16 @@ import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCMSingleTraceElement;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCMTraceElement;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.TraceEntry;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.EnumCharacteristicType;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Literal;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
 public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrace, TransformationTraceModifier {
 
     private final Collection<TraceEntry> traceEntries = new ArrayList<>();
+    private final Map<Object, EnumCharacteristicType> annotationCtEntry = new HashMap<>();
+    private final Map<Object, Literal> annotationLiteralEntry = new HashMap<>();
 
     public PCM2DFDTransformationTraceImpl() {
         // intentionally left blank
@@ -65,6 +71,26 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
             .filter(e -> predicate.test(e.getPCMEntry()))
             .map(TraceEntry::getDFDEntry)
             .collect(Collectors.toList());
+    }
+
+    @Override
+    public void addAnnotationEntry(Object annotation, EnumCharacteristicType characteristicType) {
+        annotationCtEntry.put(annotation, characteristicType);
+    }
+
+    @Override
+    public void addAnnotationEntry(Object annotation, Literal literal) {
+        annotationLiteralEntry.put(annotation, literal);
+    }
+
+    @Override
+    public EnumCharacteristicType getCharacteristicTypeFromAnnotation(Object annotation) {
+        return annotationCtEntry.get(annotation);
+    }
+
+    @Override
+    public Literal getLiteralFromAnnotation(Object annotation) {
+        return annotationLiteralEntry.get(annotation);
     }
 
 }

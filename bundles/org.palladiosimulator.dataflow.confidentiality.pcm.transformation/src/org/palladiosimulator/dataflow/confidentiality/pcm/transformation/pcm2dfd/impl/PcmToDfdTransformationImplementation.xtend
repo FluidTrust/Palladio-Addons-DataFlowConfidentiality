@@ -17,10 +17,13 @@ import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.profile.ProfileConstants
 import org.palladiosimulator.dataflow.confidentiality.pcm.queryutils.ModelQueryUtils
 import org.palladiosimulator.dataflow.confidentiality.pcm.queryutils.PcmQueryUtils
+import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.PcmAnnotations.PCMActionType
+import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.PcmAnnotations.PCMContainingType
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.PcmToDfdTransformation
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided.DDEntityCreator
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided.DFDEntityCreator
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided.DataFlowTransformation
+import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided.NodeAnnotationCreator
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided.TermTransformation
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.queries.AllocationLookup
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.impl.PCM2DFDTransformationTraceImpl
@@ -70,12 +73,14 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 	val extension DDEntityCreator characteristicTransformation
 	val extension DataFlowTransformation dataFlowTransformation
 	var extension AllocationLookup allocationLookup
+	val extension NodeAnnotationCreator nodeAnnotationCreator
 
 	new() {
 		entityCreator = new DFDEntityCreator(dfd, traceRecorder)
 		characteristicTransformation = new DDEntityCreator(dd, traceRecorder)
 		termTransformation = new TermTransformation(characteristicTransformation, entityCreator)
 		dataFlowTransformation = new DataFlowTransformation(entityCreator)
+		nodeAnnotationCreator = new NodeAnnotationCreator(characteristicTransformation, traceRecorder)
 	}
 
 	override transform(Collection<UsageModel> usageModels, Allocation allocationModel) {
@@ -132,12 +137,14 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		//TODO clarify if data sinks can also be inputs for the SEFF entry process
 		val requiresEntryProcess = !operationSignature.parameters__OperationSignature.isEmpty
 		if (requiresEntryProcess) {
-			seff.transformToEntryProcess(context)
+			val process = seff.transformToEntryProcess(context)
+			process.createAnnotation(PCMContainingType.Component)
 		}
 		
 		val requiresExitProcess = operationSignature.returnType__OperationSignature !== null
 		if (requiresExitProcess) {
-			seff.transformToExitProcess(context, true)
+			val process = seff.transformToExitProcess(context, true)
+			process.createAnnotation(PCMContainingType.Component)
 		}
 		
 		seff.findAllChildrenIncludingSelfOfType(AbstractAction).forEach[action | action.transformAction(context)]			
@@ -147,7 +154,8 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		Validate.isInstanceOf(OperationalDataStoreComponent, seff.basicComponent_ServiceEffectSpecification)
 		val component = seff.basicComponent_ServiceEffectSpecification as OperationalDataStoreComponent
 		val store = component.getStore(context)
-		store.createCharacteristics(context, seff)	
+		store.createCharacteristics(context, seff)
+		store.createAnnotation(PCMContainingType.Store)
 		val storeInputPin = store.inputPin
 		val storeOutputPin = store.outputPin
 		
@@ -160,11 +168,13 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 			val parameter = parameters.findFirst[true]	
 			val entryProcess = seff.transformToEntryProcess(context)
 			val entryProcessOutputPin = entryProcess.getOutputPin(parameter.parameterName)
+			entryProcess.createAnnotation(PCMContainingType.Store)
 			getDataFlow(entryProcess, entryProcessOutputPin, store, storeInputPin)
 		} else {
 			val exitProcess = seff.transformToExitProcess(context, false)
 			val exitProcessInputPin = exitProcess.getInputPin(RESULT_PIN_NAME)
-			exitProcess.createCharacteristics(context, seff)		
+			exitProcess.createCharacteristics(context, seff)
+			exitProcess.createAnnotation(PCMContainingType.Store)
 			getDataFlow(store, storeOutputPin, exitProcess, exitProcessInputPin)
 		}
 	}
@@ -186,6 +196,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		}
 		
 		process.createCharacteristics(context, seff)
+		process.createAnnotation(PCMActionType.SEFFEntry)
 		
 		// the callers have to create the incoming data flows
 		// the users of parameters have to create outgoing data flows
@@ -202,6 +213,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		process.createCopyAssignment(outputPin, inputPin)
 		
 		process.createCharacteristics(context, seff)
+		process.createAnnotation(PCMActionType.SEFFExit)
 		
 		if (createProvidingDataFlows) {
 			process.createDataFlowsToSeffExitProcess(seff, context)			
@@ -218,12 +230,14 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 	protected def dispatch transformAction(ExternalCallAction action, Stack<AssemblyContext> context) {
 		val requiresEntryProcess = !action.calledService_ExternalService.parameters__OperationSignature.isEmpty
 		if (requiresEntryProcess) {
-			action.transformToEntryProcess(context)
+			val process = action.transformToEntryProcess(context)
+			process.createAnnotation(PCMContainingType.Component)
 		}
 		
 		val requiresExitProcess = action.calledService_ExternalService.returnType__OperationSignature !== null
 		if (requiresExitProcess) {
-			action.transformToExitProcess(context)
+			val process = action.transformToExitProcess(context)
+			process.createAnnotation(PCMContainingType.Component)
 		}
 	}
 	
@@ -236,6 +250,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = action.getProcess(context)
 		process.addPinsAndBehavior(action.variableUsages, context, true)
 		process.createCharacteristics(context, action)
+		process.createAnnotation(PCMContainingType.Component)
 		process
 	}
 	
@@ -246,6 +261,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		process.createCopyAssignment(outputPin, inputPin)
 		process.createOutgoingDataFlows(action.dataSourceRole, context)
 		process.createCharacteristics(context, action)
+		process.createAnnotation(PCMContainingType.Component)
 		process.createDataFlows(action.variableReference, context)
 		process
 	}
@@ -256,6 +272,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val outputPin = process.getOutputPin(action.variableReference.referenceName)
 		process.createCopyAssignment(outputPin, inputPin)
 		process.createCharacteristics(context, action)
+		process.createAnnotation(PCMContainingType.Component)
 		// emit actions and data channels already provide data flows to these actions
 		process
 	}
@@ -264,6 +281,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = action.getProcess(context)
 		process.addPinsAndBehavior(action.localVariableUsages_SetVariableAction, context, true)
 		process.createCharacteristics(context, action)
+		process.createAnnotation(PCMContainingType.Component)
 		process
 	}
 	
@@ -275,6 +293,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = eca.getEntryProcess(context)
 		process.addPinsAndBehavior(eca.inputVariableUsages__CallAction, context, true)
 		process.createCharacteristics(context, eca)
+		process.createAnnotation(PCMActionType.CallSending)
 		process.createOutgoingDataFlows(eca.calledService_ExternalService, eca.role_ExternalService, context)
 		process
 	}
@@ -283,6 +302,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = eca.getExitProcess(context)
 		process.addPinsAndBehavior(eca.returnVariableUsage__CallReturnAction, context, true)
 		process.createCharacteristics(context, eca)
+		process.createAnnotation(PCMActionType.CallReceiving)
 		process
 	}
 	
@@ -308,6 +328,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		
 		// create characteristics
 		process.createCharacteristics(context, dc)
+		process.createAnnotation(PCMContainingType.DataChannel)
 		
 		// create data flows
 		dc.dataSourceRoles.forEach[role | process.createOutgoingDataFlows(role, context)]
@@ -336,12 +357,14 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		
 		val requiresEntryProcess = !elsc.operationSignature__EntryLevelSystemCall.parameters__OperationSignature.isEmpty
 		if (requiresEntryProcess) {
-			elsc.transformToEntryProcess(correspondingActor)
+			val process = elsc.transformToEntryProcess(correspondingActor)
+			process.createAnnotation(PCMContainingType.ScenarioBehaviour)
 		}
 		
 		val requiresExitProcess = elsc.operationSignature__EntryLevelSystemCall.returnType__OperationSignature !== null
 		if (requiresExitProcess) {
-			elsc.transformToExitProcess(correspondingActor)
+			val process = elsc.transformToExitProcess(correspondingActor)
+			process.createAnnotation(PCMContainingType.ScenarioBehaviour)
 		}
 	}
 	
@@ -349,6 +372,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = elsc.getEntryProcess(actor)
 		process.addPinsAndBehavior(elsc.inputParameterUsages_EntryLevelSystemCall)
 		process.createCharacteristics(EMPTY_STACK, elsc)
+		process.createAnnotation(PCMActionType.CallSending)
 		process.createDataFlows(elsc.inputParameterUsages_EntryLevelSystemCall, EMPTY_STACK)
 		
 		val calledSeff = elsc.providedRole_EntryLevelSystemCall.findCalledSeff(elsc.operationSignature__EntryLevelSystemCall, EMPTY_STACK)
@@ -367,6 +391,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		val process = elsc.getExitProcess(actor)
 		process.addPinsAndBehavior(elsc.outputParameterUsages_EntryLevelSystemCall)
 		process.createCharacteristics(EMPTY_STACK, elsc)
+		process.createAnnotation(PCMActionType.CallReceiving)
 		process.createDataFlows(elsc.outputParameterUsages_EntryLevelSystemCall, EMPTY_STACK)
 		process
 	}

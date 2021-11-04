@@ -5,6 +5,8 @@ import java.util.Stack;
 import java.util.function.Predicate;
 
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.EnumCharacteristicType;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Literal;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -15,4 +17,6 @@ public interface PCM2DFDTransformationTrace {
     Collection<DFDTraceElement> getDFDEntries(Predicate<PCMTraceElement> pcmElement);
     Collection<PCMTraceElement> getPCMEntries(Identifier dfdElement);
     
+    EnumCharacteristicType getCharacteristicTypeFromAnnotation(Object annotation);
+    Literal getLiteralFromAnnotation(Object annotation);
 }

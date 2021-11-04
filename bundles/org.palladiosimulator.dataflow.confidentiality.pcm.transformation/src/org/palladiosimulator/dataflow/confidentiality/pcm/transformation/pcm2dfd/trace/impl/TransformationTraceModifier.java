@@ -4,6 +4,8 @@ import java.util.Stack;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.TraceEntry;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.EnumCharacteristicType;
+import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Literal;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -32,5 +34,7 @@ public interface TransformationTraceModifier {
     }
 
     void addTraceEntry(TraceEntry entry);
+    void addAnnotationEntry(Object annotation, EnumCharacteristicType characteristicType);
+    void addAnnotationEntry(Object annotation, Literal literal);
 
 }

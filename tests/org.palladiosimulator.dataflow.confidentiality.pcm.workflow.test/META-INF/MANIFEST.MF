@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Workflow Tests
 Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test
-Bundle-Version: 0.1.0.qualifier
-Fragment-Host: org.palladiosimulator.dataflow.confidentiality.pcm.workflow;bundle-version="0.1.0"
+Bundle-Version: 5.1.0.qualifier
+Fragment-Host: org.palladiosimulator.dataflow.confidentiality.pcm.workflow;bundle-version="5.1.0"
 Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: com.google.guava,
@@ -13,13 +13,13 @@ Require-Bundle: com.google.guava,
  tools.mdsd.library.standalone.initialization;bundle-version="0.1.0",
  tools.mdsd.library.standalone.initialization.log4j,
  org.prolog4j.api;bundle-version="1.0.0",
- org.palladiosimulator.dataflow.confidentiality.pcm.testmodels;bundle-version="0.1.0",
+ org.palladiosimulator.dataflow.confidentiality.pcm.testmodels;bundle-version="5.1.0",
  org.palladiosimulator.supporting.prolog;bundle-version="4.2.0",
  org.prolog4j.swicli;bundle-version="1.0.0",
  org.prolog4j.swicli.enabler;bundle-version="1.0.0",
  org.modelversioning.emfprofile.registry,
  tools.mdsd.library.standalone.initialization.emfprofiles,
- org.palladiosimulator.dataflow.confidentiality.pcm.resources;bundle-version="0.1.0",
+ org.palladiosimulator.dataflow.confidentiality.pcm.resources;bundle-version="5.1.0",
  org.palladiosimulator.dataflow.confidentiality.resources;bundle-version="0.1.0",
  org.palladiosimulator.supporting.prolog.api;bundle-version="1.0.0",
  de.uka.ipd.sdq.stoex.analyser;bundle-version="4.3.0"

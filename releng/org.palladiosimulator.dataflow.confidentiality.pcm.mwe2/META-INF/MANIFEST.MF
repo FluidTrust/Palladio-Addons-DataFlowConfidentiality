@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mwe2
 Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.mwe2
-Bundle-Version: 4.2.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.mwe2
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.0",

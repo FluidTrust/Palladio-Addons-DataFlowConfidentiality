@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: PCM Query Utils
 Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.queryutils
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.queryutils
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: com.google.guava,

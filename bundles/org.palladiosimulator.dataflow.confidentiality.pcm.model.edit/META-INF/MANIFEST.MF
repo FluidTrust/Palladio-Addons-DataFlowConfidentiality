@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.model.edit;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.model.edit
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.provider.DataFlowConfidentialityEditPlugin$Implementation
 Bundle-Vendor: %providerName

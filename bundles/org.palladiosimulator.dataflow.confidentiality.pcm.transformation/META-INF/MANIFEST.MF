@@ -2,17 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: PCM Data Flow Confidentiality Transformation
 Bundle-SymbolicName: org.palladiosimulator.dataflow.confidentiality.pcm.transformation
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.dataflow.confidentiality.pcm.transformation
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Require-Bundle: org.palladiosimulator.dataflow.confidentiality.pcm.model;bundle-version="0.1.0";visibility:=reexport,
+Require-Bundle: org.palladiosimulator.dataflow.confidentiality.pcm.model;bundle-version="5.1.0";visibility:=reexport,
  org.palladiosimulator.dataflow.diagram.characterized;bundle-version="0.1.0";visibility:=reexport,
- org.palladiosimulator.dataflow.confidentiality.pcm.queryutils;bundle-version="0.1.0";visibility:=reexport,
+ org.palladiosimulator.dataflow.confidentiality.pcm.queryutils;bundle-version="5.1.0";visibility:=reexport,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
  org.eclipse.xtend.lib.macro,
- org.palladiosimulator.dataflow.confidentiality.pcm.model.profile;bundle-version="1.0.0";visibility:=reexport,
+ org.palladiosimulator.dataflow.confidentiality.pcm.model.profile;bundle-version="5.1.0";visibility:=reexport,
  org.palladiosimulator.mdsdprofiles.api;bundle-version="4.3.0";visibility:=reexport
 Export-Package: org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd,
  org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl;x-friends:="org.palladiosimulator.dataflow.confidentiality.pcm.datatypeusage",

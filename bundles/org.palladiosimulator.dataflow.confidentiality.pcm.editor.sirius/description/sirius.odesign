@@ -478,6 +478,108 @@
         </toolSections>
       </layers>
     </ownedRepresentationExtensions>
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="PCM Confidentiality Assembly" viewpointURI="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly" representationName="Assembly Diagram">
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#/"/>
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#//characteristics"/>
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#//expression"/>
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#//behaviour"/>
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#//repository"/>
+      <metamodel href="../../org.palladiosimulator.dataflow.confidentiality.pcm.model/model/dataFlowConfidentiality.ecore#//dictionary"/>
+      <layers name="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assembly" label="PCM Confidentiality" activeByDefault="true" optional="false">
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComposedProvidingRequiringEntity Node" semanticCandidatesExpression="var:self">
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalInfrastructureProvidedRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalInfrastructureRequiredRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalOperationProvidedRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalOperationRequiredRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalSinkRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalSourceRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.indirections.editor.sirius/description/indirections.odesign#//@ownedViewpoints[name='PCM-Indirections']/@ownedRepresentationExtensions[name='PCM%20Indirections%20Assembly']/@layers[name='org.palladiosimulator.indirections.editor.sirius.Indirections.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalDataSinkRole%20Node']"/>
+          <reusedBorderedNodeMappings href="../../org.palladiosimulator.indirections.editor.sirius/description/indirections.odesign#//@ownedViewpoints[name='PCM-Indirections']/@ownedRepresentationExtensions[name='PCM%20Indirections%20Assembly']/@layers[name='org.palladiosimulator.indirections.editor.sirius.Indirections.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalDataSourceRole%20Node']"/>
+          <reusedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subNodeMappings[name='EventChannel%20Node']"/>
+          <reusedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subNodeMappings[name='StereotypeApplication%20Node']"/>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="AssemblyContext Container" semanticCandidatesExpression="[self.assemblyContexts__ComposedStructure/]">
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='InfrastructureProvidedRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='InfrastructureRequiredRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='OperationProvidedRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='OperationRequiredRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='SinkRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='SourceRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.indirections.editor.sirius/description/indirections.odesign#//@ownedViewpoints[name='PCM-Indirections']/@ownedRepresentationExtensions[name='PCM%20Indirections%20Assembly']/@layers[name='org.palladiosimulator.indirections.editor.sirius.Indirections.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='ExternalDataSinkRole%20Node']"/>
+            <reusedBorderedNodeMappings href="../../org.palladiosimulator.indirections.editor.sirius/description/indirections.odesign#//@ownedViewpoints[name='PCM-Indirections']/@ownedRepresentationExtensions[name='PCM%20Indirections%20Assembly']/@layers[name='org.palladiosimulator.indirections.editor.sirius.Indirections.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='ExternalDataSourceRole%20Node']"/>
+            <subNodeMappings name="PCM-Confidentiality-EnumCharacteristic-AssemblyContext" label="EnumCharacteristic" deletionDescription="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20Assembly']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assembly']/@toolSections.0/@ownedTools[name='DeleteEnumCharacteristic']" semanticCandidatesExpression="service:findAppliedEnumCharacteristics" domainClass="EnumCharacteristic">
+              <style xsi:type="style:SquareDescription" labelExpression="service:getLabelForEnumCharacteristic" labelAlignment="LEFT" sizeComputationExpression="8" labelPosition="node" resizeKind="NSEW" width="15" height="2">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </subNodeMappings>
+            <reusedNodeMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subNodeMappings[name='StereotypeApplication%20Node']"/>
+            <reusedContainerMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subContainerMappings[name='Role%20Container']"/>
+            <reusedContainerMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subContainerMappings[name='VariableUsage%20Container']"/>
+            <importedMapping href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']"/>
+          </subContainerMappings>
+          <reusedContainerMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']"/>
+          <reusedContainerMappings href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='System%20Role%20Container']"/>
+          <reusedContainerMappings href="../../org.palladiosimulator.indirections.editor.sirius/description/indirections.odesign#//@ownedViewpoints[name='PCM-Indirections']/@ownedRepresentationExtensions[name='PCM%20Indirections%20Assembly']/@layers[name='org.palladiosimulator.indirections.editor.sirius.Indirections.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']"/>
+          <importedMapping href="../../org.palladiosimulator.editors.sirius.assembly/description/assembly.odesign#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']"/>
+        </containerMappings>
+        <toolSections name="Assembly-PCM-Confidentiality" label="Confidentiality">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConfidentialityEnumCharacteristic" label="Enum Characteristic" nodeMappings="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20Assembly']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assembly']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subNodeMappings[name='PCM-Confidentiality-EnumCharacteristic-AssemblyContext']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="service:getCharacteristicsContainer">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="characteristics::EnumCharacteristic" referenceName="characteristics">
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                      <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Create EnumCharacteristic">
+                        <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:RemoveElement"/>
+                          </initialOperation>
+                        </buttons>
+                        <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ExternalJavaAction" id="PCM-Confidentiality-LinkEnumCharacteristic">
+                              <parameters name="characteristic" value="var:instance"/>
+                              <parameters name="container" value="var:container"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </buttons>
+                        <page name="Default Page" labelExpression="Creation Parameters" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='PCM-Confidentiality']/@ownedRepresentationExtensions[name='PCM%20Confidentiality%20Assembly']/@layers[name='org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assembly']/@toolSections.0/@ownedTools[name='ConfidentialityEnumCharacteristic']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                        <groups name="Default Group" labelExpression="Mandatory Parameters" semanticCandidateExpression="var:self">
+                          <controls xsi:type="properties:SelectDescription" labelExpression="Type" valueExpression="aql:instance.type" candidatesExpression="service:findAllEnumCharacteristicTypes" candidateDisplayExpression="aql:candidate.name">
+                            <initialOperation>
+                              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:newValue"/>
+                              </firstModelOperations>
+                            </initialOperation>
+                          </controls>
+                        </groups>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DeleteEnumCharacteristic">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="UnlinkEnumCharacteristic" id="PCM-Confidentiality-UnlinkEnumCharacteristic">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                  <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                </subModelOperations>
+                <parameters name="container" value="aql:containerView.semanticElements->first()"/>
+                <parameters name="characteristic" value="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
     <ownedJavaExtensions qualifiedClassName="org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.Services"/>
   </ownedViewpoints>
   <extensions xsi:type="properties:ViewExtensionDescription" name="Properties">

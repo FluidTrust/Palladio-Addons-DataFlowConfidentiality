@@ -36,7 +36,7 @@ public class TransformPCMDFDToPrologJobBuilder {
     public static final String DEFAULT_PROLOG_KEY = "prologProgram";
     private static final String DEFAULT_DFDTRACE_KEY = "dfdTrace";
     private static final String DEFAULT_PCMTRACE_KEY = "pcmTrace";
-    private static final String DEFAULT_TRACE_KEY = "transitiveTrace";
+    public static final String DEFAULT_TRACE_KEY = "transitiveTrace";
 
     private final Collection<ModelContent> usageModels = new ArrayList<>();
     private ModelContent allocationModel = null;

@@ -114,8 +114,10 @@ class DataFlowTransformation {
 	
 	protected def createDataFlows(Iterable<Pin> srcPins, CharacterizedProcess dstProcess, Pin dstPin) {
 			if (srcPins.isEmpty) {
-				// that must not happen
-				println("Attention!")
+				// that must not happen and indicates an error in the PCM model
+				throw new IllegalStateException(
+					'''We could not identify a source pin for a required destination pin "«dstPin.name»" on process "«dstProcess.name»"".'''
+				)
 			}
 			for (srcPin : srcPins) {
 				val srcNode = srcPin.owner.findParentOfType(CharacterizedNode, false)

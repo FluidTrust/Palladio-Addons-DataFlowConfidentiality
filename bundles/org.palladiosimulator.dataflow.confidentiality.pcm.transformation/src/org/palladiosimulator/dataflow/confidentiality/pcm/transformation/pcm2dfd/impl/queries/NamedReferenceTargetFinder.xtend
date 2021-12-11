@@ -154,6 +154,7 @@ class NamedReferenceTargetFinder {
 	 */
 	
 	def Iterable<VariableReferenceTarget> findTarget(AbstractNamedReference reference, AbstractAction usingAction, Stack<AssemblyContext> context) {
+		// no need to search: reference refers to result of called SEFF
 		if (usingAction instanceof ExternalCallAction && reference.referenceName == RESULT_PIN_NAME) {
 			val call = (usingAction as ExternalCallAction)
 			val role = call.role_ExternalService
@@ -162,16 +163,21 @@ class NamedReferenceTargetFinder {
 			return #[new SEFFReferenceTarget(reference, calledSeff.seff)]
 		}
 		
+		// search all predecessors of the using action
 		for (var currentAction = usingAction; currentAction !== null; currentAction = currentAction.predecessor_AbstractAction) {
 			val result = reference.findTargetInternalSeff(currentAction, context)
 			if (!result.isEmpty) {
 				return result
 			}
 		}
+		
+		// continue the search at the predecessor of the parent action
 		val parentAction = usingAction.findParentOfType(AbstractAction, false)
 		if (parentAction !== null) {
-			return reference.findTarget(parentAction, context)
+			return reference.findTarget(parentAction.predecessor_AbstractAction, context)
 		}
+		
+		// we were out of luck...
 		#[]
 	}
 	

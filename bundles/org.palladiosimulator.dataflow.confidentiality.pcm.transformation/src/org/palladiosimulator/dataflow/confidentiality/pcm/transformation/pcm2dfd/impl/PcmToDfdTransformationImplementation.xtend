@@ -444,15 +444,15 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 	
 	/* =========== Characteristics Transformations =========== */
 	
-	protected def createCharacteristics(CharacterizedNode node, Stack<AssemblyContext> context, EObject... pcmElements) {
+	protected def createCharacteristics(CharacterizedNode node, Stack<AssemblyContext> context, EObject pcmElement) {
 		val characterisedElements = new ArrayList<EObject>
-		characterisedElements += context
 		if (!context.isEmpty) {
 			characterisedElements += context.findResourceContainer
 		}
-		characterisedElements += pcmElements
+		characterisedElements += context
+		characterisedElements += pcmElement
 		
-		for (characteristic : characterisedElements.applicableCharacteristics) {
+		for (characteristic : characterisedElements.reverse.applicableCharacteristics) {
 			val ct = characteristic.type.characteristicType
 			val values = characteristic.determineLiterals
 			node.ownedCharacteristics += createCharacteristic(ct, values)
@@ -497,7 +497,7 @@ class PcmToDfdTransformationImplementation implements PcmToDfdTransformation {
 		for(var current = eobject; current !== null; current = current.eContainer) {
 			collectedCharacteristics += current.characteristics
 		}
-		val characteristicStack = collectedCharacteristics.reverseView
+		val characteristicStack = collectedCharacteristics
 		characteristicStack.effectiveCharacteristics
 	}
 	

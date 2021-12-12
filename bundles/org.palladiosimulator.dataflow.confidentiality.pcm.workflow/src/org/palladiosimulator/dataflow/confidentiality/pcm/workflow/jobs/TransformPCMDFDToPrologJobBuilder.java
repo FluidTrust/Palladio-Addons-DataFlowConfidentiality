@@ -17,6 +17,7 @@ import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jo
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.LoadExistingModelsJob.ModelContent;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.SerializeModelToStringJob;
 import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.TransformDFDToPrologJob;
+import org.palladiosimulator.dataflow.confidentiality.transformation.workflow.jobs.ValidateModelJob;
 import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 
@@ -42,7 +43,9 @@ public class TransformPCMDFDToPrologJobBuilder {
     private ModelContent allocationModel = null;
     private ModelLocation prologLocation = null;
     private boolean serializeToString = false;
+    private boolean performanceTweaks = false;
     private String prologResultKey;
+    private boolean enableDFDValidation = false;
 
     public static TransformPCMDFDToPrologJobBuilder create() {
         return new TransformPCMDFDToPrologJobBuilder();
@@ -119,6 +122,16 @@ public class TransformPCMDFDToPrologJobBuilder {
         return this;
     }
     
+    public TransformPCMDFDToPrologJobBuilder enablePerformanceTweaks() {
+        performanceTweaks = true;
+        return this;
+    }
+    
+    public TransformPCMDFDToPrologJobBuilder enableDFDValidation() {
+        enableDFDValidation = true;
+        return this;
+    }
+    
     public TransformPCMDFDtoPrologJob<? extends KeyValueMDSDBlackboard> build() {
         // validate builder state
         Validate.notNull(prologLocation);
@@ -154,8 +167,14 @@ public class TransformPCMDFDToPrologJobBuilder {
         
         // create DFD to prolog transformation job
         IJob dfdToPrologJob = new TransformDFDToPrologJob<KeyValueMDSDBlackboard>(DEFAULT_DFD_LOCATION, prologLocation, DEFAULT_DFDTRACE_KEY,
-                NameGenerationStrategie.SHORTED_ID);
+                NameGenerationStrategie.SHORTED_ID, performanceTweaks);
         jobSequence.add(dfdToPrologJob);
+
+        // create DFD validation job
+        if (enableDFDValidation) {
+            IJob validationJob = new ValidateModelJob<>(DEFAULT_DFD_LOCATION, "dfdValidationResultKey", true);
+            jobSequence.add(validationJob);            
+        }
         
         // create transitive trace job
         IJob transitiveTraceJob = new TransitiveTransformationTraceBuilderJob(DEFAULT_PCMTRACE_KEY,

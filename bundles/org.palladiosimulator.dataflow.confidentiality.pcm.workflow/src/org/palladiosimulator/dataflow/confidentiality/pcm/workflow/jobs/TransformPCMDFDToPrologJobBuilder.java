@@ -28,7 +28,7 @@ import de.uka.ipd.sdq.workflow.mdsd.blackboard.SavePartitionToDiskJob;
 
 public class TransformPCMDFDToPrologJobBuilder {
 
-    private static final String DEFAULT_PCM_INPUT_PARTITION_ID = "pcm";
+    public static final String DEFAULT_PCM_INPUT_PARTITION_ID = "pcm";
     private static final ModelLocation DEFAULT_DD_LOCATION = new ModelLocation("dfd", URI.createFileURI("tmp/dd.xmi"));
     private static final ModelLocation DEFAULT_DFD_LOCATION = new ModelLocation("dfd",
             URI.createFileURI("tmp/dfd.xmi"));

@@ -89,14 +89,14 @@
   <eSubpackages name="behaviour" nsURI="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour"
       nsPrefix="behaviour">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="DataChannelBehaviour" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="variableUsagesReferToValidSourceRoleParameter variableReferencesReferToValidSinkRoleParameter reusedBehavioursOnlyBindValidVariables"/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
         <details key="variableUsagesReferToValidSourceRoleParameter" value="self.variableUsages->forAll(usage |&#xA;&#x9;self.dataSources->collect(&#xA;&#x9;&#x9;role | role.entityName.concat('.').concat(role.dataInterface.dataSignature.parameter.parameterName)&#x9;&#x9;&#xA;&#x9;)->includes(usage.namedReference__VariableUsage.referenceName)&#xA;)"/>
         <details key="variableReferencesReferToValidSinkRoleParameter" value="self.variableUsages.variableCharacterisation_VariableUsage->selectByKind(confidentiality::ConfidentialityVariableCharacterisation)->forAll(characterisation |&#xA;&#x9;characterisation.rhs.oclAsType(ecore::EObject)->closure(eContents()->selectByKind(ecore::EObject))->selectByKind(stoex::VariableReference)->forAll(reference |&#xA;&#x9;&#x9;self.dataSinks->collect(&#xA;&#x9;&#x9;&#x9;role | role.entityName.concat('.').concat(role.dataInterface.dataSignature.parameter.parameterName)&#xA;&#x9;&#x9;)->includes(reference.referenceName)&#xA;&#x9;)&#xA;)"/>
         <details key="reusedBehavioursOnlyBindValidVariables" value="let validSourceNames : Set(String) = self.dataSources->collect(&#xA;&#x9;role | role.entityName.concat('.').concat(role.dataInterface.dataSignature.parameter.parameterName)&#xA;)->asSet() in&#xA;&#xA;    let validSinkNames : Set(String) = self.dataSinks->collect(&#xA;        role | role.entityName.concat('.').concat(role.dataInterface.dataSignature.parameter.parameterName)&#xA;    )->asSet() in&#xA;&#xA;        let validReferenceNames : Set(String) = validSourceNames->union(validSinkNames) in&#xA;&#xA;            let usedReferenceNames : Set(String) = self.reusedBehaviours->collect(variableBindings)->flatten()->collect(boundValue.referenceName)->asSet() in&#xA;&#xA;                validReferenceNames->includesAll(usedReferenceNames)"/>
@@ -106,14 +106,14 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataSources" upperBound="-1"
           eType="ecore:EClass ../../org.palladiosimulator.indirections/model/indirections.ecore#//repository/DataSourceRole"
           changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
           <details key="derivation" value="self.dataChannel.dataSourceRoles"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="dataSinks" upperBound="-1"
           eType="ecore:EClass ../../org.palladiosimulator.indirections/model/indirections.ecore#//repository/DataSinkRole"
           changeable="false" volatile="true" transient="true" derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
           <details key="derivation" value="self.dataChannel.dataSinkRoles"/>
         </eAnnotations>
       </eStructuralFeatures>
@@ -153,7 +153,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="boundVariableBelongsToReusedBehaviour"/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
         <details key="boundVariableBelongsToReusedBehaviour" value="let reusedBehaviour : ReusableBehaviour = self.oclAsType(ecore::EObject).eContainer().oclAsType(BehaviourReuse).reusedBehaviour in&#xA;&#x9;reusedBehaviour.outputVariables->union(reusedBehaviour.inputVariables)->includes(self.boundVariable)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundVariable" lowerBound="1"
@@ -166,13 +166,13 @@
   <eSubpackages name="repository" nsURI="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/repository"
       nsPrefix="repository">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG"/>
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="OperationalDataStoreComponent" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/BasicComponent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="onlyProvidesDataStoreInterface noRequiredInterfaces allSeffsAreEmpty"/>
       </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/LPG">
         <details key="onlyProvidesDataStoreInterface" value="self.providedRoles_InterfaceProvidingEntity->size() = 1 and&#xA;let opInterface : pcm::repository::OperationInterface = self.providedRoles_InterfaceProvidingEntity->selectByKind(pcm::repository::OperationProvidedRole).providedInterface__OperationProvidedRole->any(true) in&#xA;    opInterface.signatures__OperationInterface->size() = 2 and&#xA;    let addSignature : pcm::repository::OperationSignature = opInterface.signatures__OperationInterface->any(signature | signature.entityName.substring(1,3) = 'add') in&#xA;        addSignature.parameters__OperationSignature->size() = 1 and addSignature.returnType__OperationSignature.oclIsUndefined() and&#xA;        let getSignature : pcm::repository::OperationSignature = opInterface.signatures__OperationInterface->any(signature | signature.entityName.substring(1,3) = 'get') in&#xA;            getSignature.parameters__OperationSignature->size() = 0 and not getSignature.returnType__OperationSignature.oclIsUndefined() and&#xA;            addSignature.parameters__OperationSignature->any(true).dataType__Parameter = getSignature.returnType__OperationSignature"/>
         <details key="noRequiredInterfaces" value="self.requiredRoles_InterfaceRequiringEntity->isEmpty()"/>
         <details key="allSeffsAreEmpty" value="self.serviceEffectSpecifications__BasicComponent->selectByKind(pcm::seff::ResourceDemandingBehaviour)->forAll(seff | seff.steps_Behaviour->size() = 2)"/>

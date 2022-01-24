@@ -23,6 +23,7 @@ import org.palladiosimulator.pcm.usagemodel.AbstractUserAction
 
 class DFDEntityCreator implements TransformationResultGetter {
 	
+	val extension IdGenerationHelper idGenerationHelper = new IdGenerationHelper
 	val extension DFDFactoryUtilities dfdFactoryUtils = new DFDFactoryUtilities
 	val extension TransformationTraceModifier traceRecorder
 	val DataFlowDiagram dfd
@@ -37,6 +38,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 //		addTraceEntry(behavior, actor)
 		actor.name = actorName
 		actor.createBehavior
+		actor.calculatedId = #["actor", actorName]
 		dfd.nodes += actor
 	}
 	
@@ -50,6 +52,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 		// requirement: at some point in time, the exit process creation method that takes an actor has to be called
 		process.name = '''UserAction Exit «action.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["exit", action]
 		dfd.nodes += process
 		addTraceEntry(action, process)
 	}
@@ -63,6 +66,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create process : createActorProcess getEntryProcess(AbstractUserAction action) {
 		process.name = '''UserAction Entry «action.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["entry", action]
 		dfd.nodes += process
 		addTraceEntry(action, process)
 	}
@@ -70,6 +74,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create process : createProcess getExitProcess(AbstractAction action, Stack<AssemblyContext> context) {
 		process.name = '''Action Exit «action.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["exit", action, context]
 		dfd.nodes += process
 		addTraceEntry(action, context, process)
 	}
@@ -77,6 +82,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create process : createProcess getEntryProcess(AbstractAction action, Stack<AssemblyContext> context) {
 		process.name = '''Action Entry «action.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["entry", action, context]
 		dfd.nodes += process
 		addTraceEntry(action, context, process)
 	}
@@ -84,6 +90,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create process : createProcess getProcess(AbstractAction action, Stack<AssemblyContext> context) {
 		process.name = '''Action «action.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["process", action, context]
 		dfd.nodes += process
 		addTraceEntry(action, context, process)
 	}
@@ -91,14 +98,15 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create process : createProcess getExitProcess(ServiceEffectSpecification seff, Stack<AssemblyContext> context) {
 		process.name = '''SEFF Exit «context.peek.entityName».«seff.describedService__SEFF.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["exit", seff, context]
 		dfd.nodes += process
 		addTraceEntry(seff, context, process)
 	}
 	
 	override create process : createProcess getEntryProcess(ServiceEffectSpecification seff, Stack<AssemblyContext> context) {
-		
 		process.name = '''SEFF Entry «context.peek.entityName».«seff.describedService__SEFF.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["entry", seff, context]
 		dfd.nodes += process
 		addTraceEntry(seff, context, process)
 	}
@@ -114,6 +122,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	protected def create process : createProcess getCharacterizedProcess(DataChannel dc, Stack<AssemblyContext> context) {
 		process.name = '''DC «context.peek.entityName».«dc.entityName»'''
 		process.createBehavior
+		process.calculatedId = #["process", dc, context]
 		dfd.nodes += process
 		addTraceEntry(dc, context, process)
 	}
@@ -121,6 +130,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create store : createStore getStore(OperationalDataStoreComponent component, Stack<AssemblyContext> context) {
 		store.name = '''Store «context.peek.entityName».«component.entityName»'''
 		store.createBehavior
+		store.calculatedId = #["store", component, context]
 		dfd.nodes += store
 		addTraceEntry(component, context, store)
 	}
@@ -128,6 +138,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create store : createStore getStore(DataChannel dc, Stack<AssemblyContext> context) {
 		store.name = '''Store «context.peek.entityName».«dc.entityName»'''
 		store.createBehavior
+		store.calculatedId = #["store", dc, context]
 		dfd.nodes += store
 		addTraceEntry(dc, context, store)
 	}
@@ -135,11 +146,13 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create pin: createPin getOutputPin(CharacterizedNode process, String pinName) {
 		pin.name = pinName
 		process.behavior.outputs += pin
+		pin.calculatedId = #["output", process, pinName]
 	}
 	
 	override create pin: createPin getInputPin(CharacterizedNode process, String pinName) {
 		pin.name = pinName
 		process.behavior.inputs += pin
+		pin.calculatedId = #["input", process, pinName]
 	}
 	
 	override getOutputPin(CharacterizedNode process, DataSourceRole role) {
@@ -157,11 +170,13 @@ class DFDEntityCreator implements TransformationResultGetter {
 	override create pin: createPin getOutputPin(CharacterizedStore store) {
 		pin.name = TransformationConstants.STORE_OUTPUT_PIN_NAME
 		store.behavior.outputs += pin
+		pin.calculatedId = #["output", store]
 	}
 	
 	override create pin: createPin getInputPin(CharacterizedStore store) {
 		pin.name = TransformationConstants.STORE_INPUT_PIN_NAME
 		store.behavior.inputs += pin
+		pin.calculatedId = #["output", store]
 	}
 	
 	override create flow : createDataFlow getDataFlow(CharacterizedNode source, Pin sourcePin, CharacterizedNode destination, Pin destinationPin) {
@@ -171,6 +186,7 @@ class DFDEntityCreator implements TransformationResultGetter {
 		flow.sourcePin = sourcePin
 		flow.target = destination as Node
 		flow.targetPin = destinationPin
+		flow.calculatedId = #["dataflow", source, sourcePin, destination, destinationPin]
 		dfd.edges += flow
 	}
 	

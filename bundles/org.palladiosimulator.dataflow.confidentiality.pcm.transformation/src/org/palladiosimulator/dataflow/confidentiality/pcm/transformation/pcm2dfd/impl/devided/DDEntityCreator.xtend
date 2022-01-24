@@ -16,6 +16,7 @@ import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd
 
 class DDEntityCreator {
 	
+	val extension IdGenerationHelper idGenerationHelper = new IdGenerationHelper
 	val extension DFDFactoryUtilities dfdFactoryUtils = new DFDFactoryUtilities
 	val extension TransformationTraceModifier traceModifier
 	val DataDictionaryCharacterized dd
@@ -33,6 +34,7 @@ class DDEntityCreator {
 	protected def dispatch create newCt : createEnumCharacteristicType getCharacteristicTypeInternal(EnumCharacteristicType ct) {
 		newCt.name = ct.name
 		newCt.type = ct.type.getEnumeration
+		newCt.calculatedId = #["ct", ct]
 		dd.characteristicTypes += newCt
 		addTraceEntry(ct, newCt)
 	}
@@ -40,12 +42,14 @@ class DDEntityCreator {
 	protected def dispatch create newCt : createEnumCharacteristicType getCharacteristicTypeInternal(DataTypeCharacteristicType ct) {
 		newCt.name = ct.name
 		newCt.type = getDataTypeEnumeration()
+		newCt.calculatedId = #["ct", ct]
 		dd.characteristicTypes += newCt
 		addTraceEntry(ct, newCt)
 	}
 	
 	protected def create newEnum: createEnumeration getDataTypeEnumeration() {
 		newEnum.name = "DataTypes"
+		newEnum.calculatedId = #["dataTypeEnum"]
 		dd.enumerations += newEnum
 	}
 	
@@ -59,12 +63,14 @@ class DDEntityCreator {
 	
 	protected def create newLiteral: createLiteral getLiteralInternal(PrimitiveTypeEnum primitiveType) {
 		newLiteral.name = primitiveType.getName
+		newLiteral.calculatedId = #["literal", primitiveType]
 		dataTypeEnumeration.literals += newLiteral
 		//FIXME trace recorder is only capable of recording Identifier instances
 	}
 	
 	protected def create newLiteral: createLiteral getLiteralInternal(DataType dataType) {
 		newLiteral.name = dataType.name
+		newLiteral.calculatedId = #["literal", dataType]
 		dataTypeEnumeration.literals += newLiteral
 		addTraceEntry(dataType, newLiteral)
 	}
@@ -72,12 +78,14 @@ class DDEntityCreator {
 	protected def create newEnum: createEnumeration getEnumeration(Enumeration enumeration) {
 		newEnum.name = enumeration.name
 		newEnum.literals += enumeration.literals.map[getLiteral]
+		newEnum.calculatedId = #["enum", enumeration]
 		dd.enumerations += newEnum
 		addTraceEntry(enumeration, newEnum)
 	}
 	
 	def create newLiteral: createLiteral getLiteral(Literal literal) {
 		newLiteral.name = literal.name
+		newLiteral.calculatedId = #["literal", literal]
 		addTraceEntry(literal, newLiteral)
 	}
 	

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:org.palladiosimulator.dataflow.confidentiality.pcm.model.profile="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" xmlns:org.palladiosimulator.indirections.actions="http://palladiosimulator.org/Indirections/Actions/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:repository_1="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/repository" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2">
+  <repository:Repository id="_fZUBcH1HEeySLaOi7Opbhw" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_f5KwwH1IEeySLaOi7Opbhw" entityName="DiagnosticsLogic">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_OCChsH1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.provided.Diagnostics" providedInterface__OperationProvidedRole="_iU7okH1IEeySLaOi7Opbhw"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_ZtetUH3GEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.sink.MedicalRecord" dataInterface="_pjB7oH3EEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_bsq94H3GEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.source.MedicalRecord" dataInterface="_pjB7oH3EEeyu5qLnVyrbVw"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OCTAYH1JEeySLaOi7Opbhw" describedService__SEFF="_trTq8H1IEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_OCTAYX1JEeySLaOi7Opbhw" successor_AbstractAction="_qrB-IH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_OCTAYn1JEeySLaOi7Opbhw" predecessor_AbstractAction="_qrB-IH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_qrB-IH3HEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.addPatientHistory.emitData" predecessor_AbstractAction="_OCTAYX1JEeySLaOi7Opbhw" successor_AbstractAction="_OCTAYn1JEeySLaOi7Opbhw" dataSourceRole="_bsq94H3GEeyu5qLnVyrbVw">
+          <variableReference referenceName="patientHistory"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OEKooH1JEeySLaOi7Opbhw" describedService__SEFF="_53CoAH1IEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_OELPsH1JEeySLaOi7Opbhw" successor_AbstractAction="_vQE2oH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_OELPsX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_vQE2oH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_vQE2oH3HEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.addDiagnosis.emitData" predecessor_AbstractAction="_OELPsH1JEeySLaOi7Opbhw" successor_AbstractAction="_OELPsX1JEeySLaOi7Opbhw" dataSourceRole="_bsq94H3GEeyu5qLnVyrbVw">
+          <variableReference referenceName="diagnosis"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OEYrEH1JEeySLaOi7Opbhw" describedService__SEFF="__SNQMH1IEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_OEZSIH1JEeySLaOi7Opbhw" successor_AbstractAction="_CDDNcH3IEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_OEZSIX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_6a6UoH1JEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_6a6UoH1JEeySLaOi7Opbhw" entityName="DiagnocistsLogic.getTreatments.return" predecessor_AbstractAction="_CDDNcH3IEeyu5qLnVyrbVw" successor_AbstractAction="_OEZSIX1JEeySLaOi7Opbhw">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_FWVgYH1KEeySLaOi7Opbhw"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_FWVgYX1KEeySLaOi7Opbhw">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_CDDNcH3IEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.getTreatments.consumeData" predecessor_AbstractAction="_OEZSIH1JEeySLaOi7Opbhw" successor_AbstractAction="_6a6UoH1JEeySLaOi7Opbhw" dataSinkRole="_ZtetUH3GEeyu5qLnVyrbVw">
+          <variableReference referenceName="treatments"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OElfYH1JEeySLaOi7Opbhw" describedService__SEFF="_3Lj5MH1IEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_OEmGcH1JEeySLaOi7Opbhw" successor_AbstractAction="_UPSUYH3IEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_OEmGcX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_JDxbcH1KEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_JDxbcH1KEeySLaOi7Opbhw" entityName="DiagnosticsLogic.getPatientHistory.return" predecessor_AbstractAction="_UPSUYH3IEeyu5qLnVyrbVw" successor_AbstractAction="_OEmGcX1JEeySLaOi7Opbhw">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_RVNtMH1KEeySLaOi7Opbhw"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_RVNtMX1KEeySLaOi7Opbhw">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_UPSUYH3IEeyu5qLnVyrbVw" entityName="DiagnosticsLogic.getPatientHistory.consumeData" predecessor_AbstractAction="_OEmGcH1JEeySLaOi7Opbhw" successor_AbstractAction="_JDxbcH1KEeySLaOi7Opbhw" dataSinkRole="_ZtetUH3GEeyu5qLnVyrbVw">
+          <variableReference referenceName="patientHistory"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository_1:OperationalDataStoreComponent" id="_vGXo0H1KEeySLaOi7Opbhw" entityName="InvoiceStore">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1gi28H1KEeySLaOi7Opbhw" entityName="InvoiceStore.provided.Invoices" providedInterface__OperationProvidedRole="_wKafwH1KEeySLaOi7Opbhw"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_2xBnYH1KEeySLaOi7Opbhw" describedService__SEFF="_xMaIQH1KEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_3DGO0H1KEeySLaOi7Opbhw" successor_AbstractAction="_3DGO0X1KEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_3DGO0X1KEeySLaOi7Opbhw" predecessor_AbstractAction="_3DGO0H1KEeySLaOi7Opbhw"/>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_3TYGgH1KEeySLaOi7Opbhw" describedService__SEFF="_yoH4UH1KEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_3j510H1KEeySLaOi7Opbhw" successor_AbstractAction="_3j510X1KEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_3j510X1KEeySLaOi7Opbhw" predecessor_AbstractAction="_3j510H1KEeySLaOi7Opbhw"/>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_8PuEsH1KEeySLaOi7Opbhw" entityName="HospitalManagementLogic">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_J3ZwcH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.provided.HospitalManagement" providedInterface__OperationProvidedRole="_X5B_gH1KEeySLaOi7Opbhw"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_lfKBEH3FEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.sink.PersonalRecord" dataInterface="_EmKx0H3FEeyu5qLnVyrbVw"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_rL_oEH3FEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.sink.FinancialRecord" dataInterface="_18aTIH3EEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_ni9r4H3FEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.source.PersonalRecord" dataInterface="_EmKx0H3FEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_s2pzEH3FEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.source.FinancialRecord" dataInterface="_18aTIH3EEeyu5qLnVyrbVw"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J3lWoH1NEeySLaOi7Opbhw" describedService__SEFF="_n1eOEH1KEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J3l9sH1NEeySLaOi7Opbhw" successor_AbstractAction="_vmN7MH3GEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J3l9sX1NEeySLaOi7Opbhw" predecessor_AbstractAction="_vmN7MH3GEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_vmN7MH3GEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.addContactInformation.emitData" predecessor_AbstractAction="_J3l9sH1NEeySLaOi7Opbhw" successor_AbstractAction="_J3l9sX1NEeySLaOi7Opbhw" dataSourceRole="_ni9r4H3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="contactInformation"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J3yyAH1NEeySLaOi7Opbhw" describedService__SEFF="_AZFb4H1NEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J3yyAX1NEeySLaOi7Opbhw" successor_AbstractAction="_5H5s0H3GEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J3yyAn1NEeySLaOi7Opbhw" predecessor_AbstractAction="_lGW1EH1NEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_lGW1EH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatments.return" predecessor_AbstractAction="_5H5s0H3GEeyu5qLnVyrbVw" successor_AbstractAction="_J3yyAn1NEeySLaOi7Opbhw">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_AK51gH3HEeyu5qLnVyrbVw"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_AK51gX3HEeyu5qLnVyrbVw">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_5H5s0H3GEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.getTreatments.consumeData" predecessor_AbstractAction="_J3yyAX1NEeySLaOi7Opbhw" successor_AbstractAction="_lGW1EH1NEeySLaOi7Opbhw" dataSinkRole="_rL_oEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="treatments"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J38jAH1NEeySLaOi7Opbhw" describedService__SEFF="_D6YqUH1LEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J38jAX1NEeySLaOi7Opbhw" successor_AbstractAction="_FiNRYH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J38jAn1NEeySLaOi7Opbhw" predecessor_AbstractAction="_FiNRYH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_FiNRYH3HEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.addTreatmentPrices.emit" predecessor_AbstractAction="_J38jAX1NEeySLaOi7Opbhw" successor_AbstractAction="_J38jAn1NEeySLaOi7Opbhw" dataSourceRole="_s2pzEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="treatmentPrices"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4FF4H1NEeySLaOi7Opbhw" describedService__SEFF="_kS_l0H1KEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J4Fs8H1NEeySLaOi7Opbhw" successor_AbstractAction="_WHEx4H3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J4Fs8X1NEeySLaOi7Opbhw" predecessor_AbstractAction="_WHEx4H3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_WHEx4H3HEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.addPaymentInformation.emitData" predecessor_AbstractAction="_J4Fs8H1NEeySLaOi7Opbhw" successor_AbstractAction="_J4Fs8X1NEeySLaOi7Opbhw" dataSourceRole="_s2pzEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="paymentInformation"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4O24H1NEeySLaOi7Opbhw" describedService__SEFF="_8w7CYH1MEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J4O24X1NEeySLaOi7Opbhw" successor_AbstractAction="_ampUgH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J4O24n1NEeySLaOi7Opbhw" predecessor_AbstractAction="_ampUgH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_ampUgH3HEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.addTreatments.emitData" predecessor_AbstractAction="_J4O24X1NEeySLaOi7Opbhw" successor_AbstractAction="_J4O24n1NEeySLaOi7Opbhw" dataSourceRole="_s2pzEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="treatments"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4XZwH1NEeySLaOi7Opbhw" describedService__SEFF="_HvghwH1LEeySLaOi7Opbhw">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_J4YA0H1NEeySLaOi7Opbhw" successor_AbstractAction="_gfdiAH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_J4YA0X1NEeySLaOi7Opbhw" predecessor_AbstractAction="_L3C3gH1OEeySLaOi7Opbhw"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_L3C3gH1OEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatmentPrices.return" predecessor_AbstractAction="_gfdiAH3HEeyu5qLnVyrbVw" successor_AbstractAction="_J4YA0X1NEeySLaOi7Opbhw">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_Vu-l8H1OEeySLaOi7Opbhw"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_Vu-l8X1OEeySLaOi7Opbhw">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_gfdiAH3HEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.getTreatmentPrices.consumeData" predecessor_AbstractAction="_J4YA0H1NEeySLaOi7Opbhw" successor_AbstractAction="_L3C3gH1OEeySLaOi7Opbhw" dataSinkRole="_rL_oEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="treatmentPrices"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_U8SiIH25EeyLqd4V6z24dg" describedService__SEFF="_QehWUH25EeyLqd4V6z24dg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_Vb4BIH25EeyLqd4V6z24dg" successor_AbstractAction="_lkZbgH3HEeyu5qLnVyrbVw"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_Vb4BIX25EeyLqd4V6z24dg" predecessor_AbstractAction="_aAMg4H25EeyLqd4V6z24dg"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_aAMg4H25EeyLqd4V6z24dg" entityName="HospitalManagementLogic.getContactInformation.return" predecessor_AbstractAction="_lkZbgH3HEeyu5qLnVyrbVw" successor_AbstractAction="_Vb4BIX25EeyLqd4V6z24dg">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_kt6Awn25EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_kt6Aw325EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_lkZbgH3HEeyu5qLnVyrbVw" entityName="HospitalManagementLogic.getContactInformation.consumeData" predecessor_AbstractAction="_Vb4BIH25EeyLqd4V6z24dg" successor_AbstractAction="_aAMg4H25EeyLqd4V6z24dg" dataSinkRole="_lfKBEH3FEeyu5qLnVyrbVw">
+          <variableReference referenceName="contactInformation"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_lgM_YH3EEeyu5qLnVyrbVw" entityName="MedicalRecordsStore">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_udxXUH3EEeyu5qLnVyrbVw" entityName="MedicalRecordsStore.sink.MedicalRecord" dataInterface="_pjB7oH3EEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_vBH8AH3EEeyu5qLnVyrbVw" entityName="MedicalRecordsStore.source.MedicalRecord" dataInterface="_pjB7oH3EEeyu5qLnVyrbVw"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_0yDY0H3EEeyu5qLnVyrbVw" entityName="FinancialRecordsStore">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_6kYj0H3EEeyu5qLnVyrbVw" entityName="FinancialRecordsStore.sink.FinancialRecord" dataInterface="_18aTIH3EEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_8sRdYH3EEeyu5qLnVyrbVw" entityName="FinancialRecordsStore.source.FinancialRecord" dataInterface="_18aTIH3EEeyu5qLnVyrbVw"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_DXqXUH3FEeyu5qLnVyrbVw" entityName="PersonalRecordsStore">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_IwTP8H3FEeyu5qLnVyrbVw" entityName="PersonalRecordsStore.sink.PersonalRecord" dataInterface="_EmKx0H3FEeyu5qLnVyrbVw"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_KukTcH3FEeyu5qLnVyrbVw" entityName="PersonalRecordsStore.source.PersonalRecord" dataInterface="_EmKx0H3FEeyu5qLnVyrbVw"/>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_iU7okH1IEeySLaOi7Opbhw" entityName="Diagnostics">
+      <signatures__OperationInterface id="_trTq8H1IEeySLaOi7Opbhw" entityName="addPatientHistory">
+        <parameters__OperationSignature dataType__Parameter="_sDrl0H1IEeySLaOi7Opbhw" parameterName="patientHistory"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_3Lj5MH1IEeySLaOi7Opbhw" entityName="getPatientHistory" returnType__OperationSignature="_sDrl0H1IEeySLaOi7Opbhw"/>
+      <signatures__OperationInterface id="_53CoAH1IEeySLaOi7Opbhw" entityName="addDiagnosis">
+        <parameters__OperationSignature dataType__Parameter="_68YfcH1IEeySLaOi7Opbhw" parameterName="diagnosis"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="__SNQMH1IEeySLaOi7Opbhw" entityName="getTreatments" returnType__OperationSignature="_BM9FoH1JEeySLaOi7Opbhw"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_X5B_gH1KEeySLaOi7Opbhw" entityName="HospitalManagement">
+      <signatures__OperationInterface id="_kS_l0H1KEeySLaOi7Opbhw" entityName="addPaymentInformation">
+        <parameters__OperationSignature dataType__Parameter="_aIW90H1KEeySLaOi7Opbhw" parameterName="paymentInformation"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_n1eOEH1KEeySLaOi7Opbhw" entityName="addContactInformation">
+        <parameters__OperationSignature dataType__Parameter="_bRqvQH1KEeySLaOi7Opbhw" parameterName="contactInformation"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_D6YqUH1LEeySLaOi7Opbhw" entityName="addTreatmentPrices">
+        <parameters__OperationSignature dataType__Parameter="_eTp5kH1KEeySLaOi7Opbhw" parameterName="treatmentPrices"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_HvghwH1LEeySLaOi7Opbhw" entityName="getTreatmentPrices" returnType__OperationSignature="_eTp5kH1KEeySLaOi7Opbhw"/>
+      <signatures__OperationInterface id="_8w7CYH1MEeySLaOi7Opbhw" entityName="addTreatments">
+        <parameters__OperationSignature dataType__Parameter="_AnSMwH1JEeySLaOi7Opbhw" parameterName="treatments"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_AZFb4H1NEeySLaOi7Opbhw" entityName="getTreatments" returnType__OperationSignature="_BM9FoH1JEeySLaOi7Opbhw"/>
+      <signatures__OperationInterface id="_QehWUH25EeyLqd4V6z24dg" entityName="getContactInformation" returnType__OperationSignature="_bRqvQH1KEeySLaOi7Opbhw"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_wKafwH1KEeySLaOi7Opbhw" entityName="Invoices">
+      <signatures__OperationInterface id="_xMaIQH1KEeySLaOi7Opbhw" entityName="add">
+        <parameters__OperationSignature dataType__Parameter="_xz8CUH1KEeySLaOi7Opbhw" parameterName="invoice"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_yoH4UH1KEeySLaOi7Opbhw" entityName="get" returnType__OperationSignature="_xz8CUH1KEeySLaOi7Opbhw"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_pjB7oH3EEeyu5qLnVyrbVw" entityName="MedicalRecord">
+      <dataSignature id="_rbzbIH3EEeyu5qLnVyrbVw" entityName="record">
+        <parameter dataType__Parameter="_FmegEH1IEeySLaOi7Opbhw" parameterName="record"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_18aTIH3EEeyu5qLnVyrbVw" entityName="FinancialRecord">
+      <dataSignature id="_3gbDkH3EEeyu5qLnVyrbVw" entityName="record">
+        <parameter dataType__Parameter="_IX3poH1IEeySLaOi7Opbhw" parameterName="record"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_EmKx0H3FEeyu5qLnVyrbVw" entityName="PersonalRecord">
+      <dataSignature id="_Fys2YH3FEeyu5qLnVyrbVw" entityName="record">
+        <parameter dataType__Parameter="_JLHEcH1IEeySLaOi7Opbhw" parameterName="record"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_FmegEH1IEeySLaOi7Opbhw" entityName="MedicalRecord"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_IX3poH1IEeySLaOi7Opbhw" entityName="FinancialRecord"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_JLHEcH1IEeySLaOi7Opbhw" entityName="PersonalRecord"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_l-SU4H1IEeySLaOi7Opbhw" entityName="TestResult"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_mwfN4H1IEeySLaOi7Opbhw" entityName="TestResults" innerType_CollectionDataType="_l-SU4H1IEeySLaOi7Opbhw"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sDrl0H1IEeySLaOi7Opbhw" entityName="PatientHistory"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_68YfcH1IEeySLaOi7Opbhw" entityName="Diagnosis"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_AnSMwH1JEeySLaOi7Opbhw" entityName="Treatment"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_BM9FoH1JEeySLaOi7Opbhw" entityName="Treatments" innerType_CollectionDataType="_AnSMwH1JEeySLaOi7Opbhw"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_aIW90H1KEeySLaOi7Opbhw" entityName="PaymentInformation"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_bRqvQH1KEeySLaOi7Opbhw" entityName="ContactInformation"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_dXhogH1KEeySLaOi7Opbhw" entityName="TreatmentPrice"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_eTp5kH1KEeySLaOi7Opbhw" entityName="TreatmentPrices" innerType_CollectionDataType="_dXhogH1KEeySLaOi7Opbhw"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_hNAFQH1KEeySLaOi7Opbhw" entityName="PricedTreatment"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_iMxgMH1KEeySLaOi7Opbhw" entityName="PricedTreatments" innerType_CollectionDataType="_hNAFQH1KEeySLaOi7Opbhw"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_xz8CUH1KEeySLaOi7Opbhw" entityName="Invoice"/>
+  </repository:Repository>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_lgM_YH3EEeyu5qLnVyrbVw">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="Behaviours.xmi#_i8QfIH3IEeyu5qLnVyrbVw"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_0yDY0H3EEeyu5qLnVyrbVw">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="Behaviours.xmi#_sZz-sH3IEeyu5qLnVyrbVw"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_DXqXUH3FEeyu5qLnVyrbVw">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="Behaviours.xmi#_zQlCMH3IEeyu5qLnVyrbVw"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" location="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

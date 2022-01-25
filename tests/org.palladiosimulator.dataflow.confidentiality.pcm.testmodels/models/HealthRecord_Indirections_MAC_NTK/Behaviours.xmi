@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviour:Behaviours xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviour="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xsi:schemaLocation="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0#//behaviour http://palladiosimulator.org/Indirections/Repository/1.0 http://palladiosimulator.org/Indirections/1.0#//repository" id="_UmKLAH3CEeyu5qLnVyrbVw">
+  <dataChannelBehaviour id="_i8QfIH3IEeyu5qLnVyrbVw" entityName="MedicalRecordsStoreBehavior">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_lgM_YH3EEeyu5qLnVyrbVw"/>
+    <reusedBehaviours id="_lac_4H3IEeyu5qLnVyrbVw" reusedBehaviour="_T-FeYX3CEeyu5qLnVyrbVw"/>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_sZz-sH3IEeyu5qLnVyrbVw" entityName="FinancialRecordsStoreBehavior">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_0yDY0H3EEeyu5qLnVyrbVw"/>
+    <reusedBehaviours id="_ul4NoH3IEeyu5qLnVyrbVw" reusedBehaviour="_T-FeYX3CEeyu5qLnVyrbVw"/>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_zQlCMH3IEeyu5qLnVyrbVw" entityName="PersonalRecordsStoreBehavior">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_DXqXUH3FEeyu5qLnVyrbVw"/>
+    <reusedBehaviours id="_1PlFgH3IEeyu5qLnVyrbVw" reusedBehaviour="_T-FeYX3CEeyu5qLnVyrbVw"/>
+  </dataChannelBehaviour>
+  <reusableBehaviours id="_T-FeYX3CEeyu5qLnVyrbVw" entityName="Store"/>
+</behaviour:Behaviours>

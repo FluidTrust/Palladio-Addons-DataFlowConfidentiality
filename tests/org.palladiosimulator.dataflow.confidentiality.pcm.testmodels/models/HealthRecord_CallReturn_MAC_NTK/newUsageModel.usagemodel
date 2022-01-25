@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/characteristics" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:expressions="http://palladiosimulator.org/dataflow/dictionary/characterized/expressions/1.0" xmlns:org.palladiosimulator.dataflow.confidentiality.pcm.model.profile="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
+  <usagemodel:UsageModel>
+    <usageScenario_UsageModel id="_iphCYH1REeyMfpB2Ap20pg" entityName="Physician">
+      <scenarioBehaviour_UsageScenario id="_Wd_3YH23EeyLqd4V6z24dg" entityName="ScenarioBehaviour">
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_WeAecH23EeyLqd4V6z24dg" successor="_Ynsu0H23EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_WeBFgH23EeyLqd4V6z24dg" predecessor="_oXu5EH23EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_Ynsu0H23EeyLqd4V6z24dg" entityName="Physician.addPatientHistory" successor="_c-Uw0H23EeyLqd4V6z24dg" predecessor="_WeAecH23EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_VcMXYH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_trTq8H1IEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_4HnSUH23EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_vrWskH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_4HnSUX23EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_c-Uw0H23EeyLqd4V6z24dg" entityName="Physician.getPatientHisotry" successor="_h8Z0YH23EeyLqd4V6z24dg" predecessor="_Ynsu0H23EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_VcMXYH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_3Lj5MH1IEeySLaOi7Opbhw"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_9ipXon23EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_9ipXo323EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_h8Z0YH23EeyLqd4V6z24dg" entityName="Physician.addDiagnosis" successor="_mZnmkH23EeyLqd4V6z24dg" predecessor="_c-Uw0H23EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_VcMXYH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_53CoAH1IEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_N-1dQH24EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_N-1dQX24EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_N-2EUH24EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_vrWskH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_N-2EUX24EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="diagnosis"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_mZnmkH23EeyLqd4V6z24dg" entityName="Physician.getTreatments" successor="_oXu5EH23EeyLqd4V6z24dg" predecessor="_h8Z0YH23EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_VcMXYH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#__SNQMH1IEeySLaOi7Opbhw"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VpZVMX24EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_VpZVMn24EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatments"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_oXu5EH23EeyLqd4V6z24dg" entityName="Physician.addTreatments" successor="_WeBFgH23EeyLqd4V6z24dg" predecessor="_mZnmkH23EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_8w7CYH1MEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_dx9-0H24EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_dx9-0X24EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_dx9-0n24EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_vrWskH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:False" id="_dx9-0324EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatments"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+      </scenarioBehaviour_UsageScenario>
+      <workload_UsageScenario xsi:type="usagemodel:ClosedWorkload" population="1">
+        <thinkTime_ClosedWorkload specification="0.0"/>
+      </workload_UsageScenario>
+    </usageScenario_UsageModel>
+    <usageScenario_UsageModel id="_jscfAH1REeyMfpB2Ap20pg" entityName="Patient">
+      <scenarioBehaviour_UsageScenario id="_hMsccH28EeyLqd4V6z24dg" entityName="ScenarioBehaviour">
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_hMsccX28EeyLqd4V6z24dg" successor="_i_YiEH28EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_hMsccn28EeyLqd4V6z24dg" predecessor="_qerlMH28EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_i_YiEH28EeyLqd4V6z24dg" entityName="Patient.addContactInformation" successor="_kcIz8H28EeyLqd4V6z24dg" predecessor="_hMsccX28EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_n1eOEH1KEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_EJ0GoH29EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_wCidgH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_EJ0GoX29EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_kcIz8H28EeyLqd4V6z24dg" entityName="Patient.addPaymentInformation" successor="_qerlMH28EeyLqd4V6z24dg" predecessor="_i_YiEH28EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_kS_l0H1KEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_NltZUH29EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_v1JhwH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_NltZUX29EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="paymentInformation"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_qerlMH28EeyLqd4V6z24dg" entityName="Patient.getInvoice" successor="_hMsccn28EeyLqd4V6z24dg" predecessor="_kcIz8H28EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_TThasH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_yoH4UH1KEeySLaOi7Opbhw"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_U2I6AX29EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_U2I6An29EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="invoice"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+      </scenarioBehaviour_UsageScenario>
+      <workload_UsageScenario xsi:type="usagemodel:ClosedWorkload" population="1">
+        <thinkTime_ClosedWorkload specification="0.0"/>
+      </workload_UsageScenario>
+    </usageScenario_UsageModel>
+    <usageScenario_UsageModel id="_kWeTcH1REeyMfpB2Ap20pg" entityName="Clerk">
+      <scenarioBehaviour_UsageScenario id="_3g8ecH24EeyLqd4V6z24dg" entityName="ScenarioBehaviour">
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_3g9FgH24EeyLqd4V6z24dg" successor="_4zj84H24EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_3g9skH24EeyLqd4V6z24dg" predecessor="_rTnwgH25EeyLqd4V6z24dg"/>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_4zj84H24EeyLqd4V6z24dg" entityName="Clerk.addTreatmentPrices" successor="_73Uo0H24EeyLqd4V6z24dg" predecessor="_3g9FgH24EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_D6YqUH1LEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_WKEucH26EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                <literal href="characteristicTypes.characteristics#_v1JhwH1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_WKEucX26EeyLqd4V6z24dg"/>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_73Uo0H24EeyLqd4V6z24dg" entityName="Clerk.getTreatmentPrices" successor="_B0qxAH25EeyLqd4V6z24dg" predecessor="_4zj84H24EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_HvghwH1LEeySLaOi7Opbhw"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_kZSmMH26EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_kZSmMX26EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_B0qxAH25EeyLqd4V6z24dg" entityName="Clerk.getTreatments" successor="_nKwdsH25EeyLqd4V6z24dg" predecessor="_73Uo0H24EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_AZFb4H1NEeySLaOi7Opbhw"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_zFtXUH26EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_zFtXUX26EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatments"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_nKwdsH25EeyLqd4V6z24dg" entityName="Clerk.getContactInformation" successor="_rTnwgH25EeyLqd4V6z24dg" predecessor="_B0qxAH25EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_U4sowH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_QehWUH25EeyLqd4V6z24dg"/>
+          <outputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_HfZNQn27EeyLqd4V6z24dg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_HfZNQ327EeyLqd4V6z24dg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+          </outputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+        <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_rTnwgH25EeyLqd4V6z24dg" entityName="Clerk.addInvoice" successor="_3g9skH24EeyLqd4V6z24dg" predecessor="_nKwdsH25EeyLqd4V6z24dg">
+          <providedRole_EntryLevelSystemCall href="newSystem.system#_TThasH1PEeySLaOi7Opbhw"/>
+          <operationSignature__EntryLevelSystemCall href="newRepository.repository#_xMaIQH1KEeySLaOi7Opbhw"/>
+          <inputParameterUsages_EntryLevelSystemCall>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_YuZ28H27EeyLqd4V6z24dg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+              </lhs>
+              <rhs xsi:type="expressions:And" id="_YuZ28X27EeyLqd4V6z24dg">
+                <left xsi:type="expressions:And" id="_YuZ28n27EeyLqd4V6z24dg">
+                  <left xsi:type="expression:NamedEnumCharacteristicReference" id="_YuZ28327EeyLqd4V6z24dg">
+                    <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                    <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+                  </left>
+                  <right xsi:type="expression:NamedEnumCharacteristicReference" id="_YuZ29H27EeyLqd4V6z24dg">
+                    <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                    <namedReference xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+                  </right>
+                </left>
+                <right xsi:type="expression:NamedEnumCharacteristicReference" id="_YuZ29X27EeyLqd4V6z24dg">
+                  <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="characteristicTypes.characteristics#_0R6oAX1HEeySLaOi7Opbhw"/>
+                  <namedReference xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+                </right>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="invoice"/>
+          </inputParameterUsages_EntryLevelSystemCall>
+        </actions_ScenarioBehaviour>
+      </scenarioBehaviour_UsageScenario>
+      <workload_UsageScenario xsi:type="usagemodel:ClosedWorkload" population="1">
+        <thinkTime_ClosedWorkload specification="0.0"/>
+      </workload_UsageScenario>
+    </usageScenario_UsageModel>
+  </usagemodel:UsageModel>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_iphCYH1REeyMfpB2Ap20pg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newUsageModel.usagemodel.characteristics#_jtHuoH24EeyLqd4V6z24dg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_kWeTcH1REeyMfpB2Ap20pg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newUsageModel.usagemodel.characteristics#_zYBZ4H27EeyLqd4V6z24dg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_jscfAH1REeyMfpB2Ap20pg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newUsageModel.usagemodel.characteristics#_XmorsH29EeyLqd4V6z24dg"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" location="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

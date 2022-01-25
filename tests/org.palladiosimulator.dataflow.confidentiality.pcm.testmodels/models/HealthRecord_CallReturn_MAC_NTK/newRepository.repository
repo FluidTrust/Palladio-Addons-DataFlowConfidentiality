@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="ASCII"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:repository_1="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/repository" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_fZUBcH1HEeySLaOi7Opbhw" entityName="New Repository">
+  <components__Repository xsi:type="repository_1:OperationalDataStoreComponent" id="_6-GMIH1HEeySLaOi7Opbhw" entityName="MedicalRecordsStore">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Zx_XIH1IEeySLaOi7Opbhw" entityName="MedicalRecordsStore.provided.MedicalRecords" providedInterface__OperationProvidedRole="_QnxDQH1IEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_XbrxoH1JEeySLaOi7Opbhw" describedService__SEFF="_SDSmEH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_Xr8bMH1JEeySLaOi7Opbhw" successor_AbstractAction="_Xr9CQH1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_Xr9CQH1JEeySLaOi7Opbhw" predecessor_AbstractAction="_Xr8bMH1JEeySLaOi7Opbhw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_YBP80H1JEeySLaOi7Opbhw" describedService__SEFF="_SEnbwH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_YO-20H1JEeySLaOi7Opbhw" successor_AbstractAction="_YO-20X1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_YO-20X1JEeySLaOi7Opbhw" predecessor_AbstractAction="_YO-20H1JEeySLaOi7Opbhw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository_1:OperationalDataStoreComponent" id="_8z-vsH1HEeySLaOi7Opbhw" entityName="PersonalRecordsStore">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_X842sH1IEeySLaOi7Opbhw" entityName="PersonalRecordsStore.provided.PersonalRecords" providedInterface__OperationProvidedRole="_MmHywH1IEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_SjBV8H2_EeyLqd4V6z24dg" describedService__SEFF="_OVSDQH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_SzCH4H2_EeyLqd4V6z24dg" successor_AbstractAction="_SzCu8H2_EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_SzCu8H2_EeyLqd4V6z24dg" predecessor_AbstractAction="_SzCH4H2_EeyLqd4V6z24dg"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_TE0bcH2_EeyLqd4V6z24dg" describedService__SEFF="_OWcg4H1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_TV_D8H2_EeyLqd4V6z24dg" successor_AbstractAction="_TV_D8X2_EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_TV_D8X2_EeyLqd4V6z24dg" predecessor_AbstractAction="_TV_D8H2_EeyLqd4V6z24dg"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository_1:OperationalDataStoreComponent" id="__AgRoH1HEeySLaOi7Opbhw" entityName="FinancialRecordsStore">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_VB8IgH1IEeySLaOi7Opbhw" entityName="FinancialRecordsStore.provided.FinancialRecords" providedInterface__OperationProvidedRole="_BDdn4H1IEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UC4mMH2_EeyLqd4V6z24dg" describedService__SEFF="_KJbG0H1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UUAycH2_EeyLqd4V6z24dg" successor_AbstractAction="_UUBZgH2_EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UUBZgH2_EeyLqd4V6z24dg" predecessor_AbstractAction="_UUAycH2_EeyLqd4V6z24dg"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UlMCAH2_EeyLqd4V6z24dg" describedService__SEFF="_KXtacH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_U0zLUH2_EeyLqd4V6z24dg" successor_AbstractAction="_U0zLUX2_EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_U0zLUX2_EeyLqd4V6z24dg" predecessor_AbstractAction="_U0zLUH2_EeyLqd4V6z24dg"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_f5KwwH1IEeySLaOi7Opbhw" entityName="DiagnosticsLogic">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_OCChsH1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.provided.Diagnostics" providedInterface__OperationProvidedRole="_iU7okH1IEeySLaOi7Opbhw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_R0rF0H1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.required.MedicalRecords" requiredInterface__OperationRequiredRole="_QnxDQH1IEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OCTAYH1JEeySLaOi7Opbhw" describedService__SEFF="_trTq8H1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_OCTAYX1JEeySLaOi7Opbhw" successor_AbstractAction="_esynwH1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_OCTAYn1JEeySLaOi7Opbhw" predecessor_AbstractAction="_esynwH1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_esynwH1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.addPatientHistory.callDB" predecessor_AbstractAction="_OCTAYX1JEeySLaOi7Opbhw" successor_AbstractAction="_OCTAYn1JEeySLaOi7Opbhw" calledService_ExternalService="_SDSmEH1IEeySLaOi7Opbhw" role_ExternalService="_R0rF0H1JEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_mVoBYH1JEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_mVoBYX1JEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OEKooH1JEeySLaOi7Opbhw" describedService__SEFF="_53CoAH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_OELPsH1JEeySLaOi7Opbhw" successor_AbstractAction="_u-158H1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_OELPsX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_u-158H1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_u-158H1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.addDiagnosis.callDB" predecessor_AbstractAction="_OELPsH1JEeySLaOi7Opbhw" successor_AbstractAction="_OELPsX1JEeySLaOi7Opbhw" calledService_ExternalService="_SDSmEH1IEeySLaOi7Opbhw" role_ExternalService="_R0rF0H1JEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_0k48cH1JEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_0k48cX1JEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="diagnosis"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OEYrEH1JEeySLaOi7Opbhw" describedService__SEFF="__SNQMH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_OEZSIH1JEeySLaOi7Opbhw" successor_AbstractAction="_3V9V4H1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_OEZSIX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_6a6UoH1JEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_3V9V4H1JEeySLaOi7Opbhw" entityName="DiagnosticsLogic.getTreatments.callDB" predecessor_AbstractAction="_OEZSIH1JEeySLaOi7Opbhw" successor_AbstractAction="_6a6UoH1JEeySLaOi7Opbhw" calledService_ExternalService="_SEnbwH1IEeySLaOi7Opbhw" role_ExternalService="_R0rF0H1JEeySLaOi7Opbhw">
+        <returnVariableUsage__CallReturnAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_Dcr3IH1KEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_Dcr3IX1KEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatments"/>
+        </returnVariableUsage__CallReturnAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_6a6UoH1JEeySLaOi7Opbhw" entityName="DiagnocistsLogic.getTreatments.return" predecessor_AbstractAction="_3V9V4H1JEeySLaOi7Opbhw" successor_AbstractAction="_OEZSIX1JEeySLaOi7Opbhw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_FWVgYH1KEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_FWVgYX1KEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_OElfYH1JEeySLaOi7Opbhw" describedService__SEFF="_3Lj5MH1IEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_OEmGcH1JEeySLaOi7Opbhw" successor_AbstractAction="_G8x5wH1KEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_OEmGcX1JEeySLaOi7Opbhw" predecessor_AbstractAction="_JDxbcH1KEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_G8x5wH1KEeySLaOi7Opbhw" entityName="DiagnosticsLogic.getPatientHistory.callDB" predecessor_AbstractAction="_OEmGcH1JEeySLaOi7Opbhw" successor_AbstractAction="_JDxbcH1KEeySLaOi7Opbhw" calledService_ExternalService="_SEnbwH1IEeySLaOi7Opbhw" role_ExternalService="_R0rF0H1JEeySLaOi7Opbhw">
+        <returnVariableUsage__CallReturnAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_OsSjIH1KEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_OsSjIX1KEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+        </returnVariableUsage__CallReturnAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_JDxbcH1KEeySLaOi7Opbhw" entityName="DiagnosticsLogic.getPatientHistory.return" predecessor_AbstractAction="_G8x5wH1KEeySLaOi7Opbhw" successor_AbstractAction="_OEmGcX1JEeySLaOi7Opbhw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_RVNtMH1KEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_RVNtMX1KEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="patientHistory"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository_1:OperationalDataStoreComponent" id="_vGXo0H1KEeySLaOi7Opbhw" entityName="InvoiceStore">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1gi28H1KEeySLaOi7Opbhw" entityName="InvoiceStore.provided.Invoices" providedInterface__OperationProvidedRole="_wKafwH1KEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_2xBnYH1KEeySLaOi7Opbhw" describedService__SEFF="_xMaIQH1KEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_3DGO0H1KEeySLaOi7Opbhw" successor_AbstractAction="_3DGO0X1KEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_3DGO0X1KEeySLaOi7Opbhw" predecessor_AbstractAction="_3DGO0H1KEeySLaOi7Opbhw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_3TYGgH1KEeySLaOi7Opbhw" describedService__SEFF="_yoH4UH1KEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_3j510H1KEeySLaOi7Opbhw" successor_AbstractAction="_3j510X1KEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_3j510X1KEeySLaOi7Opbhw" predecessor_AbstractAction="_3j510H1KEeySLaOi7Opbhw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_8PuEsH1KEeySLaOi7Opbhw" entityName="HospitalManagementLogic">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_J3ZwcH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.provided.HospitalManagement" providedInterface__OperationProvidedRole="_X5B_gH1KEeySLaOi7Opbhw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_-goXYH1KEeySLaOi7Opbhw" entityName="HospitalManagementLogic.required.FinancialRecords" requiredInterface__OperationRequiredRole="_BDdn4H1IEeySLaOi7Opbhw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_AeOsgH1LEeySLaOi7Opbhw" entityName="HospitalManagementLogic.required.PersonalRecords" requiredInterface__OperationRequiredRole="_MmHywH1IEeySLaOi7Opbhw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J3lWoH1NEeySLaOi7Opbhw" describedService__SEFF="_n1eOEH1KEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J3l9sH1NEeySLaOi7Opbhw" successor_AbstractAction="_YEEqgH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J3l9sX1NEeySLaOi7Opbhw" predecessor_AbstractAction="_YEEqgH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_YEEqgH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.addContactInformation.callDB" predecessor_AbstractAction="_J3l9sH1NEeySLaOi7Opbhw" successor_AbstractAction="_J3l9sX1NEeySLaOi7Opbhw" calledService_ExternalService="_OVSDQH1IEeySLaOi7Opbhw" role_ExternalService="_AeOsgH1LEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_fr_eIH1NEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_fr_eIX1NEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J3yyAH1NEeySLaOi7Opbhw" describedService__SEFF="_AZFb4H1NEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J3yyAX1NEeySLaOi7Opbhw" successor_AbstractAction="_hnL_gH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J3yyAn1NEeySLaOi7Opbhw" predecessor_AbstractAction="_lGW1EH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_hnL_gH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatments.callDB" predecessor_AbstractAction="_J3yyAX1NEeySLaOi7Opbhw" successor_AbstractAction="_lGW1EH1NEeySLaOi7Opbhw" calledService_ExternalService="_KXtacH1IEeySLaOi7Opbhw" role_ExternalService="_-goXYH1KEeySLaOi7Opbhw">
+        <returnVariableUsage__CallReturnAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_oKVjcH1NEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_oKVjcX1NEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatments"/>
+        </returnVariableUsage__CallReturnAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_lGW1EH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatments.return" predecessor_AbstractAction="_hnL_gH1NEeySLaOi7Opbhw" successor_AbstractAction="_J3yyAn1NEeySLaOi7Opbhw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_vlcqIH1NEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_vlcqIX1NEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J38jAH1NEeySLaOi7Opbhw" describedService__SEFF="_D6YqUH1LEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J38jAX1NEeySLaOi7Opbhw" successor_AbstractAction="_x-lrwH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J38jAn1NEeySLaOi7Opbhw" predecessor_AbstractAction="_x-lrwH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_x-lrwH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.addTreatmentPrices" predecessor_AbstractAction="_J38jAX1NEeySLaOi7Opbhw" successor_AbstractAction="_J38jAn1NEeySLaOi7Opbhw" calledService_ExternalService="_KJbG0H1IEeySLaOi7Opbhw" role_ExternalService="_-goXYH1KEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_3jxLkH1NEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_3jxLkX1NEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4FF4H1NEeySLaOi7Opbhw" describedService__SEFF="_kS_l0H1KEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J4Fs8H1NEeySLaOi7Opbhw" successor_AbstractAction="_5QWpMH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J4Fs8X1NEeySLaOi7Opbhw" predecessor_AbstractAction="_5QWpMH1NEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_5QWpMH1NEeySLaOi7Opbhw" entityName="HospitalManagementLogic.addPaymentInformation.callDB" predecessor_AbstractAction="_J4Fs8H1NEeySLaOi7Opbhw" successor_AbstractAction="_J4Fs8X1NEeySLaOi7Opbhw" calledService_ExternalService="_KJbG0H1IEeySLaOi7Opbhw" role_ExternalService="_-goXYH1KEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="__DtH4H1NEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="__DtH4X1NEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="paymentInformation"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4O24H1NEeySLaOi7Opbhw" describedService__SEFF="_8w7CYH1MEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J4O24X1NEeySLaOi7Opbhw" successor_AbstractAction="_COHOYH1OEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J4O24n1NEeySLaOi7Opbhw" predecessor_AbstractAction="_COHOYH1OEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_COHOYH1OEeySLaOi7Opbhw" entityName="HospitalManagementLogic.addTreatments.callDB" predecessor_AbstractAction="_J4O24X1NEeySLaOi7Opbhw" successor_AbstractAction="_J4O24n1NEeySLaOi7Opbhw" calledService_ExternalService="_KJbG0H1IEeySLaOi7Opbhw" role_ExternalService="_-goXYH1KEeySLaOi7Opbhw">
+        <inputVariableUsages__CallAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_IMZxwH1OEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_IMaY0H1OEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="treatments"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="record"/>
+        </inputVariableUsages__CallAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_J4XZwH1NEeySLaOi7Opbhw" describedService__SEFF="_HvghwH1LEeySLaOi7Opbhw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_J4YA0H1NEeySLaOi7Opbhw" successor_AbstractAction="_K3sTUH1OEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_J4YA0X1NEeySLaOi7Opbhw" predecessor_AbstractAction="_L3C3gH1OEeySLaOi7Opbhw"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_K3sTUH1OEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatmentPrices.callDB" predecessor_AbstractAction="_J4YA0H1NEeySLaOi7Opbhw" successor_AbstractAction="_L3C3gH1OEeySLaOi7Opbhw" calledService_ExternalService="_KXtacH1IEeySLaOi7Opbhw" role_ExternalService="_-goXYH1KEeySLaOi7Opbhw">
+        <returnVariableUsage__CallReturnAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_TIDnAH1OEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_TIDnAX1OEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+        </returnVariableUsage__CallReturnAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_L3C3gH1OEeySLaOi7Opbhw" entityName="HospitalManagementLogic.getTreatmentPrices.return" predecessor_AbstractAction="_K3sTUH1OEeySLaOi7Opbhw" successor_AbstractAction="_J4YA0X1NEeySLaOi7Opbhw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_Vu-l8H1OEeySLaOi7Opbhw"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_Vu-l8X1OEeySLaOi7Opbhw">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="treatmentPrices"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_U8SiIH25EeyLqd4V6z24dg" describedService__SEFF="_QehWUH25EeyLqd4V6z24dg">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_Vb4BIH25EeyLqd4V6z24dg" successor_AbstractAction="_XBQDgH25EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_Vb4BIX25EeyLqd4V6z24dg" predecessor_AbstractAction="_aAMg4H25EeyLqd4V6z24dg"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_XBQDgH25EeyLqd4V6z24dg" entityName="HospitalManagementLogic.getContactInformation.callDB" predecessor_AbstractAction="_Vb4BIH25EeyLqd4V6z24dg" successor_AbstractAction="_aAMg4H25EeyLqd4V6z24dg" calledService_ExternalService="_OWcg4H1IEeySLaOi7Opbhw" role_ExternalService="_AeOsgH1LEeySLaOi7Opbhw">
+        <returnVariableUsage__CallReturnAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_gajVMH25EeyLqd4V6z24dg"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_gajVMX25EeyLqd4V6z24dg">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+        </returnVariableUsage__CallReturnAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_aAMg4H25EeyLqd4V6z24dg" entityName="HospitalManagementLogic.getContactInformation.return" predecessor_AbstractAction="_XBQDgH25EeyLqd4V6z24dg" successor_AbstractAction="_Vb4BIX25EeyLqd4V6z24dg">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+            <specification_VariableCharacterisation specification="false"/>
+            <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_kt6Awn25EeyLqd4V6z24dg"/>
+            <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_kt6Aw325EeyLqd4V6z24dg">
+              <namedReference xsi:type="stoex:VariableReference" referenceName="contactInformation"/>
+            </rhs>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_BDdn4H1IEeySLaOi7Opbhw" entityName="FinancialRecords">
+    <signatures__OperationInterface id="_KJbG0H1IEeySLaOi7Opbhw" entityName="add">
+      <parameters__OperationSignature dataType__Parameter="_IX3poH1IEeySLaOi7Opbhw" parameterName="record"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_KXtacH1IEeySLaOi7Opbhw" entityName="get" returnType__OperationSignature="_IX3poH1IEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MmHywH1IEeySLaOi7Opbhw" entityName="PersonalRecords">
+    <signatures__OperationInterface id="_OVSDQH1IEeySLaOi7Opbhw" entityName="add">
+      <parameters__OperationSignature dataType__Parameter="_JLHEcH1IEeySLaOi7Opbhw" parameterName="record"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_OWcg4H1IEeySLaOi7Opbhw" entityName="get" returnType__OperationSignature="_JLHEcH1IEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_QnxDQH1IEeySLaOi7Opbhw" entityName="MedicalRecords">
+    <signatures__OperationInterface id="_SDSmEH1IEeySLaOi7Opbhw" entityName="add">
+      <parameters__OperationSignature dataType__Parameter="_FmegEH1IEeySLaOi7Opbhw" parameterName="record"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_SEnbwH1IEeySLaOi7Opbhw" entityName="get" returnType__OperationSignature="_FmegEH1IEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_iU7okH1IEeySLaOi7Opbhw" entityName="Diagnostics">
+    <signatures__OperationInterface id="_trTq8H1IEeySLaOi7Opbhw" entityName="addPatientHistory">
+      <parameters__OperationSignature dataType__Parameter="_sDrl0H1IEeySLaOi7Opbhw" parameterName="patientHistory"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_3Lj5MH1IEeySLaOi7Opbhw" entityName="getPatientHistory" returnType__OperationSignature="_sDrl0H1IEeySLaOi7Opbhw"/>
+    <signatures__OperationInterface id="_53CoAH1IEeySLaOi7Opbhw" entityName="addDiagnosis">
+      <parameters__OperationSignature dataType__Parameter="_68YfcH1IEeySLaOi7Opbhw" parameterName="diagnosis"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="__SNQMH1IEeySLaOi7Opbhw" entityName="getTreatments" returnType__OperationSignature="_BM9FoH1JEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_X5B_gH1KEeySLaOi7Opbhw" entityName="HospitalManagement">
+    <signatures__OperationInterface id="_kS_l0H1KEeySLaOi7Opbhw" entityName="addPaymentInformation">
+      <parameters__OperationSignature dataType__Parameter="_aIW90H1KEeySLaOi7Opbhw" parameterName="paymentInformation"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_n1eOEH1KEeySLaOi7Opbhw" entityName="addContactInformation">
+      <parameters__OperationSignature dataType__Parameter="_bRqvQH1KEeySLaOi7Opbhw" parameterName="contactInformation"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_D6YqUH1LEeySLaOi7Opbhw" entityName="addTreatmentPrices">
+      <parameters__OperationSignature dataType__Parameter="_eTp5kH1KEeySLaOi7Opbhw" parameterName="treatmentPrices"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_HvghwH1LEeySLaOi7Opbhw" entityName="getTreatmentPrices" returnType__OperationSignature="_eTp5kH1KEeySLaOi7Opbhw"/>
+    <signatures__OperationInterface id="_8w7CYH1MEeySLaOi7Opbhw" entityName="addTreatments">
+      <parameters__OperationSignature dataType__Parameter="_AnSMwH1JEeySLaOi7Opbhw" parameterName="treatments"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_AZFb4H1NEeySLaOi7Opbhw" entityName="getTreatments" returnType__OperationSignature="_BM9FoH1JEeySLaOi7Opbhw"/>
+    <signatures__OperationInterface id="_QehWUH25EeyLqd4V6z24dg" entityName="getContactInformation" returnType__OperationSignature="_bRqvQH1KEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_wKafwH1KEeySLaOi7Opbhw" entityName="Invoices">
+    <signatures__OperationInterface id="_xMaIQH1KEeySLaOi7Opbhw" entityName="add">
+      <parameters__OperationSignature dataType__Parameter="_xz8CUH1KEeySLaOi7Opbhw" parameterName="invoice"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_yoH4UH1KEeySLaOi7Opbhw" entityName="get" returnType__OperationSignature="_xz8CUH1KEeySLaOi7Opbhw"/>
+  </interfaces__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_FmegEH1IEeySLaOi7Opbhw" entityName="MedicalRecord"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_IX3poH1IEeySLaOi7Opbhw" entityName="FinancialRecord"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_JLHEcH1IEeySLaOi7Opbhw" entityName="PersonalRecord"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_l-SU4H1IEeySLaOi7Opbhw" entityName="TestResult"/>
+  <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_mwfN4H1IEeySLaOi7Opbhw" entityName="TestResults" innerType_CollectionDataType="_l-SU4H1IEeySLaOi7Opbhw"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sDrl0H1IEeySLaOi7Opbhw" entityName="PatientHistory"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_68YfcH1IEeySLaOi7Opbhw" entityName="Diagnosis"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_AnSMwH1JEeySLaOi7Opbhw" entityName="Treatment"/>
+  <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_BM9FoH1JEeySLaOi7Opbhw" entityName="Treatments" innerType_CollectionDataType="_AnSMwH1JEeySLaOi7Opbhw"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_aIW90H1KEeySLaOi7Opbhw" entityName="PaymentInformation"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_bRqvQH1KEeySLaOi7Opbhw" entityName="ContactInformation"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_dXhogH1KEeySLaOi7Opbhw" entityName="TreatmentPrice"/>
+  <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_eTp5kH1KEeySLaOi7Opbhw" entityName="TreatmentPrices" innerType_CollectionDataType="_dXhogH1KEeySLaOi7Opbhw"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_hNAFQH1KEeySLaOi7Opbhw" entityName="PricedTreatment"/>
+  <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_iMxgMH1KEeySLaOi7Opbhw" entityName="PricedTreatments" innerType_CollectionDataType="_hNAFQH1KEeySLaOi7Opbhw"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_xz8CUH1KEeySLaOi7Opbhw" entityName="Invoice"/>
+</repository:Repository>

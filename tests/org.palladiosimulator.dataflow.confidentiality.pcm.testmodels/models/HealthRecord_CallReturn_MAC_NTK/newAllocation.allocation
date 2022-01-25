@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_YWpEYH1REeyMfpB2Ap20pg" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="newResourceEnvironment.resourceenvironment#/"/>
+  <system_Allocation href="newSystem.system#_YKwE0H1OEeySLaOi7Opbhw"/>
+  <allocationContexts_Allocation id="_dTA3wH1REeyMfpB2Ap20pg" entityName="Allocation_Assembly_MedicalRecordsStore">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_XZ5IQH1REeyMfpB2Ap20pg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_hXBxsH1PEeySLaOi7Opbhw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_dTCF4H1REeyMfpB2Ap20pg" entityName="Allocation_Assembly_FinancialRecordsStore">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_XZ5IQH1REeyMfpB2Ap20pg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_jBtK0H1PEeySLaOi7Opbhw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_dTCs831REeyMfpB2Ap20pg" entityName="Allocation_Assembly_DiagnosticsLogic">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_XZ5IQH1REeyMfpB2Ap20pg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_cC1UMH1PEeySLaOi7Opbhw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_dTDUA31REeyMfpB2Ap20pg" entityName="Allocation_Assembly_HospitalManagementLogic">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_XZ5IQH1REeyMfpB2Ap20pg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_ZNcbcH1PEeySLaOi7Opbhw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_dTD7E31REeyMfpB2Ap20pg" entityName="Allocation_Assembly_PersonalRecordsStore">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_XZ5IQH1REeyMfpB2Ap20pg"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_iEhJ0H1PEeySLaOi7Opbhw"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

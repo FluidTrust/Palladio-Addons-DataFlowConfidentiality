@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characteristics:CharacteristicTypeDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/characteristics" id="_r8VdIH1HEeySLaOi7Opbhw">
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_z02RgX1HEeySLaOi7Opbhw" name="NeedsToKnow" type="_sQP3on1HEeySLaOi7Opbhw"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_0R6oAX1HEeySLaOi7Opbhw" name="Compartments" type="_sQP3on1HEeySLaOi7Opbhw"/>
+  <characteristicEnumerations id="_sQP3on1HEeySLaOi7Opbhw" name="Purpose">
+    <literals id="_vrWskH1HEeySLaOi7Opbhw" name="Medical"/>
+    <literals id="_v1JhwH1HEeySLaOi7Opbhw" name="Financial"/>
+    <literals id="_wCidgH1HEeySLaOi7Opbhw" name="Personal"/>
+  </characteristicEnumerations>
+</characteristics:CharacteristicTypeDictionary>

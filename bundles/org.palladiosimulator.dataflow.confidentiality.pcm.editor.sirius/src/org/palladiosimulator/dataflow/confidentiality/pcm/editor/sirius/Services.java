@@ -19,10 +19,10 @@ import org.eclipse.xtext.ui.editor.embedded.IEditedResourceProvider;
 import org.palladiosimulator.dataflow.confidentiality.pcm.dddsl.ui.internal.DddslActivator;
 import org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assignments.SerializationHelper;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityVariableCharacterisation;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.Characteristics;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicsFactory;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.EnumCharacteristic;
-import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.profile.ProfileConstants;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.EnumCharacteristicType;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Enumeration;
@@ -63,9 +63,9 @@ public class Services {
     }
 
     public Collection<EnumCharacteristicType> findAllEnumCharacteristicTypes(EObject self) {
-        return QueryHelpers.findDictionariesInSemanticResources(self)
+        return QueryHelpers.findCharacteristicTypeDictionariesInSemanticResources(self)
             .stream()
-            .map(PCMDataDictionary::getCharacteristicTypes)
+            .map(CharacteristicTypeDictionary::getCharacteristicTypes)
             .flatMap(Collection::stream)
             .filter(EnumCharacteristicType.class::isInstance)
             .map(EnumCharacteristicType.class::cast)
@@ -136,7 +136,7 @@ public class Services {
     }
 
     protected static String serialize(ConfidentialityVariableCharacterisation characterisation) throws IOException {
-        var dictionaries = QueryHelpers.findDictionariesInSemanticResources(characterisation);
+        var dictionaries = QueryHelpers.findCharacteristicTypeDictionariesInSemanticResources(characterisation);
 
         // build virtual dictionary
         var dict = SERIALIZATION_HELPER.buildSerializationModel(behaviour -> {

@@ -3,7 +3,7 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.editor.sirius.assignm
 import java.util.Collection;
 
 import org.eclipse.swt.widgets.Shell;
-import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary;
 import org.palladiosimulator.pcm.parameter.VariableUsage;
 
 import com.google.inject.Inject;
@@ -15,7 +15,7 @@ public class AssignmentsEditorFactory {
     private Injector injector;
 
     public AssignmentsEditorImpl create(Shell parentShell, String outputName, Collection<String> usableInputs,
-            Collection<PCMDataDictionary> dictionaries, VariableUsage existingUsage) {
+            Collection<CharacteristicTypeDictionary> dictionaries, VariableUsage existingUsage) {
         var dialog = new AssignmentsEditorImpl(parentShell, outputName, usableInputs, dictionaries, existingUsage);
         injector.injectMembers(dialog);
         return dialog;

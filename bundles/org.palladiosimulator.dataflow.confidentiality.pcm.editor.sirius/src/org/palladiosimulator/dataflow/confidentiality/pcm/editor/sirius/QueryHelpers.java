@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
-import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary;
 
 public final class QueryHelpers {
 
@@ -15,14 +15,14 @@ public final class QueryHelpers {
         // intentionally left blank
     }
 
-    public static Collection<PCMDataDictionary> findDictionariesInSemanticResources(EObject semanticDiagramElement) {
+    public static Collection<CharacteristicTypeDictionary> findCharacteristicTypeDictionariesInSemanticResources(EObject semanticDiagramElement) {
         Session session = SessionManager.INSTANCE.getSession(semanticDiagramElement);
         return session.getSemanticResources()
             .stream()
             .map(Resource::getContents)
             .flatMap(Collection::stream)
-            .filter(PCMDataDictionary.class::isInstance)
-            .map(PCMDataDictionary.class::cast)
+            .filter(CharacteristicTypeDictionary.class::isInstance)
+            .map(CharacteristicTypeDictionary.class::cast)
             .collect(Collectors.toList());
     }
 

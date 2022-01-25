@@ -90,7 +90,7 @@ public class CreateVariableCharacterisationsViaEditor implements IExternalJavaAc
             .getShell();
 
         // find dictionaries
-        var dictionaries = QueryHelpers.findDictionariesInSemanticResources(variableUsage);
+        var dictionaries = QueryHelpers.findCharacteristicTypeDictionariesInSemanticResources(variableUsage);
 
         // find output variable name
         var outputName = variableUsage.getNamedReference__VariableUsage()

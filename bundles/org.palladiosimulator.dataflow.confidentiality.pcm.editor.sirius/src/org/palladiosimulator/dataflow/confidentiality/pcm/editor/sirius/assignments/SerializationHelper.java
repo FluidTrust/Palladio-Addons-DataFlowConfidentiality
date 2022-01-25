@@ -19,6 +19,7 @@ import org.eclipse.xtext.ui.editor.embedded.IEditedResourceProvider;
 import org.eclipse.xtext.util.StringInputStream;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.BehaviourFactory;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.ReusableBehaviour;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.DictionaryFactory;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary;
 import org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.CharacteristicType;
@@ -40,7 +41,7 @@ public final class SerializationHelper {
     }
 
     public PCMDataDictionary buildSerializationModel(Consumer<ReusableBehaviour> behaviorBuilder, String lhsName,
-            Collection<String> inputs, Collection<PCMDataDictionary> dictionaries) {
+            Collection<String> inputs, Collection<CharacteristicTypeDictionary> dictionaries) {
         var dict = DictionaryFactory.eINSTANCE.createPCMDataDictionary();
 
         // create characteristic types
@@ -68,14 +69,14 @@ public final class SerializationHelper {
         return dict;
     }
 
-    public PCMDataDictionary parseDict(String text, Collection<PCMDataDictionary> dictionaries) throws IOException {
+    public PCMDataDictionary parseDict(String text, Collection<CharacteristicTypeDictionary> dictionaries) throws IOException {
         var parsedDict = parseDict(text);
         var parsedVariableUsages = findVariableUsages(parsedDict);
         parsedVariableUsages.forEach(usage -> replaceCharacteristicTypes(usage, dictionaries));
         return parsedDict;
     }
 
-    public String serializeDict(PCMDataDictionary dict, Collection<PCMDataDictionary> dictionaries) throws IOException {
+    public String serializeDict(PCMDataDictionary dict, Collection<CharacteristicTypeDictionary> dictionaries) throws IOException {
         var copy = EcoreUtil.copy(dict);
         var dictionariestoUse = new ArrayList<>(dictionaries);
         if (dictionariestoUse.contains(dict)) {
@@ -107,7 +108,7 @@ public final class SerializationHelper {
     }
 
     protected static void replaceCharacteristicTypes(VariableUsage variableUsage,
-            Collection<PCMDataDictionary> dictionaries) {
+            Collection<CharacteristicTypeDictionary> dictionaries) {
 
         // fix references to data dictionary
         eAllContentsStream(variableUsage).filter(EnumCharacteristicReference.class::isInstance)
@@ -142,7 +143,7 @@ public final class SerializationHelper {
     }
 
     protected static Optional<CharacteristicType> findCharacteristicTypeInDicts(String name,
-            Collection<PCMDataDictionary> dictionaries) {
+            Collection<CharacteristicTypeDictionary> dictionaries) {
         return dictionaries.stream()
             .map(dict -> findCharacteristicTypeInDict(name, dict))
             .filter(Optional::isPresent)
@@ -150,7 +151,7 @@ public final class SerializationHelper {
             .findFirst();
     }
 
-    protected static Optional<CharacteristicType> findCharacteristicTypeInDict(String name, PCMDataDictionary dict) {
+    protected static Optional<CharacteristicType> findCharacteristicTypeInDict(String name, CharacteristicTypeDictionary dict) {
         return dict.getCharacteristicTypes()
             .stream()
             .filter(ct -> name.equals(ct.getName()))

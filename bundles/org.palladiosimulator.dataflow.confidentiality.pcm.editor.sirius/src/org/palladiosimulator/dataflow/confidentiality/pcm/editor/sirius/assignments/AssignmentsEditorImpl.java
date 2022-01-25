@@ -23,6 +23,7 @@ import org.eclipse.xtext.validation.IResourceValidator;
 import org.eclipse.xtext.validation.Issue;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.ConfidentialityVariableCharacterisation;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.behaviour.ReusableBehaviour;
+import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary;
 import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.dictionary.PCMDataDictionary;
 import org.palladiosimulator.pcm.parameter.VariableUsage;
 
@@ -45,7 +46,7 @@ public class AssignmentsEditorImpl extends TitleAreaDialog {
 
     private final String outputName;
     private final Collection<String> usableInputs;
-    private final Collection<PCMDataDictionary> dictionaries;
+    private final Collection<CharacteristicTypeDictionary> dictionaries;
     private final VariableUsage existingUsage;
 
     private EmbeddedEditorModelAccess modelAccess;
@@ -55,7 +56,7 @@ public class AssignmentsEditorImpl extends TitleAreaDialog {
     private SerializationHelper serializationHelper;
 
     public AssignmentsEditorImpl(Shell parentShell, String outputName, Collection<String> usableInputs,
-            Collection<PCMDataDictionary> dictionaries, VariableUsage existingUsage) {
+            Collection<CharacteristicTypeDictionary> dictionaries, VariableUsage existingUsage) {
         super(parentShell);
         this.outputName = outputName;
         this.usableInputs = usableInputs;

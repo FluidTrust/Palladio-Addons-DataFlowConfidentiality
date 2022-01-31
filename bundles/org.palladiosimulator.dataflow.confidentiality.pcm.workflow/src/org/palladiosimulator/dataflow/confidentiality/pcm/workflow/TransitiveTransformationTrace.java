@@ -17,8 +17,10 @@ public interface TransitiveTransformationTrace {
     Collection<String> getFactIds(EObject pcmElement, Stack<Identifier> pcmElementContext);
     Collection<String> getFactId(Predicate<CharacteristicType> predicate);
     Collection<String> getLiteralFactIds(EObject pcmElement);
+
+    Collection<String> getLiteralFactIdsBySemantic(EObject pcmElement);
     Collection<PCMTraceElement> getPCMEntries(String factId);
-    
+
     DataFlowDiagram getDfd();
-    
+
 }

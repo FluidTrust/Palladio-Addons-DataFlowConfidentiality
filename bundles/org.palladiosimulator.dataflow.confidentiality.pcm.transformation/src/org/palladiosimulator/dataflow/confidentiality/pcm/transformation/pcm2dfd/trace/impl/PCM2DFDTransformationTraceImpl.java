@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.DFDTraceElement;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCM2DFDTransformationTrace;
 import org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.trace.PCMContextHavingTraceElement;
@@ -32,12 +33,12 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
 
     @Override
     public void addTraceEntry(TraceEntry entry) {
-        traceEntries.add(entry);
+        this.traceEntries.add(entry);
     }
 
     @Override
     public Collection<DFDTraceElement> getDFDEntries(EObject pcmElement) {
-        return traceEntries.stream()
+        return this.traceEntries.stream()
             .filter(entry -> entry.getPCMEntry() instanceof PCMSingleTraceElement)
             .filter(entry -> ((PCMSingleTraceElement) entry.getPCMEntry()).getElement()
                 .equals(pcmElement))
@@ -47,7 +48,7 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
 
     @Override
     public Collection<DFDTraceElement> getDFDEntries(EObject pcmElement, Stack<Identifier> pcmElementContext) {
-        return traceEntries.stream()
+        return this.traceEntries.stream()
             .filter(entry -> entry.getPCMEntry() instanceof PCMContextHavingTraceElement)
             .filter(entry -> ((PCMContextHavingTraceElement) entry.getPCMEntry()).getContext()
                 .equals(pcmElementContext))
@@ -57,7 +58,7 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
 
     @Override
     public Collection<PCMTraceElement> getPCMEntries(Identifier dfdElement) {
-        return traceEntries.stream()
+        return this.traceEntries.stream()
             .filter(entry -> entry.getDFDEntry()
                 .getElement()
                 .equals(dfdElement))
@@ -67,7 +68,7 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
 
     @Override
     public Collection<DFDTraceElement> getDFDEntries(Predicate<PCMTraceElement> predicate) {
-        return traceEntries.stream()
+        return this.traceEntries.stream()
             .filter(e -> predicate.test(e.getPCMEntry()))
             .map(TraceEntry::getDFDEntry)
             .collect(Collectors.toList());
@@ -75,22 +76,33 @@ public class PCM2DFDTransformationTraceImpl implements PCM2DFDTransformationTrac
 
     @Override
     public void addAnnotationEntry(Object annotation, EnumCharacteristicType characteristicType) {
-        annotationCtEntry.put(annotation, characteristicType);
+        this.annotationCtEntry.put(annotation, characteristicType);
     }
 
     @Override
     public void addAnnotationEntry(Object annotation, Literal literal) {
-        annotationLiteralEntry.put(annotation, literal);
+        this.annotationLiteralEntry.put(annotation, literal);
     }
 
     @Override
     public EnumCharacteristicType getCharacteristicTypeFromAnnotation(Object annotation) {
-        return annotationCtEntry.get(annotation);
+        return this.annotationCtEntry.get(annotation);
     }
 
     @Override
     public Literal getLiteralFromAnnotation(Object annotation) {
-        return annotationLiteralEntry.get(annotation);
+        return this.annotationLiteralEntry.get(annotation);
+    }
+
+    @Override
+    public Collection<DFDTraceElement> getDFDEntriesBySemanticEquality(EObject pcmElement) {
+        return this.traceEntries.stream()
+                .filter(entry -> entry.getPCMEntry() instanceof PCMSingleTraceElement)
+            .filter(entry -> EcoreUtil.equals(((PCMSingleTraceElement) entry.getPCMEntry())
+                .getElement()
+                    , pcmElement))
+                .map(TraceEntry::getDFDEntry)
+                .collect(Collectors.toList());
     }
 
 }

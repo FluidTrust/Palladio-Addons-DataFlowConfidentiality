@@ -37,28 +37,28 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
 
     @Override
     public Collection<String> getFactIds(EObject pcmElement) {
-        var dfdElements = pcm2dfdTrace.getDFDEntries(pcmElement);
+        var dfdElements = this.pcm2dfdTrace.getDFDEntries(pcmElement);
         return getFactIds(dfdElements);
     }
 
     @Override
     public Collection<String> getFactIds(EObject pcmElement, Stack<Identifier> pcmElementContext) {
-        var dfdElements = pcm2dfdTrace.getDFDEntries(pcmElement, pcmElementContext);
+        var dfdElements = this.pcm2dfdTrace.getDFDEntries(pcmElement, pcmElementContext);
         return getFactIds(dfdElements);
     }
 
     protected Collection<String> getFactIds(Collection<DFDTraceElement> dfdElements) {
         var elements = dfdElements.stream()
-            .map(dfdElement -> dfdElement.getElement())
+            .map(DFDTraceElement::getElement)
             .collect(Collectors.toList());
         var dfdStream = elements.stream()
             .filter(Entity.class::isInstance)
             .map(Entity.class::cast)
-            .map(dfd2prologTrace::getFactId);
+            .map(this.dfd2prologTrace::getFactId);
         var ddStream = elements.stream()
             .filter(org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Entity.class::isInstance)
             .map(org.palladiosimulator.dataflow.dictionary.characterized.DataDictionaryCharacterized.Entity.class::cast)
-            .map(dfd2prologTrace::getFactId);
+            .map(this.dfd2prologTrace::getFactId);
         return Stream.concat(dfdStream, ddStream)
             .filter(Optional::isPresent)
             .map(Optional::get)
@@ -67,13 +67,13 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
 
     @Override
     public Collection<PCMTraceElement> getPCMEntries(String factId) {
-        Optional<String> dfdId = dfd2prologTrace.getDfdId(factId);
+        Optional<String> dfdId = this.dfd2prologTrace.getDfdId(factId);
         if (dfdId.isEmpty()) {
             return Collections.emptyList();
         }
-        Optional<Identifier> dfdElement = dfdId.flatMap(id -> dfd2prologTrace.resolveDfdElement(id, Identifier.class));
+        Optional<Identifier> dfdElement = dfdId.flatMap(id -> this.dfd2prologTrace.resolveDfdElement(id, Identifier.class));
 
-        return dfdElement.map(pcm2dfdTrace::getPCMEntries)
+        return dfdElement.map(this.pcm2dfdTrace::getPCMEntries)
             .orElse(Collections.emptyList())
             .stream()
             .map(PCMTraceElement.class::cast)
@@ -82,19 +82,23 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
 
     @Override
     public DataFlowDiagram getDfd() {
-        return dfd2prologTrace.getDfd();
+        return this.dfd2prologTrace.getDfd();
     }
 
     @Override
     public Collection<String> getLiteralFactIds(EObject pcmElement) {
-        var dfdElements = pcm2dfdTrace.getDFDEntries(pcmElement);
+        var dfdElements = this.pcm2dfdTrace.getDFDEntries(pcmElement);
+        return getLiteralFactIDsFromDFD(dfdElements);
+    }
+
+    private Collection<String> getLiteralFactIDsFromDFD(Collection<DFDTraceElement> dfdElements) {
         Collection<Optional<String>> result = new ArrayList<>();
         for (var dfdElement : dfdElements) {
             var realElement = dfdElement.getElement();
             if (realElement instanceof Component) {
-                result.add(dfd2prologTrace.getFactId((Component) realElement));
+                result.add(this.dfd2prologTrace.getFactId((Component) realElement));
             } else if (realElement instanceof Literal) {
-                result.add(dfd2prologTrace.getFactId((Literal) realElement));
+                result.add(this.dfd2prologTrace.getFactId((Literal) realElement));
             }
         }
         return result.stream()
@@ -116,17 +120,23 @@ public class TransitiveTransformationTraceImpl implements TransitiveTransformati
             return false;
         };
 
-        Collection<String> foundIds = pcm2dfdTrace.getDFDEntries(convertedPredicate)
+        Collection<String> foundIds = this.pcm2dfdTrace.getDFDEntries(convertedPredicate)
             .stream()
             .map(DFDTraceElement::getElement)
             .filter(CharacteristicType.class::isInstance)
             .map(CharacteristicType.class::cast)
-            .map(dfd2prologTrace::getFactId)
+            .map(this.dfd2prologTrace::getFactId)
             .filter(Optional::isPresent)
             .map(Optional::get)
             .collect(Collectors.toList());
 
         return foundIds;
+    }
+
+    @Override
+    public Collection<String> getLiteralFactIdsBySemantic(EObject pcmElement) {
+        var dfdElements = this.pcm2dfdTrace.getDFDEntriesBySemanticEquality(pcmElement);
+        return getLiteralFactIDsFromDFD(dfdElements);
     }
 
 }

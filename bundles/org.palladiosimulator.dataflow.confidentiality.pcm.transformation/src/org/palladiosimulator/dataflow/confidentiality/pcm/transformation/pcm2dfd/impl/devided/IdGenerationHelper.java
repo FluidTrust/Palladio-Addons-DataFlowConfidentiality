@@ -1,12 +1,12 @@
 package org.palladiosimulator.dataflow.confidentiality.pcm.transformation.pcm2dfd.impl.devided;
 
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 import java.util.Queue;
 import java.util.function.Function;
@@ -63,9 +63,8 @@ public class IdGenerationHelper {
         }
         return input -> {
             byte[] encodedhash = digest.digest(input.getBytes(StandardCharsets.UTF_8));
-            byte[] stringBytes = Base64.getEncoder()
-                .encode(encodedhash);
-            return new String(stringBytes);
+            BigInteger integerRepresentation = new BigInteger(1, encodedhash);
+            return integerRepresentation.toString(36).toUpperCase();
         };
     }
 

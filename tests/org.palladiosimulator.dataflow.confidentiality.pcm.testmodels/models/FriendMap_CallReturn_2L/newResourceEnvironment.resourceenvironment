@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/characteristics" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:org.palladiosimulator.dataflow.confidentiality.pcm.model.profile="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2">
+  <resourceenvironment:ResourceEnvironment entityName="New ResourceEnvironment">
+    <linkingResources__ResourceEnvironment id="_O648IINmEeydpeNEy1O9cA" entityName="LinkingResource1" connectedResourceContainers_LinkingResource="_LThM0INmEeydpeNEy1O9cA _N_Y9MINmEeydpeNEy1O9cA _NQYiIINmEeydpeNEy1O9cA _RZzOkINmEeydpeNEy1O9cA">
+      <communicationLinkResourceSpecifications_LinkingResource id="_O66KQINmEeydpeNEy1O9cA">
+        <latency_CommunicationLinkResourceSpecification/>
+        <throughput_CommunicationLinkResourceSpecification/>
+      </communicationLinkResourceSpecifications_LinkingResource>
+    </linkingResources__ResourceEnvironment>
+    <resourceContainer_ResourceEnvironment id="_LThM0INmEeydpeNEy1O9cA" entityName="Mobile"/>
+    <resourceContainer_ResourceEnvironment id="_NQYiIINmEeydpeNEy1O9cA" entityName="Google"/>
+    <resourceContainer_ResourceEnvironment id="_N_Y9MINmEeydpeNEy1O9cA" entityName="SocialNetwork"/>
+    <resourceContainer_ResourceEnvironment id="_RZzOkINmEeydpeNEy1O9cA" entityName="MapProvider"/>
+  </resourceenvironment:ResourceEnvironment>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_LThM0INmEeydpeNEy1O9cA">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_5cGYIBB1EeuGl5fMWzDLAw"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newResourceEnvironment.resourceenvironment.characteristics#_d0xhgINmEeydpeNEy1O9cA"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_NQYiIINmEeydpeNEy1O9cA">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_5cGYIBB1EeuGl5fMWzDLAw"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newResourceEnvironment.resourceenvironment.characteristics#_evjuwINmEeydpeNEy1O9cA"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_RZzOkINmEeydpeNEy1O9cA">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_5cGYIBB1EeuGl5fMWzDLAw"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newResourceEnvironment.resourceenvironment.characteristics#_fPUz8INmEeydpeNEy1O9cA"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_N_Y9MINmEeydpeNEy1O9cA">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_5cGYIBB1EeuGl5fMWzDLAw"/>
+      <characteristics xsi:type="characteristics:EnumCharacteristic" href="newResourceEnvironment.resourceenvironment.characteristics#_f7DRgINmEeydpeNEy1O9cA"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" location="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

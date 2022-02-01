@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviour:Behaviours xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:behaviour="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:expressions="http://palladiosimulator.org/dataflow/dictionary/characterized/expressions/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_S_TBMINwEeyth_Kqe2ur6g">
+  <dataChannelBehaviour id="_VshccINwEeyth_Kqe2ur6g" entityName="Google.createMap">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_E4SAAINsEeydpeNEy1O9cA"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_12_jYINxEeyth_Kqe2ur6g"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_2eRl04NxEeyth_Kqe2ur6g">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="Google.createMap.sink.Locations.locations"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="Google.createMap.source.Map.map"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_W0piIINwEeyth_Kqe2ur6g" entityName="MapProvider.provideMapCode">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_RZnZoINsEeydpeNEy1O9cA"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_9Ac5YINxEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecINjEeydpeNEy1O9cA"/>
+          <literal href="CharacteristicTypes.characteristics#_WU0edYNjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:True" id="_-s1itoNxEeyth_Kqe2ur6g"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="MapProvider.provideMapCode.source.Code.code"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_XEKk0INwEeyth_Kqe2ur6g" entityName="FriendMap.encryptLocations">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_VjeyAINsEeydpeNEy1O9cA"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_DWf1cINyEeyth_Kqe2ur6g"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_DptFU4NyEeyth_Kqe2ur6g">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="FriendMap.encryptLocations.sinkl.Locations.locations"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_J50YgINyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecoNjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_LMWXY4NyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecINjEeydpeNEy1O9cA"/>
+          <namedReference xsi:type="stoex:VariableReference" referenceName="FriendMap.encryptLocations.sinkl.Locations.locations"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_OxB_EINyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecINjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:False" id="_QCV194NyEeyth_Kqe2ur6g"/>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_Qy03sINyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecINjEeydpeNEy1O9cA"/>
+          <literal href="CharacteristicTypes.characteristics#_WU0edYNjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:True" id="_SAFVBoNyEeyth_Kqe2ur6g"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="FriendMap.encryptLocations.source.Locations.locations"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_XS6ygINwEeyth_Kqe2ur6g" entityName="FriendMap.decryptMap">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_ad5dkINsEeydpeNEy1O9cA"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_qFywwINyEeyth_Kqe2ur6g"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_qcvRI4NyEeyth_Kqe2ur6g">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="FriendMap.decryptMap.sinkl.Map.map"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_srXE0INyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecINjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_twzp84NyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecoNjEeydpeNEy1O9cA"/>
+          <namedReference xsi:type="stoex:VariableReference" referenceName="FriendMap.decryptMap.sinkl.Map.map"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_wsIyoINyEeyth_Kqe2ur6g">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_WU0ecoNjEeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:False" id="_xutp94NyEeyth_Kqe2ur6g"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="FriendMap.decryptMap.source.Map.map"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+</behaviour:Behaviours>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:org.palladiosimulator.indirections.composition="http://palladiosimulator.org/Indirections/Composition/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:repository_1="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/repository" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_4TOLsINlEeydpeNEy1O9cA" entityName="New System">
+  <assemblyContexts__ComposedStructure id="_-ZlF8INlEeydpeNEy1O9cA" entityName="Assembly_FriendMapApp">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_9oGtEINiEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="__ntF8INlEeydpeNEy1O9cA" entityName="Assembly_LocationStore">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository_1:OperationalDataStoreComponent" href="newRepository.repository#_te-48INYEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_AiONcINmEeydpeNEy1O9cA" entityName="Assembly_SocialNetwork">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_3E_w8INYEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_x9t2oINvEeyth_Kqe2ur6g" entityName="Assembly_FriendMap.decryptMap">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_ad5dkINsEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_yuvD4INvEeyth_Kqe2ur6g" entityName="Assembly_FriendMap.encryptLocations">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_VjeyAINsEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_zPDisINvEeyth_Kqe2ur6g" entityName="Assembly_Google.createMap">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_E4SAAINsEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_0sAo4INvEeyth_Kqe2ur6g" entityName="Assembly_MapProvider.provideMapCode">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_RZnZoINsEeydpeNEy1O9cA"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_HKmPoINmEeydpeNEy1O9cA" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_8H268INlEeydpeNEy1O9cA" assemblyContext_ProvidedDelegationConnector="_AiONcINmEeydpeNEy1O9cA">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#_4Q3uMINYEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_HiLCIINmEeydpeNEy1O9cA" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_50RuwINlEeydpeNEy1O9cA" assemblyContext_ProvidedDelegationConnector="_-ZlF8INlEeydpeNEy1O9cA">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#__jdmgINiEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_IcQEwINmEeydpeNEy1O9cA" entityName="newAssemblyConnector" requiringAssemblyContext_AssemblyConnector="_AiONcINmEeydpeNEy1O9cA" providingAssemblyContext_AssemblyConnector="__ntF8INlEeydpeNEy1O9cA">
+    <providedRole_AssemblyConnector href="newRepository.repository#_y8VScINYEeydpeNEy1O9cA"/>
+    <requiredRole_AssemblyConnector href="newRepository.repository#_-7xf8INYEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_BPXbwINwEeyth_Kqe2ur6g" entityName="newAssemblyDataConnector" sinkAssemblyContext="_yuvD4INvEeyth_Kqe2ur6g" sourceAssemblyContext="_-ZlF8INlEeydpeNEy1O9cA">
+    <dataSourceRole href="newRepository.repository#_lnV3MINsEeydpeNEy1O9cA"/>
+    <dataSinkRole href="newRepository.repository#_XMU_IINsEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_Bh6kUINwEeyth_Kqe2ur6g" entityName="newAssemblyDataConnector" sinkAssemblyContext="_zPDisINvEeyth_Kqe2ur6g" sourceAssemblyContext="_yuvD4INvEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_YiJikINsEeydpeNEy1O9cA"/>
+    <dataSinkRole href="newRepository.repository#_Oaxp8INsEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_BzdnUINwEeyth_Kqe2ur6g" entityName="newAssemblyDataConnector" sinkAssemblyContext="_x9t2oINvEeyth_Kqe2ur6g" sourceAssemblyContext="_zPDisINvEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_Mjh0cINsEeydpeNEy1O9cA"/>
+    <dataSinkRole href="newRepository.repository#_d58GoINsEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_CdSncINwEeyth_Kqe2ur6g" entityName="newAssemblyDataConnector" sinkAssemblyContext="_-ZlF8INlEeydpeNEy1O9cA" sourceAssemblyContext="_x9t2oINvEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_cjClIINsEeydpeNEy1O9cA"/>
+    <dataSinkRole href="newRepository.repository#_n4wgMINsEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_C2LBgINwEeyth_Kqe2ur6g" entityName="newAssemblyDataConnector" sinkAssemblyContext="_-ZlF8INlEeydpeNEy1O9cA" sourceAssemblyContext="_0sAo4INvEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_TDL_gINsEeydpeNEy1O9cA"/>
+    <dataSinkRole href="newRepository.repository#_qph-sINsEeydpeNEy1O9cA"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_50RuwINlEeydpeNEy1O9cA" entityName="FriendMapProvidedRole">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_4cCR0INXEeydpeNEy1O9cA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_8H268INlEeydpeNEy1O9cA" entityName="SocialNetworkProvidedRole">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_JlF58INXEeydpeNEy1O9cA"/>
+  </providedRoles_InterfaceProvidingEntity>
+</system:System>

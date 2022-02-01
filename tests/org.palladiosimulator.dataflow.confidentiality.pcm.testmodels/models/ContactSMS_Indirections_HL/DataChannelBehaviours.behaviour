@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviour:Behaviours xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:behaviour="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:expressions="http://palladiosimulator.org/dataflow/dictionary/characterized/expressions/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_vG8sYINEEeydpeNEy1O9cA">
+  <dataChannelBehaviour id="_wK7R4INEEeydpeNEy1O9cA" entityName="SMSApp.extractNumber">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_OUpwcINDEeydpeNEy1O9cA"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_aaz_EINFEeydpeNEy1O9cA"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_cw6604NFEeydpeNEy1O9cA">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="SMSApp.extractNumber.sink.Contact.contact"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_hYEFEINFEeydpeNEy1O9cA">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_q1dfgYM4EeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:False" id="_hs4eh4NFEeydpeNEy1O9cA"/>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_lfgbkINFEeydpeNEy1O9cA">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_q1dfgYM4EeydpeNEy1O9cA"/>
+          <literal href="CharacteristicTypes.characteristics#_pR9scIM4EeydpeNEy1O9cA"/>
+        </lhs>
+        <rhs xsi:type="expressions:True" id="_m0TrVoNFEeydpeNEy1O9cA"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="SMSApp.extractNumber.source.Number.number"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_wmUNYINEEeydpeNEy1O9cA" entityName="SMSGateway.sendSMS">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_QJpjMINDEeydpeNEy1O9cA"/>
+  </dataChannelBehaviour>
+</behaviour:Behaviours>

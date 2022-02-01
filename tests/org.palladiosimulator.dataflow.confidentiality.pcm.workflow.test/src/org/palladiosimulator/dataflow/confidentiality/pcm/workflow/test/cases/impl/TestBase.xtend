@@ -20,6 +20,8 @@ import org.prolog4j.swicli.SWIPrologCLIProverFactory.SWIPrologExecutableProvider
 import org.prolog4j.swicli.enabler.SWIPrologEmbeddedFallbackExecutableProvider
 
 import static org.junit.jupiter.api.Assertions.*
+import de.uka.ipd.sdq.stoex.AbstractNamedReference
+import de.uka.ipd.sdq.stoex.VariableReference
 
 class TestBase {
 	static SWIPrologCLIProverFactory proverFactory
@@ -97,6 +99,14 @@ class TestBase {
 		}
 
 		assertEquals(expectedAmount, solutionCounter, debugMessage);
+	}
+	
+	protected def dispatch getString(AbstractNamedReference reference) {
+		throw new IllegalArgumentException
+	}
+	
+	protected def dispatch getString(VariableReference reference) {
+		reference.referenceName
 	}
 	
 }

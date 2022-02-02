@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ASCII"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:org.palladiosimulator.indirections.composition="http://palladiosimulator.org/Indirections/Composition/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_LJJKAIOAEeyth_Kqe2ur6g" entityName="New System">
+  <assemblyContexts__ComposedStructure id="_QM27gIOAEeyth_Kqe2ur6g" entityName="Assembly_HospitalApp">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_CLBVQIN8Eeyth_Kqe2ur6g"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_s58qQIP9EeySUeZbAd56vg" entityName="Assembly_AnswerRequest">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_CohBwIP5EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_tu5VQIP9EeySUeZbAd56vg" entityName="Assembly_Authorize">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_zyNU0IP4EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_uZZDwIP9EeySUeZbAd56vg" entityName="Assembly_BuildRequest">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_7SaW4IP4EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_u5rGUIP9EeySUeZbAd56vg" entityName="Assembly_EncryptPatientsList">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_sNIZ0IP4EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_vZkHUIP9EeySUeZbAd56vg" entityName="Assembly_PatientsDB">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_mnzwEIP4EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_wBoz8IP9EeySUeZbAd56vg" entityName="Assembly_PatientsDBLogic">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_Cwuf0IN7Eeyth_Kqe2ur6g"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_bsdOEIP-EeySUeZbAd56vg" entityName="Assembly_PatientsDBLogic_Dropbox">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="newRepository.repository#_Cwuf0IN7Eeyth_Kqe2ur6g"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_pC8uEIP-EeySUeZbAd56vg" entityName="Assembly_PatientsDB_Dropbox">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_mnzwEIP4EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_KDeIsIP_EeySUeZbAd56vg" entityName="Assembly_WritePatientList">
+    <encapsulatedComponent__AssemblyContext xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_CPTBwIP_EeySUeZbAd56vg"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_cMcS8IOAEeyth_Kqe2ur6g" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_MNnewIOAEeyth_Kqe2ur6g" assemblyContext_ProvidedDelegationConnector="_QM27gIOAEeyth_Kqe2ur6g">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#_Dfi4MIN8Eeyth_Kqe2ur6g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_Spc8gIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g" sourceAssemblyContext="_tu5VQIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_3mXi8IP4EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_cNuhYIP5EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_UWjXgIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_uZZDwIP9EeySUeZbAd56vg" sourceAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_llAZ0IP5EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_AktW8IP5EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_UvjGUIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_uZZDwIP9EeySUeZbAd56vg" sourceAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_jNmdkIP5EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_-aapoIP4EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_WrvGMIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_s58qQIP9EeySUeZbAd56vg" sourceAssemblyContext="_uZZDwIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_G54-EIP-EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_D5StIIP5EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_kdSxkIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_u5rGUIP9EeySUeZbAd56vg" sourceAssemblyContext="_vZkHUIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_qEaZ0IP4EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_tve9YIP4EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_lazisIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_vZkHUIP9EeySUeZbAd56vg" sourceAssemblyContext="_wBoz8IP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_pQP1IIP8EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_ojcWUIP4EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_l20JQIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_wBoz8IP9EeySUeZbAd56vg" sourceAssemblyContext="_u5rGUIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_vLCVYIP4EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_qq0VsIP8EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_uHg0IIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_pC8uEIP-EeySUeZbAd56vg" sourceAssemblyContext="_bsdOEIP-EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_pQP1IIP8EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_ojcWUIP4EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_uouDwIP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_bsdOEIP-EeySUeZbAd56vg" sourceAssemblyContext="_pC8uEIP-EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_qEaZ0IP4EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_qq0VsIP8EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_ztb60IP-EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g" sourceAssemblyContext="_s58qQIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_FbEB4IP5EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_B3lXQIP9EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_Nt394IP_EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_KDeIsIP_EeySUeZbAd56vg" sourceAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_jNmdkIP5EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_FfJB4IP_EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_OKKRQIP_EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_KDeIsIP_EeySUeZbAd56vg" sourceAssemblyContext="_QM27gIOAEeyth_Kqe2ur6g">
+    <dataSourceRole href="newRepository.repository#_n6qCkIP5EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_HG9UQIP_EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_O6sWUIP_EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_vZkHUIP9EeySUeZbAd56vg" sourceAssemblyContext="_KDeIsIP_EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_IXsjYIP_EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_ojcWUIP4EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_TKmFQIP_EeySUeZbAd56vg" entityName="newAssemblyDataConnector" sinkAssemblyContext="_s58qQIP9EeySUeZbAd56vg" sourceAssemblyContext="_u5rGUIP9EeySUeZbAd56vg">
+    <dataSourceRole href="newRepository.repository#_vLCVYIP4EeySUeZbAd56vg"/>
+    <dataSinkRole href="newRepository.repository#_7e6TEIP-EeySUeZbAd56vg"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_8PM40IQEEeySUeZbAd56vg" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_MrfGgIOAEeyth_Kqe2ur6g" assemblyContext_ProvidedDelegationConnector="_wBoz8IP9EeySUeZbAd56vg">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#_EdQTEIN7Eeyth_Kqe2ur6g"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_8jr7EIQEEeySUeZbAd56vg" entityName="newProvidedDelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_aglOEIOAEeyth_Kqe2ur6g" assemblyContext_ProvidedDelegationConnector="_bsdOEIP-EeySUeZbAd56vg">
+    <innerProvidedRole_ProvidedDelegationConnector href="newRepository.repository#_EdQTEIN7Eeyth_Kqe2ur6g"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MNnewIOAEeyth_Kqe2ur6g" entityName="HospitalProvidedRole">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_HphQMIN6Eeyth_Kqe2ur6g"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MrfGgIOAEeyth_Kqe2ur6g" entityName="PatiensDBProvidedRole">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_IjlEsIN6Eeyth_Kqe2ur6g"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_aglOEIOAEeyth_Kqe2ur6g" entityName="PatiensDBProvidedRoleDropbox">
+    <providedInterface__OperationProvidedRole href="newRepository.repository#_IjlEsIN6Eeyth_Kqe2ur6g"/>
+  </providedRoles_InterfaceProvidingEntity>
+</system:System>

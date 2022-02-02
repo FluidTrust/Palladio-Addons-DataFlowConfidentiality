@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_k7MLwIOAEeyth_Kqe2ur6g" entityName="New Allocation">
+  <targetResourceEnvironment_Allocation href="newResourceEnvironment.resourceenvironment#/0"/>
+  <system_Allocation href="newSystem.system#_LJJKAIOAEeyth_Kqe2ur6g"/>
+  <allocationContexts_Allocation id="_pBFqIIOAEeyth_Kqe2ur6g" entityName="Allocation_Assembly_HospitalApp">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_QM27gIOAEeyth_Kqe2ur6g"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_g6T9kIP_EeySUeZbAd56vg" entityName="Allocation_Assembly_PatientsDBLogic_Dropbox">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_bsdOEIP-EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_hay0cIP_EeySUeZbAd56vg" entityName="Allocation_Assembly_Authorize">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_tu5VQIP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_hazbgIP_EeySUeZbAd56vg" entityName="Allocation_Assembly_WritePatientList">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_KDeIsIP_EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_hazbhIP_EeySUeZbAd56vg" entityName="Allocation_Assembly_PatientsDB">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_vZkHUIP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_ha0CkYP_EeySUeZbAd56vg" entityName="Allocation_Assembly_EncryptPatientsList">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_u5rGUIP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_iHF5wIP_EeySUeZbAd56vg" entityName="Allocation_Assembly_AnswerRequest">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_s58qQIP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_iHGg0IP_EeySUeZbAd56vg" entityName="Allocation_Assembly_PatientsDB">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_pC8uEIP-EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_iHGg1IP_EeySUeZbAd56vg" entityName="Allocation_Assembly_PatientsDBLogic">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_wBoz8IP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_iHHH4IP_EeySUeZbAd56vg" entityName="Allocation_Assembly_BuildRequest">
+    <resourceContainer_AllocationContext href="newResourceEnvironment.resourceenvironment#_gY3QEIOAEeyth_Kqe2ur6g"/>
+    <assemblyContext_AllocationContext href="newSystem.system#_uZZDwIP9EeySUeZbAd56vg"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

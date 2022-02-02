@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:org.palladiosimulator.dataflow.confidentiality.pcm.model.profile="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" xmlns:org.palladiosimulator.indirections.actions="http://palladiosimulator.org/Indirections/Actions/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2">
+  <repository:Repository id="_HAsVoIN6Eeyth_Kqe2ur6g" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_Cwuf0IN7Eeyth_Kqe2ur6g" entityName="PatientsDBLogic">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_EdQTEIN7Eeyth_Kqe2ur6g" entityName="PatientsDBLogic.provided.PatiensDB" providedInterface__OperationProvidedRole="_IjlEsIN6Eeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_qq0VsIP8EeySUeZbAd56vg" entityName="PatientsDBLogic.sink.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_pQP1IIP8EeySUeZbAd56vg" entityName="PatientsDBLogic.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Edx3gIN7Eeyth_Kqe2ur6g" describedService__SEFF="_KFEFkIN6Eeyth_Kqe2ur6g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_Edx3gYN7Eeyth_Kqe2ur6g" successor_AbstractAction="_UBx20IP9EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_Edx3goN7Eeyth_Kqe2ur6g" predecessor_AbstractAction="_UBx20IP9EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_UBx20IP9EeySUeZbAd56vg" entityName="PatientsDBLogic.add.emitPatientList" predecessor_AbstractAction="_Edx3gYN7Eeyth_Kqe2ur6g" successor_AbstractAction="_Edx3goN7Eeyth_Kqe2ur6g" dataSourceRole="_pQP1IIP8EeySUeZbAd56vg">
+          <variableReference referenceName="patientList"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_EeC9QIN7Eeyth_Kqe2ur6g" describedService__SEFF="_KYwdoIN6Eeyth_Kqe2ur6g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_EeC9QYN7Eeyth_Kqe2ur6g" successor_AbstractAction="_ZD33sIP9EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_EeC9QoN7Eeyth_Kqe2ur6g" predecessor_AbstractAction="_ofz7UIN7Eeyth_Kqe2ur6g"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofz7UIN7Eeyth_Kqe2ur6g" entityName="PatientsDBLogic.get.return" predecessor_AbstractAction="_ZD33sIP9EeySUeZbAd56vg" successor_AbstractAction="_EeC9QoN7Eeyth_Kqe2ur6g">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_egeDQIP9EeySUeZbAd56vg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_egeDQYP9EeySUeZbAd56vg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="patientList"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_ZD33sIP9EeySUeZbAd56vg" entityName="PatientsDBLogic.get.consumePatientList" predecessor_AbstractAction="_EeC9QYN7Eeyth_Kqe2ur6g" successor_AbstractAction="_ofz7UIN7Eeyth_Kqe2ur6g" dataSinkRole="_qq0VsIP8EeySUeZbAd56vg">
+          <variableReference referenceName="patientList"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="repository:BasicComponent" id="_CLBVQIN8Eeyth_Kqe2ur6g" entityName="HospitalApp">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Dfi4MIN8Eeyth_Kqe2ur6g" entityName="HospitalApp.provided.Hospital" providedInterface__OperationProvidedRole="_HphQMIN6Eeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_cNuhYIP5EeySUeZbAd56vg" entityName="HospitalApp.sink.Permissions" dataInterface="_XUEesIOUEeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_B3lXQIP9EeySUeZbAd56vg" entityName="HospitalApp.sink.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_jNmdkIP5EeySUeZbAd56vg" entityName="HospitalApp.source.Permissions" dataInterface="_XUEesIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_llAZ0IP5EeySUeZbAd56vg" entityName="HospitalApp.source.Request" dataInterface="_dKEBsIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_n6qCkIP5EeySUeZbAd56vg" entityName="HospitalApp.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_DfjfQIN8Eeyth_Kqe2ur6g" describedService__SEFF="_uQ1UMIN6Eeyth_Kqe2ur6g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_DfkGUIN8Eeyth_Kqe2ur6g" successor_AbstractAction="_wQ6bgIP8EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_DfkGUYN8Eeyth_Kqe2ur6g" predecessor_AbstractAction="_jaQ2cIN-Eeyth_Kqe2ur6g"/>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jaQ2cIN-Eeyth_Kqe2ur6g" entityName="HospitalApp.authroize.return" predecessor_AbstractAction="_wQ6bgIP8EeySUeZbAd56vg" successor_AbstractAction="_DfkGUYN8Eeyth_Kqe2ur6g">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_3FCasIP8EeySUeZbAd56vg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_3FCasYP8EeySUeZbAd56vg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="permissions"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_wQ6bgIP8EeySUeZbAd56vg" entityName="HospitalApp.authorize.consumePermissions" predecessor_AbstractAction="_DfkGUIN8Eeyth_Kqe2ur6g" successor_AbstractAction="_jaQ2cIN-Eeyth_Kqe2ur6g" dataSinkRole="_cNuhYIP5EeySUeZbAd56vg">
+          <variableReference referenceName="permissions"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_DfvsgIN8Eeyth_Kqe2ur6g" describedService__SEFF="_2oVxsIN6Eeyth_Kqe2ur6g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_DfvsgYN8Eeyth_Kqe2ur6g" successor_AbstractAction="_5V8GUIP8EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_DfvsgoN8Eeyth_Kqe2ur6g" predecessor_AbstractAction="_7mjeEIP8EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_5V8GUIP8EeySUeZbAd56vg" entityName="newEmitDataAction" predecessor_AbstractAction="_DfvsgYN8Eeyth_Kqe2ur6g" successor_AbstractAction="_7mjeEIP8EeySUeZbAd56vg" dataSourceRole="_n6qCkIP5EeySUeZbAd56vg">
+          <variableReference referenceName="patientList"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_7mjeEIP8EeySUeZbAd56vg" entityName="newEmitDataAction" predecessor_AbstractAction="_5V8GUIP8EeySUeZbAd56vg" successor_AbstractAction="_DfvsgoN8Eeyth_Kqe2ur6g" dataSourceRole="_jNmdkIP5EeySUeZbAd56vg">
+          <variableReference referenceName="permissions"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Df3BQIN8Eeyth_Kqe2ur6g" describedService__SEFF="_uSNNMIN6Eeyth_Kqe2ur6g">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_Df3oUIN8Eeyth_Kqe2ur6g" successor_AbstractAction="_E-YwIIP9EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_Df3oUYN8Eeyth_Kqe2ur6g" predecessor_AbstractAction="_hoEGUIP9EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_E-YwIIP9EeySUeZbAd56vg" entityName="HospitalApp.requestList.emitPermissions" predecessor_AbstractAction="_Df3oUIN8Eeyth_Kqe2ur6g" successor_AbstractAction="_FoHCkIP9EeySUeZbAd56vg" dataSourceRole="_jNmdkIP5EeySUeZbAd56vg">
+          <variableReference referenceName="permissions"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_FoHCkIP9EeySUeZbAd56vg" entityName="HospitalApp.requestList.emitRequest" predecessor_AbstractAction="_E-YwIIP9EeySUeZbAd56vg" successor_AbstractAction="_GCiUwIP9EeySUeZbAd56vg" dataSourceRole="_llAZ0IP5EeySUeZbAd56vg">
+          <variableReference referenceName="request"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_GCiUwIP9EeySUeZbAd56vg" entityName="HospitalApp.requestList.consumePatientList" predecessor_AbstractAction="_FoHCkIP9EeySUeZbAd56vg" successor_AbstractAction="_hoEGUIP9EeySUeZbAd56vg" dataSinkRole="_B3lXQIP9EeySUeZbAd56vg">
+          <variableReference referenceName="patientList"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_hoEGUIP9EeySUeZbAd56vg" entityName="HospitalApp.requestList.return" predecessor_AbstractAction="_GCiUwIP9EeySUeZbAd56vg" successor_AbstractAction="_Df3oUYN8Eeyth_Kqe2ur6g">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_m5yeoIP9EeySUeZbAd56vg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_m5yeoYP9EeySUeZbAd56vg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="patientList"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_mnzwEIP4EeySUeZbAd56vg" entityName="PatientsDB">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_ojcWUIP4EeySUeZbAd56vg" entityName="PatientsDB.sinkl.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_qEaZ0IP4EeySUeZbAd56vg" entityName="PatientsDB.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_sNIZ0IP4EeySUeZbAd56vg" entityName="EncryptPatientsList">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_tve9YIP4EeySUeZbAd56vg" entityName="EncryptPatientsList.sink.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_vLCVYIP4EeySUeZbAd56vg" entityName="EncryptPatientsList.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_zyNU0IP4EeySUeZbAd56vg" entityName="Authorize">
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_3mXi8IP4EeySUeZbAd56vg" entityName="Authorize.source.Permissions" dataInterface="_XUEesIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_7SaW4IP4EeySUeZbAd56vg" entityName="BuildRequest">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_-aapoIP4EeySUeZbAd56vg" entityName="BuildRequest.sink.Permissions" dataInterface="_XUEesIOUEeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_AktW8IP5EeySUeZbAd56vg" entityName="BuildRequest.request.Request" dataInterface="_dKEBsIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_G54-EIP-EeySUeZbAd56vg" entityName="BuildRequest.source.Request" dataInterface="_dKEBsIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_CohBwIP5EeySUeZbAd56vg" entityName="AnswerRequest">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_D5StIIP5EeySUeZbAd56vg" entityName="AnswerRequest.sink.Request" dataInterface="_dKEBsIOUEeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_7e6TEIP-EeySUeZbAd56vg" entityName="AnswerRequest.sink.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_FbEB4IP5EeySUeZbAd56vg" entityName="AnswerRequest.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_CPTBwIP_EeySUeZbAd56vg" entityName="WritePatientList">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_FfJB4IP_EeySUeZbAd56vg" entityName="WritePatientList.sink.Permissions" dataInterface="_XUEesIOUEeyth_Kqe2ur6g"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_HG9UQIP_EeySUeZbAd56vg" entityName="WritePatientList.sink.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_IXsjYIP_EeySUeZbAd56vg" entityName="WritePatientList.source.PatientList" dataInterface="_gRu9QIOUEeyth_Kqe2ur6g"/>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_HphQMIN6Eeyth_Kqe2ur6g" entityName="Hospital">
+      <signatures__OperationInterface id="_uQ1UMIN6Eeyth_Kqe2ur6g" entityName="authorize" returnType__OperationSignature="_OnkAYIN6Eeyth_Kqe2ur6g"/>
+      <signatures__OperationInterface id="_uSNNMIN6Eeyth_Kqe2ur6g" entityName="requestList" returnType__OperationSignature="_LyoaoIN6Eeyth_Kqe2ur6g">
+        <parameters__OperationSignature dataType__Parameter="_yUn5wIN6Eeyth_Kqe2ur6g" parameterName="request"/>
+        <parameters__OperationSignature dataType__Parameter="_OnkAYIN6Eeyth_Kqe2ur6g" parameterName="permissions"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_2oVxsIN6Eeyth_Kqe2ur6g" entityName="modifyList">
+        <parameters__OperationSignature dataType__Parameter="_LyoaoIN6Eeyth_Kqe2ur6g" parameterName="patientList"/>
+        <parameters__OperationSignature dataType__Parameter="_OnkAYIN6Eeyth_Kqe2ur6g" parameterName="permissions"/>
+      </signatures__OperationInterface>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_IjlEsIN6Eeyth_Kqe2ur6g" entityName="PatiensDB">
+      <signatures__OperationInterface id="_KFEFkIN6Eeyth_Kqe2ur6g" entityName="add">
+        <parameters__OperationSignature dataType__Parameter="_LyoaoIN6Eeyth_Kqe2ur6g" parameterName="patientList"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_KYwdoIN6Eeyth_Kqe2ur6g" entityName="get" returnType__OperationSignature="_LyoaoIN6Eeyth_Kqe2ur6g"/>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_XUEesIOUEeyth_Kqe2ur6g" entityName="Permissions">
+      <dataSignature id="_YOEBwIOUEeyth_Kqe2ur6g" entityName="permissions">
+        <parameter dataType__Parameter="_OnkAYIN6Eeyth_Kqe2ur6g" parameterName="permissions"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_dKEBsIOUEeyth_Kqe2ur6g" entityName="Request">
+      <dataSignature id="_d9Dk4IOUEeyth_Kqe2ur6g" entityName="request">
+        <parameter dataType__Parameter="_yUn5wIN6Eeyth_Kqe2ur6g" parameterName="request"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_gRu9QIOUEeyth_Kqe2ur6g" entityName="PatientList">
+      <dataSignature id="_hELG0IOUEeyth_Kqe2ur6g" entityName="patientList">
+        <parameter dataType__Parameter="_LyoaoIN6Eeyth_Kqe2ur6g" parameterName="patientList"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_LKI3QIN6Eeyth_Kqe2ur6g" entityName="Patient"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_LyoaoIN6Eeyth_Kqe2ur6g" entityName="PatientList" innerType_CollectionDataType="_LKI3QIN6Eeyth_Kqe2ur6g"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_NncnMIN6Eeyth_Kqe2ur6g" entityName="Permission"/>
+    <dataTypes__Repository xsi:type="repository:CollectionDataType" id="_OnkAYIN6Eeyth_Kqe2ur6g" entityName="Permissions" innerType_CollectionDataType="_NncnMIN6Eeyth_Kqe2ur6g"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_yUn5wIN6Eeyth_Kqe2ur6g" entityName="Request"/>
+  </repository:Repository>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_mnzwEIP4EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_KpfqEIQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_sNIZ0IP4EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_LAueUIQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_zyNU0IP4EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_LP-bQIQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_7SaW4IP4EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_LeUZQIQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_CohBwIP5EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_Lt67gIQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_CPTBwIP_EeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_T66LEYQDEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" location="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

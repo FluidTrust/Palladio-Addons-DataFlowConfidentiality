@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:emfprofileapplication="http://www.modelversioning.org/emfprofile/application/1.1" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:org.palladiosimulator.dataflow.confidentiality.pcm.model.profile="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" xmlns:org.palladiosimulator.indirections.actions="http://palladiosimulator.org/Indirections/Actions/1.0" xmlns:org.palladiosimulator.indirections.composition="http://palladiosimulator.org/Indirections/Composition/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2">
+  <repository:Repository id="_hQu_4IQHEeySUeZbAd56vg" entityName="New Repository">
+    <components__Repository xsi:type="repository:BasicComponent" id="_EV7oAIQIEeySUeZbAd56vg" entityName="BrowserFacade">
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_GPcHUIQIEeySUeZbAd56vg" entityName="BrowserFacade.provided.Browser" providedInterface__OperationProvidedRole="_h44lAIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_Kbu1sIQVEeySUeZbAd56vg" entityName="BrowserFacade.sink.Media" dataInterface="_zmEYcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_gETrMIQWEeySUeZbAd56vg" entityName="BrowserFacade.source.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_URDDEIQXEeySUeZbAd56vg" entityName="BrowserFacade.source.Media" dataInterface="_zmEYcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_slOQQIQlEeySUeZbAd56vg" entityName="BrowserFacade.source.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_GPo7oIQIEeySUeZbAd56vg" describedService__SEFF="__vSNAIQHEeySUeZbAd56vg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_GPo7oYQIEeySUeZbAd56vg" successor_AbstractAction="_iAmgUIQ4EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_GPo7ooQIEeySUeZbAd56vg" predecessor_AbstractAction="_p0jk0IQ4EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_iAmgUIQ4EeySUeZbAd56vg" entityName="BrowserFacade.exchangeMedia.emitMedia" predecessor_AbstractAction="_GPo7oYQIEeySUeZbAd56vg" successor_AbstractAction="_kqD14IQ4EeySUeZbAd56vg" dataSourceRole="_URDDEIQXEeySUeZbAd56vg">
+          <variableReference referenceName="media"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_kqD14IQ4EeySUeZbAd56vg" entityName="BrowserFacade.exchangeMedia.emitSessionData" predecessor_AbstractAction="_iAmgUIQ4EeySUeZbAd56vg" successor_AbstractAction="_on914IQ4EeySUeZbAd56vg" dataSourceRole="_gETrMIQWEeySUeZbAd56vg">
+          <variableReference referenceName="sessionData"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:ConsumeDataAction" id="_on914IQ4EeySUeZbAd56vg" entityName="BrowserFacade.exchangeMedia.consumeMedia" predecessor_AbstractAction="_kqD14IQ4EeySUeZbAd56vg" successor_AbstractAction="_p0jk0IQ4EeySUeZbAd56vg" dataSinkRole="_Kbu1sIQVEeySUeZbAd56vg">
+          <variableReference referenceName="otherMedia"/>
+        </steps_Behaviour>
+        <steps_Behaviour xsi:type="seff:SetVariableAction" id="_p0jk0IQ4EeySUeZbAd56vg" entityName="BrowserFacade.exchangeMedia.return" predecessor_AbstractAction="_on914IQ4EeySUeZbAd56vg" successor_AbstractAction="_GPo7ooQIEeySUeZbAd56vg">
+          <localVariableUsages_SetVariableAction>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_wtDGo4Q4EeySUeZbAd56vg"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_wtDGpIQ4EeySUeZbAd56vg">
+                <namedReference xsi:type="stoex:VariableReference" referenceName="otherMedia"/>
+              </rhs>
+            </variableCharacterisation_VariableUsage>
+            <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="RETURN"/>
+          </localVariableUsages_SetVariableAction>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+      <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_04_4kIQKEeySUeZbAd56vg" describedService__SEFF="_yEkpIIQKEeySUeZbAd56vg">
+        <steps_Behaviour xsi:type="seff:StartAction" id="_1N7mwIQKEeySUeZbAd56vg" successor_AbstractAction="_aP6yQIQ4EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="seff:StopAction" id="_1N7mwYQKEeySUeZbAd56vg" predecessor_AbstractAction="_aP6yQIQ4EeySUeZbAd56vg"/>
+        <steps_Behaviour xsi:type="org.palladiosimulator.indirections.actions:EmitDataAction" id="_aP6yQIQ4EeySUeZbAd56vg" entityName="BrowserFacade.initBrowser.emitBrowserID" predecessor_AbstractAction="_1N7mwIQKEeySUeZbAd56vg" successor_AbstractAction="_1N7mwYQKEeySUeZbAd56vg" dataSourceRole="_slOQQIQlEeySUeZbAd56vg">
+          <variableReference referenceName="browserID"/>
+        </steps_Behaviour>
+      </serviceEffectSpecifications__BasicComponent>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_LqsPEIQIEeySUeZbAd56vg" entityName="Browser.encryptSession">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_7VI78IQSEeySUeZbAd56vg" entityName="Browser.encryptSession.sink.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_86LnIIQSEeySUeZbAd56vg" entityName="Browser.encryptSession.source.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_NgRbMIQJEeySUeZbAd56vg" entityName="STUN.publish">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_S89tYIQJEeySUeZbAd56vg" entityName="STUN.publish.sink.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_RYb_kIQJEeySUeZbAd56vg" entityName="STUN.publish.source.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_PYuxoYQJEeySUeZbAd56vg" entityName="STUN.receive">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_WIf1QIQJEeySUeZbAd56vg" entityName="STUN.receive.sink.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_Upe5kIQJEeySUeZbAd56vg" entityName="STUN.receive.source.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="repository:CompositeComponent" id="_YO8kYIQJEeySUeZbAd56vg" entityName="STUN">
+      <assemblyContexts__ComposedStructure id="_nM1gAIQJEeySUeZbAd56vg" entityName="Assembly_STUN.publish" encapsulatedComponent__AssemblyContext="_NgRbMIQJEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_n63DoIQJEeySUeZbAd56vg" entityName="Assembly_STUN.receive" encapsulatedComponent__AssemblyContext="_PYuxoYQJEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_w54NEIQJEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_n63DoIQJEeySUeZbAd56vg" innerDataSourceRole="_Upe5kIQJEeySUeZbAd56vg" outerDataSourceRole="_eDGUUIQJEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_xQYokIQJEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_nM1gAIQJEeySUeZbAd56vg" innerDataSourceRole="_RYb_kIQJEeySUeZbAd56vg" outerDataSourceRole="_gB6xcIQJEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_x544kIQJEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_nM1gAIQJEeySUeZbAd56vg" innerDataSinkRole="_S89tYIQJEeySUeZbAd56vg" outerDataSinkRole="_h5xq8IQJEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_ySeXsIQJEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_n63DoIQJEeySUeZbAd56vg" innerDataSinkRole="_WIf1QIQJEeySUeZbAd56vg" outerDataSinkRole="_bEQkoIQJEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_bEQkoIQJEeySUeZbAd56vg" entityName="STUN.sink.receive.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_h5xq8IQJEeySUeZbAd56vg" entityName="STUN.sink.publish.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_eDGUUIQJEeySUeZbAd56vg" entityName="STUN.source.receive.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_gB6xcIQJEeySUeZbAd56vg" entityName="STUN.source.publishPort" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_8mVNIIQJEeySUeZbAd56vg" entityName="SignalingServer.dispatchSessionData">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_GCj3AIQKEeySUeZbAd56vg" entityName="SignalingServer.dispatchSessionData.sink.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_DkR2sIQKEeySUeZbAd56vg" entityName="SignalingServer.dispatchSessionData.source.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="repository:CompositeComponent" id="_Hp95sIQKEeySUeZbAd56vg" entityName="SignalingServer">
+      <assemblyContexts__ComposedStructure id="_TobPwIQKEeySUeZbAd56vg" entityName="Assembly_SignalingServer.dispatchSessionData_request" encapsulatedComponent__AssemblyContext="_8mVNIIQJEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_WYDewIQKEeySUeZbAd56vg" entityName="Assembly_SignalingServer.dispatchSessionData_response" encapsulatedComponent__AssemblyContext="_8mVNIIQJEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_ehrRQIQKEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_TobPwIQKEeySUeZbAd56vg" innerDataSinkRole="_GCj3AIQKEeySUeZbAd56vg" outerDataSinkRole="_JQlSMIQKEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_e0I6QIQKEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_WYDewIQKEeySUeZbAd56vg" innerDataSinkRole="_GCj3AIQKEeySUeZbAd56vg" outerDataSinkRole="_OMImMIQKEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_fNP90IQKEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_WYDewIQKEeySUeZbAd56vg" innerDataSourceRole="_DkR2sIQKEeySUeZbAd56vg" outerDataSourceRole="_MwdSYIQKEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_fcX-8IQKEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_TobPwIQKEeySUeZbAd56vg" innerDataSourceRole="_DkR2sIQKEeySUeZbAd56vg" outerDataSourceRole="_LPeAwIQKEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_JQlSMIQKEeySUeZbAd56vg" entityName="SignalingServer.sink.request.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_OMImMIQKEeySUeZbAd56vg" entityName="SignalingServer.sink.response.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_LPeAwIQKEeySUeZbAd56vg" entityName="SignalingServer.source.request.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_MwdSYIQKEeySUeZbAd56vg" entityName="SignalingServer.source.response.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_33GBYIQKEeySUeZbAd56vg" entityName="IDP.IdentityDataStore">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_6YF-gIQKEeySUeZbAd56vg" entityName="IdentityDataStore.sink.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_70bZoIQKEeySUeZbAd56vg" entityName="IdentityDataStore.source.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_AnC0EIQLEeySUeZbAd56vg" entityName="IDP.TransmitBrowserID">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_Cm5zAIQLEeySUeZbAd56vg" entityName="TransmitBrowserID.sink.own.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_EbpuIIQLEeySUeZbAd56vg" entityName="TransmitBrowserID.sink.other.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_GBH3IIQLEeySUeZbAd56vg" entityName="TransmitBrowserID.source.other.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="repository:CompositeComponent" id="_IDy5gIQLEeySUeZbAd56vg" entityName="IDP">
+      <assemblyContexts__ComposedStructure id="_az2fMIQLEeySUeZbAd56vg" entityName="Assembly_IDP.IdentityDataStore" encapsulatedComponent__AssemblyContext="_33GBYIQKEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_bTWeoIQLEeySUeZbAd56vg" entityName="Assembly_IDP.TransmitBrowserID" encapsulatedComponent__AssemblyContext="_AnC0EIQLEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_hbycgIQLEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_az2fMIQLEeySUeZbAd56vg" innerDataSinkRole="_6YF-gIQKEeySUeZbAd56vg" outerDataSinkRole="_Kl8GIIQLEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_ilZI4IQLEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_bTWeoIQLEeySUeZbAd56vg" innerDataSinkRole="_EbpuIIQLEeySUeZbAd56vg" outerDataSinkRole="_SBkKMIQLEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_jYZTIIQLEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_70bZoIQKEeySUeZbAd56vg" dataSinkRole="_Cm5zAIQLEeySUeZbAd56vg" sinkAssemblyContext="_bTWeoIQLEeySUeZbAd56vg" sourceAssemblyContext="_az2fMIQLEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_kkGRQIQLEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_az2fMIQLEeySUeZbAd56vg" innerDataSourceRole="_70bZoIQKEeySUeZbAd56vg" outerDataSourceRole="_NVZ9EIQLEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_nSSV0IQLEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_bTWeoIQLEeySUeZbAd56vg" innerDataSourceRole="_GBH3IIQLEeySUeZbAd56vg" outerDataSourceRole="_Ti1IoIQLEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_Kl8GIIQLEeySUeZbAd56vg" entityName="IDP.sink.own.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_SBkKMIQLEeySUeZbAd56vg" entityName="IDP.sink.other.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_NVZ9EIQLEeySUeZbAd56vg" entityName="IDP.source.own.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_Ti1IoIQLEeySUeZbAd56vg" entityName="IDP.source.ownforother.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="repository:CompositeComponent" id="_EhlvUIQREeySUeZbAd56vg" entityName="Browser">
+      <assemblyContexts__ComposedStructure id="_fIP9gIQUEeySUeZbAd56vg" entityName="Assembly_BrowserFacade" encapsulatedComponent__AssemblyContext="_EV7oAIQIEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_hedm8IQUEeySUeZbAd56vg" entityName="Assembly_Browser.createMediaPackage" encapsulatedComponent__AssemblyContext="_tXDbAIQTEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_iSazcIQUEeySUeZbAd56vg" entityName="Assembly_Browser.encryptMediaPackage" encapsulatedComponent__AssemblyContext="_9DW70IQTEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_4AheoIQUEeySUeZbAd56vg" entityName="Assembly_Browser.decryptMediaPackage" encapsulatedComponent__AssemblyContext="_CQYaUIQUEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_-DUukIQUEeySUeZbAd56vg" entityName="Assembly_Browser.unpackMediaPackage" encapsulatedComponent__AssemblyContext="_Hz67YIQUEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_k2F_MIQWEeySUeZbAd56vg" entityName="Assembly_Browser.encryptSession" encapsulatedComponent__AssemblyContext="_LqsPEIQIEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_3qAxMIQWEeySUeZbAd56vg" entityName="Assembly_Browser.decryptSession" encapsulatedComponent__AssemblyContext="__EBogIQSEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_6Zcy8IQWEeySUeZbAd56vg" entityName="Assembly_Browser.extractOtherID" encapsulatedComponent__AssemblyContext="_kRTXcIQTEeySUeZbAd56vg"/>
+      <assemblyContexts__ComposedStructure id="_vxuzEIQmEeySUeZbAd56vg" entityName="Assembly_Browser.PortGenerator" encapsulatedComponent__AssemblyContext="_oUSxIIQmEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_gw7LgIQUEeySUeZbAd56vg" entityName="newProvidedDelegationConnector" innerProvidedRole_ProvidedDelegationConnector="_GPcHUIQIEeySUeZbAd56vg" outerProvidedRole_ProvidedDelegationConnector="_FeifwIQREeySUeZbAd56vg" assemblyContext_ProvidedDelegationConnector="_fIP9gIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_sJAeEIQUEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_iSazcIQUEeySUeZbAd56vg" innerDataSourceRole="__tME0IQTEeySUeZbAd56vg" outerDataSourceRole="_qUpkgIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_szN4sIQUEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_60q2sIQTEeySUeZbAd56vg" dataSinkRole="_-b9GcIQTEeySUeZbAd56vg" sinkAssemblyContext="_iSazcIQUEeySUeZbAd56vg" sourceAssemblyContext="_hedm8IQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_79m_QIQUEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_4AheoIQUEeySUeZbAd56vg" innerDataSinkRole="_D2uGAIQUEeySUeZbAd56vg" outerDataSinkRole="_6OkqkIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_BIRGQIQVEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_FXUWEIQUEeySUeZbAd56vg" dataSinkRole="_JOIPkIQUEeySUeZbAd56vg" sinkAssemblyContext="_-DUukIQUEeySUeZbAd56vg" sourceAssemblyContext="_4AheoIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_Sc0-UIQVEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_KmoTkIQUEeySUeZbAd56vg" dataSinkRole="_Kbu1sIQVEeySUeZbAd56vg" sinkAssemblyContext="_fIP9gIQUEeySUeZbAd56vg" sourceAssemblyContext="_-DUukIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_YsyrEIQWEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_hedm8IQUEeySUeZbAd56vg" innerDataSinkRole="_0Hnv4IQTEeySUeZbAd56vg" outerDataSinkRole="_V3l_kIQWEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_mo7OwIQWEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_gETrMIQWEeySUeZbAd56vg" dataSinkRole="_7VI78IQSEeySUeZbAd56vg" sinkAssemblyContext="_k2F_MIQWEeySUeZbAd56vg" sourceAssemblyContext="_fIP9gIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_t7EmsIQWEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_k2F_MIQWEeySUeZbAd56vg" innerDataSourceRole="_86LnIIQSEeySUeZbAd56vg" outerDataSourceRole="_rhGeoIQWEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_5a8jUIQWEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_3qAxMIQWEeySUeZbAd56vg" innerDataSinkRole="_AU5agIQTEeySUeZbAd56vg" outerDataSinkRole="_2Ezt8IQWEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_8B4JUIQWEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_CDY8oIQTEeySUeZbAd56vg" dataSinkRole="_myF5MIQTEeySUeZbAd56vg" sinkAssemblyContext="_6Zcy8IQWEeySUeZbAd56vg" sourceAssemblyContext="_3qAxMIQWEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_G54NoIQXEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_6Zcy8IQWEeySUeZbAd56vg" innerDataSourceRole="_ptEckIQTEeySUeZbAd56vg" outerDataSourceRole="_FIQfAIQXEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:AssemblyDataConnector" id="_Wdj98IQXEeySUeZbAd56vg" entityName="newAssemblyDataConnector" dataSourceRole="_URDDEIQXEeySUeZbAd56vg" dataSinkRole="_vdYOUIQTEeySUeZbAd56vg" sinkAssemblyContext="_hedm8IQUEeySUeZbAd56vg" sourceAssemblyContext="_fIP9gIQUEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_kfFX8IQXEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_hedm8IQUEeySUeZbAd56vg" innerDataSinkRole="_xt-_AIQTEeySUeZbAd56vg" outerDataSinkRole="_g0v0MIQXEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSinkDelegationConnector" id="_05XZEIQXEeySUeZbAd56vg" entityName="newDataSinkDelegationConnector" assemblyContext="_hedm8IQUEeySUeZbAd56vg" innerDataSinkRole="_2qf8UIQTEeySUeZbAd56vg" outerDataSinkRole="_tiaZoIQXEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_v9i28IQlEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_fIP9gIQUEeySUeZbAd56vg" innerDataSourceRole="_slOQQIQlEeySUeZbAd56vg" outerDataSourceRole="_moEVUIQlEeySUeZbAd56vg"/>
+      <connectors__ComposedStructure xsi:type="org.palladiosimulator.indirections.composition:DataSourceDelegationConnector" id="_2SfxYIQmEeySUeZbAd56vg" entityName="newDataSourceDelegationConnector" assemblyContext="_vxuzEIQmEeySUeZbAd56vg" innerDataSourceRole="_qGlOIIQmEeySUeZbAd56vg" outerDataSourceRole="_0YxPoIQmEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_FeifwIQREeySUeZbAd56vg" entityName="Browser.provided.Browser" providedInterface__OperationProvidedRole="_h44lAIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_6OkqkIQUEeySUeZbAd56vg" entityName="MediaPackageDataSinkRole" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_V3l_kIQWEeySUeZbAd56vg" entityName="BrowserIDOwnDataSinkRole" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_2Ezt8IQWEeySUeZbAd56vg" entityName="SessionDataOtherDataSinkRole" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_g0v0MIQXEeySUeZbAd56vg" entityName="PortOtherDataSinkRole" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_tiaZoIQXEeySUeZbAd56vg" entityName="BrowserIDOtherDataSinkRole" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_qUpkgIQUEeySUeZbAd56vg" entityName="MediaPackageDataSourceRole" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_rhGeoIQWEeySUeZbAd56vg" entityName="SessionDataOwnDataSourceRole" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_FIQfAIQXEeySUeZbAd56vg" entityName="BrowserIDOtherDataSourceRole" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_moEVUIQlEeySUeZbAd56vg" entityName="BrowserIDOwnDataSourceRole" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_0YxPoIQmEeySUeZbAd56vg" entityName="PortOwnDataSourceRole" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="__EBogIQSEeySUeZbAd56vg" entityName="Browser.decryptSession">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_AU5agIQTEeySUeZbAd56vg" entityName="Browser.decryptSession.sink.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_CDY8oIQTEeySUeZbAd56vg" entityName="Browser.decryptSession.source.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_kRTXcIQTEeySUeZbAd56vg" entityName="Browser.extractOtherID">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_myF5MIQTEeySUeZbAd56vg" entityName="Browser.extractOtherID.sink.SessionData" dataInterface="_xIWY0IQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_ptEckIQTEeySUeZbAd56vg" entityName="Browser.extractOtherID.source.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_tXDbAIQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_vdYOUIQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage.sink.Media" dataInterface="_zmEYcIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_xt-_AIQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage.sink.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_0Hnv4IQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage.sink.own.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_2qf8UIQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage.sink.other.BrowserID" dataInterface="_49ESUIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_60q2sIQTEeySUeZbAd56vg" entityName="Browser.createMediaPackage.source.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_9DW70IQTEeySUeZbAd56vg" entityName="Browser.encryptMediaPackage">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_-b9GcIQTEeySUeZbAd56vg" entityName="Browser.encryptMediaPackage.sink.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="__tME0IQTEeySUeZbAd56vg" entityName="Browser.encryptMediaPackage.source.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_CQYaUIQUEeySUeZbAd56vg" entityName="Browser.decryptMediaPackage">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_D2uGAIQUEeySUeZbAd56vg" entityName="Browser.decryptMediaPackage.sink.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_FXUWEIQUEeySUeZbAd56vg" entityName="Browser.decryptMediaPackage.source.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_Hz67YIQUEeySUeZbAd56vg" entityName="Browser.unpackMediaPackage">
+      <providedRoles_InterfaceProvidingEntity xsi:type="org.palladiosimulator.indirections.repository:DataSinkRole" id="_JOIPkIQUEeySUeZbAd56vg" entityName="Browser.unpackMediaPackage.sink.MediaPackage" dataInterface="_13LfcIQHEeySUeZbAd56vg"/>
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_KmoTkIQUEeySUeZbAd56vg" entityName="Browser.unpackMediaPackage.source.Media" dataInterface="_zmEYcIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <components__Repository xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" id="_oUSxIIQmEeySUeZbAd56vg" entityName="Browser.PortGenerator">
+      <requiredRoles_InterfaceRequiringEntity xsi:type="org.palladiosimulator.indirections.repository:DataSourceRole" id="_qGlOIIQmEeySUeZbAd56vg" entityName="PortGenerator.source.Port" dataInterface="_8k4GgIQHEeySUeZbAd56vg"/>
+    </components__Repository>
+    <interfaces__Repository xsi:type="repository:OperationInterface" id="_h44lAIQHEeySUeZbAd56vg" entityName="Browser">
+      <signatures__OperationInterface id="__vSNAIQHEeySUeZbAd56vg" entityName="exchangeMedia" returnType__OperationSignature="_j40ccIQHEeySUeZbAd56vg">
+        <parameters__OperationSignature dataType__Parameter="_k65kgIQHEeySUeZbAd56vg" parameterName="sessionData"/>
+        <parameters__OperationSignature dataType__Parameter="_j40ccIQHEeySUeZbAd56vg" parameterName="media"/>
+      </signatures__OperationInterface>
+      <signatures__OperationInterface id="_yEkpIIQKEeySUeZbAd56vg" entityName="initBrowser">
+        <parameters__OperationSignature dataType__Parameter="_muUp8IQHEeySUeZbAd56vg" parameterName="browserID"/>
+      </signatures__OperationInterface>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_xIWY0IQHEeySUeZbAd56vg" entityName="SessionData">
+      <dataSignature id="_x30G4IQHEeySUeZbAd56vg" entityName="sessionData">
+        <parameter dataType__Parameter="_k65kgIQHEeySUeZbAd56vg" parameterName="sessionData"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_zmEYcIQHEeySUeZbAd56vg" entityName="Media">
+      <dataSignature id="_0MiikIQHEeySUeZbAd56vg" entityName="media">
+        <parameter dataType__Parameter="_j40ccIQHEeySUeZbAd56vg" parameterName="media"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_13LfcIQHEeySUeZbAd56vg" entityName="MediaPackage">
+      <dataSignature id="_2tdnMIQHEeySUeZbAd56vg" entityName="mediaPackage">
+        <parameter dataType__Parameter="_qyfC8IQHEeySUeZbAd56vg" parameterName="mediaPackage"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_49ESUIQHEeySUeZbAd56vg" entityName="BrowserID">
+      <dataSignature id="_5vAsoIQHEeySUeZbAd56vg" entityName="browserID">
+        <parameter dataType__Parameter="_muUp8IQHEeySUeZbAd56vg" parameterName="browserID"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <interfaces__Repository xsi:type="org.palladiosimulator.indirections.repository:DataInterface" id="_8k4GgIQHEeySUeZbAd56vg" entityName="Port">
+      <dataSignature id="_9GxSoIQHEeySUeZbAd56vg" entityName="port">
+        <parameter dataType__Parameter="_qS0EYIQHEeySUeZbAd56vg" parameterName="port"/>
+      </dataSignature>
+    </interfaces__Repository>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_j40ccIQHEeySUeZbAd56vg" entityName="Media"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_k65kgIQHEeySUeZbAd56vg" entityName="SessionData"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_muUp8IQHEeySUeZbAd56vg" entityName="BrowserID"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_qS0EYIQHEeySUeZbAd56vg" entityName="Port"/>
+    <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_qyfC8IQHEeySUeZbAd56vg" entityName="MediaPackage"/>
+  </repository:Repository>
+  <emfprofileapplication:ProfileApplication>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_LqsPEIQIEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_gs_ScIQvEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_NgRbMIQJEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_rrdyMIQvEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_PYuxoYQJEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_7FGOoIQvEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_8mVNIIQJEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_GQ-4QIQwEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_33GBYIQKEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_SYk8MIQwEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_AnC0EIQLEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_edFP4YQwEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="__EBogIQSEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_10gpUYQwEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_kRTXcIQTEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_q-UGYIQxEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_tXDbAIQTEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_1aULMIQxEeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_9DW70IQTEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_vieGsIQ0EeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_CQYaUIQUEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_7AHOsIQ0EeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_Hz67YIQUEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_GhPIgYQ1EeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:DataChannelBehaviour" appliedTo="_oUSxIIQmEeySUeZbAd56vg">
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_4YVBkAevEeuLudFLEF6rzA"/>
+      <behaviour href="DataChannelBehaviours.behaviour#_Q3ET4YQ1EeySUeZbAd56vg"/>
+    </stereotypeApplications>
+    <importedProfiles nsURI="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile" location="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram"/>
+  </emfprofileapplication:ProfileApplication>
+</xmi:XMI>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<behaviour:Behaviours xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:behaviour="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/behaviour" xmlns:confidentiality="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0" xmlns:expression="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/expression" xmlns:expressions="http://palladiosimulator.org/dataflow/dictionary/characterized/expressions/1.0" xmlns:org.palladiosimulator.indirections.repository="http://palladiosimulator.org/Indirections/Repository/1.0" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_VmlbMIQuEeySUeZbAd56vg">
+  <dataChannelBehaviour id="_gs_ScIQvEeySUeZbAd56vg" entityName="Browser.encryptSession">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_LqsPEIQIEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_i9CpgIQvEeySUeZbAd56vg" reusedBehaviour="_VmlbNYQuEeySUeZbAd56vg">
+      <variableBindings id="_j4xR8IQvEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.2/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.encryptSession.sink.SessionData.sessionData"/>
+      </variableBindings>
+      <variableBindings id="_kF02gIQvEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.2/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.encryptSession.source.SessionData.sessionData"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_rrdyMIQvEeySUeZbAd56vg" entityName="STUN.publish">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_NgRbMIQJEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_0GxKkIQvEeySUeZbAd56vg" reusedBehaviour="_VmlbMYQuEeySUeZbAd56vg">
+      <variableBindings id="_1MRaEIQvEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="STUN.publish.sink.Port.port"/>
+      </variableBindings>
+      <variableBindings id="_1c9hcIQvEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="STUN.publish.source.Port.port"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_7FGOoIQvEeySUeZbAd56vg" entityName="STUN.receive">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_PYuxoYQJEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_-QNfwIQvEeySUeZbAd56vg" reusedBehaviour="_VmlbMYQuEeySUeZbAd56vg">
+      <variableBindings id="__5DF0IQvEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="STUN.receive.sink.Port.port"/>
+      </variableBindings>
+      <variableBindings id="_AFIaAIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="STUN.receive.source.Port.port"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_GQ-4QIQwEeySUeZbAd56vg" entityName="SignalingServer.dispatchSessionData">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_8mVNIIQJEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_Jz0F0IQwEeySUeZbAd56vg" reusedBehaviour="_VmlbMYQuEeySUeZbAd56vg">
+      <variableBindings id="_KGo7MIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="SignalingServer.dispatchSessionData.sink.SessionData.sessionData"/>
+      </variableBindings>
+      <variableBindings id="_PKugIIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="SignalingServer.dispatchSessionData.source.SessionData.sessionData"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_SYk8MIQwEeySUeZbAd56vg" entityName="IDP.IdentityDataStore">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_33GBYIQKEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_XYB4wIQwEeySUeZbAd56vg" reusedBehaviour="_VmlbNIQuEeySUeZbAd56vg">
+      <variableBindings id="_YMjF8IQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.1/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="IdentityDataStore.sink.BrowserID.browserID"/>
+      </variableBindings>
+      <variableBindings id="_YYXUYIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.1/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="IdentityDataStore.source.BrowserID.browserID"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_edFP4YQwEeySUeZbAd56vg" entityName="IDP.TransmitBrowserID">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_AnC0EIQLEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_rJsscIQwEeySUeZbAd56vg" reusedBehaviour="_VmlbPoQuEeySUeZbAd56vg">
+      <variableBindings id="_sFV1UIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.3/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="TransmitBrowserID.sink.own.BrowserID.browserID"/>
+      </variableBindings>
+      <variableBindings id="_sRkTcIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.3/@inputVariables.1">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="TransmitBrowserID.sink.other.BrowserID.browserID"/>
+      </variableBindings>
+      <variableBindings id="_su3TcIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.3/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="TransmitBrowserID.source.other.BrowserID.browserID"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_10gpUYQwEeySUeZbAd56vg" entityName="Browser.decryptSession">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#__EBogIQSEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_6PLd0IQwEeySUeZbAd56vg" reusedBehaviour="_77nxgYQwEeySUeZbAd56vg">
+      <variableBindings id="__eSnAIQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.4/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.decryptSession.sink.SessionData.sessionData"/>
+      </variableBindings>
+      <variableBindings id="__tNz0IQwEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.4/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.decryptSession.source.SessionData.sessionData"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_q-UGYIQxEeySUeZbAd56vg" entityName="Browser.extractOtherID">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_kRTXcIQTEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_ufNaQIQxEeySUeZbAd56vg" reusedBehaviour="_VmlbMYQuEeySUeZbAd56vg">
+      <variableBindings id="_vbjtwIQxEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.extractOtherID.sink.SessionData.sessionData"/>
+      </variableBindings>
+      <variableBindings id="_vo8pgIQxEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.extractOtherID.source.BrowserID.browserID"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_1aULMIQxEeySUeZbAd56vg" entityName="Browser.createMediaPackage">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_tXDbAIQTEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_D1whEIQyEeySUeZbAd56vg" reusedBehaviour="_4Cd5MYQxEeySUeZbAd56vg">
+      <variableBindings id="_EsBasIQyEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.5/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.createMediaPackage.sink.Media.media"/>
+      </variableBindings>
+      <variableBindings id="_E2BrQIQyEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.5/@inputVariables.1">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.createMediaPackage.sink.Port.port"/>
+      </variableBindings>
+      <variableBindings id="_FIcQ8IQyEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.5/@inputVariables.2">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.createMediaPackage.sink.own.BrowserID.browserID"/>
+      </variableBindings>
+      <variableBindings id="_FW91IIQyEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.5/@inputVariables.3">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.createMediaPackage.sink.other.BrowserID.browserID"/>
+      </variableBindings>
+      <variableBindings id="_FmT4sIQyEeySUeZbAd56vg" boundVariable="//@reusableBehaviours.5/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.createMediaPackage.source.MediaPackage.mediaPackage"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_vieGsIQ0EeySUeZbAd56vg" entityName="Browser.encryptMediaPackage">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_9DW70IQTEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_zcUGEIQ0EeySUeZbAd56vg" reusedBehaviour="_VmlbNYQuEeySUeZbAd56vg">
+      <variableBindings id="_0gHscIQ0EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.2/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.encryptMediaPackage.sink.MediaPackage.mediaPackage"/>
+      </variableBindings>
+      <variableBindings id="_0w2QEIQ0EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.2/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.encryptMediaPackage.source.MediaPackage.mediaPackage"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_7AHOsIQ0EeySUeZbAd56vg" entityName="Browser.decryptMediaPackage">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_CQYaUIQUEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_-qICUIQ0EeySUeZbAd56vg" reusedBehaviour="_77nxgYQwEeySUeZbAd56vg">
+      <variableBindings id="__iFlEIQ0EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.4/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.decryptMediaPackage.sink.MediaPackage.mediaPackage"/>
+      </variableBindings>
+      <variableBindings id="__uZiwIQ0EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.4/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.decryptMediaPackage.source.MediaPackage.mediaPackage"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_GhPIgYQ1EeySUeZbAd56vg" entityName="Browser.unpackMediaPackage">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_Hz67YIQUEeySUeZbAd56vg"/>
+    <reusedBehaviours id="_KeBHIIQ1EeySUeZbAd56vg" reusedBehaviour="_VmlbMYQuEeySUeZbAd56vg">
+      <variableBindings id="_LQH5gIQ1EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@inputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.unpackMediaPackage.sink.MediaPackage.mediaPackage"/>
+      </variableBindings>
+      <variableBindings id="_Lc2G4IQ1EeySUeZbAd56vg" boundVariable="//@reusableBehaviours.0/@outputVariables.0">
+        <boundValue xsi:type="stoex:VariableReference" referenceName="Browser.unpackMediaPackage.source.Media.media"/>
+      </variableBindings>
+    </reusedBehaviours>
+  </dataChannelBehaviour>
+  <dataChannelBehaviour id="_Q3ET4YQ1EeySUeZbAd56vg" entityName="Browser.PortGenerator">
+    <dataChannel xsi:type="org.palladiosimulator.indirections.repository:JavaClassDataChannel" href="newRepository.repository#_oUSxIIQmEeySUeZbAd56vg"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_Xchk8IQ1EeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:True" id="_ZtYNRoQ1EeySUeZbAd56vg"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="Source Role PortGenerator.source.Port.port"/>
+    </variableUsages>
+  </dataChannelBehaviour>
+  <reusableBehaviours id="_VmlbMYQuEeySUeZbAd56vg" entityName="Forward">
+    <inputVariables referenceName="input"/>
+    <outputVariables referenceName="output"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbMoQuEeySUeZbAd56vg"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_VmlbM4QuEeySUeZbAd56vg">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="input"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="output"/>
+    </variableUsages>
+  </reusableBehaviours>
+  <reusableBehaviours id="_VmlbNIQuEeySUeZbAd56vg" entityName="Store">
+    <inputVariables referenceName="input"/>
+    <outputVariables referenceName="output"/>
+  </reusableBehaviours>
+  <reusableBehaviours id="_VmlbNYQuEeySUeZbAd56vg" entityName="Encrypt">
+    <inputVariables referenceName="input"/>
+    <outputVariables referenceName="output"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbNoQuEeySUeZbAd56vg"/>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_VmlbN4QuEeySUeZbAd56vg">
+          <namedReference xsi:type="stoex:VariableReference" referenceName="input"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbOIQuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_VmlbOYQuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <namedReference xsi:type="stoex:VariableReference" referenceName="input"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbOoQuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:False" id="_VmlbO4QuEeySUeZbAd56vg"/>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbPIQuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:True" id="_VmlbPYQuEeySUeZbAd56vg"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="output"/>
+    </variableUsages>
+  </reusableBehaviours>
+  <reusableBehaviours id="_VmlbPoQuEeySUeZbAd56vg" entityName="Join">
+    <inputVariables referenceName="input1"/>
+    <inputVariables referenceName="input2"/>
+    <outputVariables referenceName="output"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbP4QuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:And" id="_VmlbQIQuEeySUeZbAd56vg">
+          <left xsi:type="expression:NamedEnumCharacteristicReference" id="_VmlbQYQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_VmlbQoQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmlbQ4QuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:Or" id="_VmmCQIQuEeySUeZbAd56vg">
+          <left xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCQYQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCQoQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmmCQ4QuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:And" id="_VmmCRIQuEeySUeZbAd56vg">
+          <left xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCRYQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCRoQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_VmmCR4QuEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:Or" id="_VmmCSIQuEeySUeZbAd56vg">
+          <left xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCSYQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_VmmCSoQuEeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="output"/>
+    </variableUsages>
+  </reusableBehaviours>
+  <reusableBehaviours id="_77nxgYQwEeySUeZbAd56vg" entityName="Decrypt">
+    <inputVariables referenceName="input"/>
+    <outputVariables referenceName="output"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_HQVnAIQxEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_HuLZk4QxEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+          <namedReference xsi:type="stoex:VariableReference" referenceName="input"/>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_OHuVkIQxEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:False" id="_PYNGAoQxEeySUeZbAd56vg"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="output"/>
+    </variableUsages>
+  </reusableBehaviours>
+  <reusableBehaviours id="_4Cd5MYQxEeySUeZbAd56vg" entityName="Join4">
+    <inputVariables referenceName="input1"/>
+    <inputVariables referenceName="input2"/>
+    <inputVariables referenceName="input3"/>
+    <inputVariables referenceName="input4"/>
+    <outputVariables referenceName="output"/>
+    <variableUsages>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_YsyaUIQyEeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:And" id="_9DyMGYQzEeySUeZbAd56vg">
+          <left xsi:type="expressions:And" id="_BAG3s4Q0EeySUeZbAd56vg">
+            <left xsi:type="expressions:And" id="_BlcZY4Q0EeySUeZbAd56vg">
+              <left xsi:type="expression:NamedEnumCharacteristicReference" id="_CLlzb4Q0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+              </left>
+              <right xsi:type="expression:NamedEnumCharacteristicReference" id="_Cvo7s4Q0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+              </right>
+            </left>
+            <right xsi:type="expression:NamedEnumCharacteristicReference" id="_DbCpI4Q0EeySUeZbAd56vg">
+              <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+              <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+              <namedReference xsi:type="stoex:VariableReference" referenceName="input3"/>
+            </right>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_EHVuc4Q0EeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input4"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_NflQIIQ0EeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:Or" id="_O4UkuoQ0EeySUeZbAd56vg">
+          <left xsi:type="expressions:Or" id="_PcK4pIQ0EeySUeZbAd56vg">
+            <left xsi:type="expressions:Or" id="_P1vPNIQ0EeySUeZbAd56vg">
+              <left xsi:type="expression:NamedEnumCharacteristicReference" id="_QRtZj4Q0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+              </left>
+              <right xsi:type="expression:NamedEnumCharacteristicReference" id="_QrUMY4Q0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+              </right>
+            </left>
+            <right xsi:type="expression:NamedEnumCharacteristicReference" id="_RVVZw4Q0EeySUeZbAd56vg">
+              <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+              <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+              <namedReference xsi:type="stoex:VariableReference" referenceName="input3"/>
+            </right>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_R1pRg4Q0EeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue-4wYQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input4"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_a82GgIQ0EeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:And" id="_a82GgYQ0EeySUeZbAd56vg">
+          <left xsi:type="expressions:And" id="_a82GgoQ0EeySUeZbAd56vg">
+            <left xsi:type="expressions:And" id="_a82Gg4Q0EeySUeZbAd56vg">
+              <left xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GhIQ0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+              </left>
+              <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GhYQ0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+              </right>
+            </left>
+            <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GhoQ0EeySUeZbAd56vg">
+              <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+              <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+              <namedReference xsi:type="stoex:VariableReference" referenceName="input3"/>
+            </right>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82Gh4Q0EeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f0oQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input4"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation specification="false"/>
+        <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_a82GiIQ0EeySUeZbAd56vg">
+          <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+          <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+        </lhs>
+        <rhs xsi:type="expressions:Or" id="_a82GiYQ0EeySUeZbAd56vg">
+          <left xsi:type="expressions:Or" id="_a82GioQ0EeySUeZbAd56vg">
+            <left xsi:type="expressions:Or" id="_a82Gi4Q0EeySUeZbAd56vg">
+              <left xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GjIQ0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input1"/>
+              </left>
+              <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GjYQ0EeySUeZbAd56vg">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+                <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+                <namedReference xsi:type="stoex:VariableReference" referenceName="input2"/>
+              </right>
+            </left>
+            <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82GjoQ0EeySUeZbAd56vg">
+              <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+              <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+              <namedReference xsi:type="stoex:VariableReference" referenceName="input3"/>
+            </right>
+          </left>
+          <right xsi:type="expression:NamedEnumCharacteristicReference" id="_a82Gj4Q0EeySUeZbAd56vg">
+            <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypes.characteristics#_Ue_f0IQUEeySUeZbAd56vg"/>
+            <literal href="CharacteristicTypes.characteristics#_Ue_f1IQUEeySUeZbAd56vg"/>
+            <namedReference xsi:type="stoex:VariableReference" referenceName="input4"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="output"/>
+    </variableUsages>
+  </reusableBehaviours>
+</behaviour:Behaviours>

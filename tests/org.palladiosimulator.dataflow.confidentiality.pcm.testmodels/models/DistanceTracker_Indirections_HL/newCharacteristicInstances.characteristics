@@ -4,7 +4,7 @@
     <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="newCharacteristics.characteristics#_1drwMDiVEeuut4QVVe5DpA"/>
     <values href="newCharacteristics.characteristics#_9-iAoDh5EeuVm5YY9CyZ8g"/>
   </characteristics>
-  <characteristics xsi:type="characteristics:EnumCharacteristic" id="_zGkLADiZEeuut4QVVe5DpA" entityName="DistanceOnlyClearance">
+  <characteristics xsi:type="characteristics:EnumCharacteristic" id="_zGkLADiZEeuut4QVVe5DpA" entityName="DistanceTrackerClearance">
     <type xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="newCharacteristics.characteristics#_1drwMDiVEeuut4QVVe5DpA"/>
     <values href="newCharacteristics.characteristics#_9GjPwDh5EeuVm5YY9CyZ8g"/>
   </characteristics>

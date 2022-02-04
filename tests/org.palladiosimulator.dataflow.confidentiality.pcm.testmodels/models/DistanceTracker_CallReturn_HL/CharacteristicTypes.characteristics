@@ -3,8 +3,8 @@
   <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_r4tjcTopEeujr6PSMKhjng" name="DataClassification" type="_vhmVsjopEeujr6PSMKhjng"/>
   <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_wttjgTopEeujr6PSMKhjng" name="NodeClearance" type="_vhmVsjopEeujr6PSMKhjng"/>
   <characteristicEnumerations id="_vhmVsjopEeujr6PSMKhjng" name="Levels">
-    <literals id="_yuhksDopEeujr6PSMKhjng" name="TrackingService"/>
-    <literals id="_yhRL0DopEeujr6PSMKhjng" name="Distance"/>
+    <literals id="_yuhksDopEeujr6PSMKhjng" name="OnlyDistance"/>
+    <literals id="_yhRL0DopEeujr6PSMKhjng" name="User,DistanceTracker"/>
     <literals id="_ySDrIDopEeujr6PSMKhjng" name="User"/>
   </characteristicEnumerations>
 </characteristics:CharacteristicTypeDictionary>

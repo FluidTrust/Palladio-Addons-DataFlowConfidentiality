@@ -25,7 +25,7 @@ class DistanceTracker_CallReturn_HL_Test extends InformationFlowHierarchicalLati
 			val eca = repository.eAllContents.filter(ExternalCallAction).findFirst[entityName == "DistanceTrackerLogic.uploadDistance.callTrackingService"]
 			val declassCharacterization = eca.inputVariableUsages__CallAction.get(0).variableCharacterisation_VariableUsage.get(2) as ConfidentialityVariableCharacterisation
 			val lhs = declassCharacterization.lhs as LhsEnumCharacteristicReference
-			lhs.literal = lhs.literal.enum.literals.findFirst[name == "Distance"]
+			lhs.literal = lhs.literal.enum.literals.findFirst[name == "User,DistanceTracker"]
 		])
 	}
 	

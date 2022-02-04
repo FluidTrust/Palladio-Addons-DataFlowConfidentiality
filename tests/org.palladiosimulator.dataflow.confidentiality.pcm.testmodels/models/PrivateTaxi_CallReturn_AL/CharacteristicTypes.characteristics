@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characteristics:CharacteristicTypeDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/characteristics" id="_D5u7wD91EeuyzLaAFX3TLQ">
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_gzAXsT92EeuyzLaAFX3TLQ" name="PublicKeyOf" type="_I1XvUj91EeuyzLaAFX3TLQ"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_lLI1kT92EeuyzLaAFX3TLQ" name="PrivateKeyOf" type="_I1XvUj91EeuyzLaAFX3TLQ"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_xSDuoT93EeuyzLaAFX3TLQ" name="DecryptableBy" type="_I1XvUj91EeuyzLaAFX3TLQ"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_3K7RcYXXEeyJD6P83TdaeQ" name="Clearance" type="_gW9KYoXXEeyJD6P83TdaeQ"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_5yqIsYXXEeyJD6P83TdaeQ" name="Classification" type="_gW9KYoXXEeyJD6P83TdaeQ"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_DSW9UYXYEeyJD6P83TdaeQ" name="EncryptedClassification" type="_gW9KYoXXEeyJD6P83TdaeQ"/>
+  <characteristicEnumerations id="_I1XvUj91EeuyzLaAFX3TLQ" name="Entities">
+    <literals id="_KDWlYD91EeuyzLaAFX3TLQ" name="CalcDistance"/>
+    <literals id="_LLhHUD91EeuyzLaAFX3TLQ" name="PrivateTaxi"/>
+    <literals id="_htC-ED92EeuyzLaAFX3TLQ" name="Driver"/>
+    <literals id="_E6d4oD94EeuyzLaAFX3TLQ" name="Rider"/>
+  </characteristicEnumerations>
+  <characteristicEnumerations id="_gW9KYoXXEeyJD6P83TdaeQ" name="Levels">
+    <literals id="_iAzdEIXXEeyJD6P83TdaeQ" name="Any"/>
+    <literals id="_jCF68IXXEeyJD6P83TdaeQ" name="Contact"/>
+    <literals id="_j7uRoIXXEeyJD6P83TdaeQ" name="Route"/>
+    <literals id="_k0aNIIXXEeyJD6P83TdaeQ" name="PrivateTaxi"/>
+    <literals id="_l2yQIIXXEeyJD6P83TdaeQ" name="Driver"/>
+    <literals id="_mzg-IIXXEeyJD6P83TdaeQ" name="Rider"/>
+    <literals id="_nszWkIXXEeyJD6P83TdaeQ" name="CalcDistance"/>
+  </characteristicEnumerations>
+</characteristics:CharacteristicTypeDictionary>

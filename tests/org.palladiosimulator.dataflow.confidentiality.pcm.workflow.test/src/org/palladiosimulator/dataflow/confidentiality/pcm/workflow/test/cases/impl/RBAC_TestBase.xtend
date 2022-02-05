@@ -24,7 +24,7 @@ class RBAC_TestBase extends TestBase {
 	
 	protected def runTest(int expectedNumberOfSolutions, Consumer<UsageModel> usageModelModifier) {
 		val solution = deriveSolution(usageModelModifier)
-		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["P", "PIN", "ROLES", "REQ", "S"])
+		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["N", "PIN", "ROLES", "REQ", "S"])
 	}
 	
 	protected def deriveSolution(Consumer<UsageModel> usageModelModifier) {
@@ -51,12 +51,13 @@ class RBAC_TestBase extends TestBase {
 		val ctRoles = trace.getFactId([ct | ct.name == "OwnedRoles"]).findFirst[true]
 
 		prover.addTheory(resultingProgram.get)
-		
+
 		val query = prover.query('''
-			inputPin(P, PIN),
-			setof(R, nodeCharacteristic(P, ?CTROLES, R), ROLES),
-			allCharacteristicValues(P, PIN, ?CTRIGHTS, REQ, S),
-			intersection(REQ, ROLES, []).
+			inputPin(N, PIN),
+			flowTree(N, PIN, S),
+			findall(R, nodeCharacteristic(N,?CTROLES,R), L_AR),
+			findall(R, characteristic(N,PIN,?CTRIGHTS,R,S), L_PR),
+			sort(L_AR, ROLES), sort(L_PR, REQ), intersection(ROLES, REQ, [])
 		''')
 		query.bind("CTROLES", ctRoles)
 		query.bind("CTRIGHTS", ctRights)

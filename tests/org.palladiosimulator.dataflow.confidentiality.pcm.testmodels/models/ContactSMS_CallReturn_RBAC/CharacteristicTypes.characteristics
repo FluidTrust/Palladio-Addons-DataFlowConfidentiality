@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characteristics:CharacteristicTypeDictionary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DataDictionaryCharacterized="http://palladiosimulator.org/dataflow/dictionary/characterized/1.0" xmlns:characteristics="http://palladiosimulator.org/dataflow/confidentiality/pcm/0.1.0/characteristics" id="_U9B_MIMuEeydpeNEy1O9cA">
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_q1dfgYM4EeydpeNEy1O9cA" name="AllowedRoles" type="_lnZfMoM4EeydpeNEy1O9cA"/>
+  <characteristicTypes xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" id="_uZME8YM4EeydpeNEy1O9cA" name="OwnedRoles" type="_lnZfMoM4EeydpeNEy1O9cA"/>
+  <characteristicEnumerations id="_lnZfMoM4EeydpeNEy1O9cA" name="Levels">
+    <literals id="_pR9scIM4EeydpeNEy1O9cA" name="Receiver"/>
+    <literals id="_ogd-EIM4EeydpeNEy1O9cA" name="User"/>
+  </characteristicEnumerations>
+</characteristics:CharacteristicTypeDictionary>

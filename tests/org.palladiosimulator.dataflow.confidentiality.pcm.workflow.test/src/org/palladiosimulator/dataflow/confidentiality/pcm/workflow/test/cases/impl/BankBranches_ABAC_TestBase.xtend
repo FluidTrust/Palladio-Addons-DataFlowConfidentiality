@@ -25,7 +25,7 @@ class BankBranches_ABAC_TestBase extends TestBase {
 
 	protected def runTest(int expectedNumberOfSolutions, Consumer<UsageModel> usageModelModifier) {
 		val solution = deriveSolution(usageModelModifier)
-		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["A", "PIN", "SUBJ_LOC", "SUBJ_ROLE", "OBJ_LOC", "OBJ_STAT", "S"])
+		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["A", "PIN", "S"])
 	}
 
 	protected def deriveSolution(Consumer<UsageModel> usageModelModifier) {
@@ -58,35 +58,40 @@ class BankBranches_ABAC_TestBase extends TestBase {
 		val ctOrigin = trace.getFactId([ct|ct.name == "Origin"]).findFirst[true]
 		val ctRole = trace.getFactId([ct|ct.name == "Role"]).findFirst[true]
 		val ctStatus = trace.getFactId([ct|ct.name == "Status"]).findFirst[true]
+		val cClerkRole = trace.getLiteralFactIds(rolesEnum.literals.findFirst[name == "Clerk"]).findFirst[true]
 		val cManagerRole = trace.getLiteralFactIds(rolesEnum.literals.findFirst[name == "Manager"]).findFirst[true]
-		val cCelebrityStatus = trace.getLiteralFactIds(statusEnum.literals.findFirst[name == "Celebrity"]).findFirst[true]
+		val cRegularStatus = trace.getLiteralFactIds(statusEnum.literals.findFirst[name == "Regular"]).findFirst[true]
 
 		prover.addTheory(resultingProgram.get)
-
-		val queryString = '''
-			CMANAGER = ?CMANAGER,
-			(actor(A);actorProcess(A,_)),
-			inputPin(A,PIN),
-			nodeCharacteristic(A, ?CTLOCATION, SUBJ_LOC),
-			nodeCharacteristic(A, ?CTROLE, SUBJ_ROLE),
-			characteristic(A, PIN, ?CTORIGIN, OBJ_LOC, S),
-			characteristic(A, PIN, ?CTSTATUS, OBJ_STAT, S),
-			(
-				SUBJ_LOC \= OBJ_LOC,
-				SUBJ_ROLE \= CMANAGER;
-				OBJ_STAT = ?CCELEBRITY,
-				SUBJ_ROLE \= CMANAGER
-			).
-		'''
-		
-		var query = prover.query(queryString)
-			.bind("CTLOCATION", ctLocation)
-			.bind("CTROLE", ctRole)
-			.bind("CTORIGIN", ctOrigin)
-			.bind("CTSTATUS", ctStatus)
-			.bind("CMANAGER", cManagerRole)
-			.bind("CCELEBRITY", cCelebrityStatus)
+		prover.loadTheory('''
+			matchSubject('Clerk', N) :-
+			  nodeCharacteristic(N, '«ctRole»', '«cClerkRole»').
 			
+			matchSubject('Manager', N) :-
+			  nodeCharacteristic(N, '«ctRole»', '«cManagerRole»').
+			
+			matchObject('Regular', N, PIN, S) :-
+			  exactCharacteristicValues(N, PIN, '«ctStatus»', ['«cRegularStatus»'], S).
+			
+			matchObject('all', _, _, _).
+			
+			read(N, PIN, S) :-
+			  matchSubject('Manager', N),
+			  matchObject('all', N, PIN, S).
+			
+			read(N, PIN, S) :-
+			  matchSubject('Clerk', N),
+			  matchObject('Regular', N, PIN, S),
+			  nodeCharacteristic(N, '«ctLocation»', L),
+			  exactCharacteristicValues(N, PIN, '«ctOrigin»', [L], S).
+		''')
+		var queryString = '''
+			(actor(A);actorProcess(A,_)),
+			inputPin(A, PIN),
+			flowTree(A, PIN, S),
+			\+ read(A, PIN, S).
+		'''
+		var query = prover.query(queryString)
 		var solution = query.solve()
 		solution
 	}

@@ -18,7 +18,7 @@ class BankBranches_Indirections_ABAC_Test extends BankBranches_ABAC_TestBase {
 	
 	@Test
 	def void testIssue() {
-		runTest(6, [um |
+		runTest(25, [um |
 			val elsc = um.usageScenario_UsageModel.findFirst[entityName == "ClerkUSA"].eAllContents.filter(EntryLevelSystemCall).findFirst[entityName == "ClerkUSA.findCustomer.RegularUSA"]
 			val system = elsc.providedRole_EntryLevelSystemCall.providingEntity_ProvidedRole as org.palladiosimulator.pcm.system.System
 			val newRole = system.providedRoles_InterfaceProvidingEntity.filter(OperationProvidedRole).findFirst[entityName == "CustomerHandlingProvidedRole_Asia_Regular"]

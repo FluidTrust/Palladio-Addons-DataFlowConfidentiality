@@ -2,7 +2,6 @@ package org.palladiosimulator.dataflow.confidentiality.pcm.workflow.test.cases.i
 
 import java.util.function.Consumer
 import org.eclipse.emf.ecore.util.EcoreUtil
-import org.palladiosimulator.dataflow.confidentiality.pcm.model.confidentiality.characteristics.CharacteristicTypeDictionary
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.TransformPCMDFDToPrologWorkflowFactory
 import org.palladiosimulator.dataflow.confidentiality.pcm.workflow.jobs.TransformPCMDFDToPrologJobBuilder
 import org.palladiosimulator.pcm.allocation.Allocation
@@ -25,7 +24,7 @@ class TMAC_TestBase extends TestBase {
 	
 	protected def runTest(int expectedNumberOfSolutions, Consumer<UsageModel> usageModelModifier) {
 		val solution = deriveSolution(usageModelModifier)
-		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["P", "PIN", "ROLES", "REQ", "S"])
+		assertNumberOfSolutions(solution, expectedNumberOfSolutions, #["P", "PIN", "ROLES", "REQ", "C", "V", "S"])
 	}
 	
 	protected def deriveSolution(Consumer<UsageModel> usageModelModifier) {
@@ -34,7 +33,6 @@ class TMAC_TestBase extends TestBase {
 		val allocationModelURI = getModelURI(folderName + "/newAllocation.allocation")
 		val allocationModel = rs.getResource(allocationModelURI, true).contents.get(0) as Allocation
 		EcoreUtil.resolveAll(rs)
-		val ctDict = rs.resources.findFirst[r|r.URI.lastSegment == "CharacteristicTypeDictionary.xmi"].contents.get(0) as CharacteristicTypeDictionary
 		
 		usageModelModifier.accept(usageModel)
 		
@@ -52,28 +50,31 @@ class TMAC_TestBase extends TestBase {
 		val ctRights = trace.getFactId([ct | ct.name == "AllowedRoles"]).findFirst[true]
 		val ctRoles = trace.getFactId([ct | ct.name == "OwnedRoles"]).findFirst[true]
 		val ctValidation = trace.getFactId([ct | ct.name == "ValidationStatus"]).findFirst[true]
-		val literalValidated = ctDict.characteristicEnumerations.findFirst[name == "ValidationStatus"].literals.findFirst[name == "Validated"]
-		val cValidated = trace.getLiteralFactIds(literalValidated).findFirst[true]
 		val ctCriticality = trace.getFactId([ct | ct.name == "Criticality"]).findFirst[true]
-		val literalHigh = ctDict.characteristicEnumerations.findFirst[name == "Criticality"].literals.findFirst[name == "High"]
-		val cHigh = trace.getLiteralFactIds(literalHigh).findFirst[true]
 
 		prover.addTheory(resultingProgram.get)
 		
 		val query = prover.query('''
-			inputPin(P, PIN),
-			setof(R, nodeCharacteristic(P, ?CTROLES, R), ROLES),
-			allCharacteristicValues(P, PIN, ?CTRIGHTS, REQ, S),
-			(intersection(REQ, ROLES, []);
-			(nodeCharacteristic(P, ?CTCRITICAL, ?CHIGH),
-			\+ characteristic(P, PIN, ?CTVALIDATION, ?CVALIDATED, S))).
+			inputPin(P, PIN), flowTree(P, PIN, S),
+			((
+				findall(R, nodeCharacteristic(P, ?CTROLES, R), L_ROLES),
+				findall(R, characteristic(P, PIN, ?CTRIGHTS, R, S), L_REQ),
+				sort(L_ROLES, ROLES), sort(L_REQ, REQ),
+				intersection(REQ, ROLES, [])
+			) ; (
+				CT_CRITICALITY=?CTCRIT,
+				CT_VALIDATION=?CTVAL,
+				nodeCharacteristic(P, CT_CRITICALITY, C),
+				characteristicTypeValue(CT_CRITICALITY, C, NC),
+				characteristic(P, PIN, CT_VALIDATION, V, S),
+				characteristicTypeValue(CT_VALIDATION, V, NV),
+				NV > NC
+			)).
 		''')
 		query.bind("CTROLES", ctRoles)
 		query.bind("CTRIGHTS", ctRights)
-		query.bind("CTCRITICAL", ctCriticality)
-		query.bind("CHIGH", cHigh)
-		query.bind("CTVALIDATION", ctValidation)
-		query.bind("CVALIDATED", cValidated)
+		query.bind("CTCRIT", ctCriticality)
+		query.bind("CTVAL", ctValidation)
 		query.solve()
 	}
 }

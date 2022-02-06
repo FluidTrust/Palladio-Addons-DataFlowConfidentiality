@@ -510,6 +510,8 @@
           <characteristicType
               xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
               href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+          <literal
+              href="CharacteristicTypeDictionary.xmi#_LwwmAD7_EeulRPEeT0f8DQ"/>
         </lhs>
         <rhs
             xsi:type="expressions:And"
@@ -520,6 +522,8 @@
             <characteristicType
                 xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
                 href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+            <literal
+                href="CharacteristicTypeDictionary.xmi#_LwwmAD7_EeulRPEeT0f8DQ"/>
             <namedReference
                 xsi:type="stoex:VariableReference"
                 referenceName="input1"/>
@@ -530,6 +534,50 @@
             <characteristicType
                 xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
                 href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+            <literal
+                href="CharacteristicTypeDictionary.xmi#_LwwmAD7_EeulRPEeT0f8DQ"/>
+            <namedReference
+                xsi:type="stoex:VariableReference"
+                referenceName="input2"/>
+          </right>
+        </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage
+          xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation
+            specification="false"/>
+        <lhs
+            xsi:type="expression:LhsEnumCharacteristicReference"
+            id="___TrUIdPEeyKkcwUFfqE0Q">
+          <characteristicType
+              xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
+              href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+          <literal
+              href="CharacteristicTypeDictionary.xmi#_07FlYIdOEeyL-IL0Rp4ISQ"/>
+        </lhs>
+        <rhs
+            xsi:type="expressions:Or"
+            id="_CapsaodQEeyKkcwUFfqE0Q">
+          <left
+              xsi:type="expression:NamedEnumCharacteristicReference"
+              id="_E7zaj4dQEeyKkcwUFfqE0Q">
+            <characteristicType
+                xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
+                href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+            <literal
+                href="CharacteristicTypeDictionary.xmi#_07FlYIdOEeyL-IL0Rp4ISQ"/>
+            <namedReference
+                xsi:type="stoex:VariableReference"
+                referenceName="input1"/>
+          </left>
+          <right
+              xsi:type="expression:NamedEnumCharacteristicReference"
+              id="_D4j03odQEeyKkcwUFfqE0Q">
+            <characteristicType
+                xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
+                href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+            <literal
+                href="CharacteristicTypeDictionary.xmi#_07FlYIdOEeyL-IL0Rp4ISQ"/>
             <namedReference
                 xsi:type="stoex:VariableReference"
                 referenceName="input2"/>
@@ -656,6 +704,21 @@
               xsi:type="stoex:VariableReference"
               referenceName="input"/>
         </rhs>
+      </variableCharacterisation_VariableUsage>
+      <variableCharacterisation_VariableUsage
+          xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+        <specification_VariableCharacterisation
+            specification="false"/>
+        <lhs
+            xsi:type="expression:LhsEnumCharacteristicReference"
+            id="_Ob_-YIdQEeyKkcwUFfqE0Q">
+          <characteristicType
+              xsi:type="DataDictionaryCharacterized:EnumCharacteristicType"
+              href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+        </lhs>
+        <rhs
+            xsi:type="expressions:False"
+            id="_QE4At4dQEeyKkcwUFfqE0Q"/>
       </variableCharacterisation_VariableUsage>
       <variableCharacterisation_VariableUsage
           xsi:type="confidentiality:ConfidentialityVariableCharacterisation">

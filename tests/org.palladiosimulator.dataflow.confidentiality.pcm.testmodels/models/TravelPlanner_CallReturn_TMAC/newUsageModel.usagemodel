@@ -11,10 +11,18 @@
           <inputParameterUsages_EntryLevelSystemCall>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_9VEu4Dl0EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_1ImrsIdIEeyL-IL0Rp4ISQ">
                 <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_t51CoQcQEeuCO_LUOeqqZQ"/>
               </lhs>
-              <rhs xsi:type="expressions:True" id="__zUS9jl0EeunY9-OetIYyA"/>
+              <rhs xsi:type="expressions:True" id="_1ImrsYdIEeyL-IL0Rp4ISQ"/>
+            </variableCharacterisation_VariableUsage>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_1ImrsodIEeyL-IL0Rp4ISQ">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+                <literal href="CharacteristicTypeDictionary.xmi#_NNdBQIdIEey9YbrOxxUv-Q"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_1Imrs4dIEeyL-IL0Rp4ISQ"/>
             </variableCharacterisation_VariableUsage>
             <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="flight"/>
           </inputParameterUsages_EntryLevelSystemCall>
@@ -44,10 +52,18 @@
           <inputParameterUsages_EntryLevelSystemCall>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_lp1zMDl1EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_8XFroIdIEeyL-IL0Rp4ISQ">
                 <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_t51CoQcQEeuCO_LUOeqqZQ"/>
               </lhs>
-              <rhs xsi:type="expressions:True" id="_mO8EVjl1EeunY9-OetIYyA"/>
+              <rhs xsi:type="expressions:True" id="_8XFroYdIEeyL-IL0Rp4ISQ"/>
+            </variableCharacterisation_VariableUsage>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_8XFroodIEeyL-IL0Rp4ISQ">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+                <literal href="CharacteristicTypeDictionary.xmi#_NNdBQIdIEey9YbrOxxUv-Q"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_8XFro4dIEeyL-IL0Rp4ISQ"/>
             </variableCharacterisation_VariableUsage>
             <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="criteria"/>
           </inputParameterUsages_EntryLevelSystemCall>
@@ -82,26 +98,26 @@
           <inputParameterUsages_EntryLevelSystemCall>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_5zIcsDl1EeunY9-OetIYyA"/>
-              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_6ZpDEzl1EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_8T8ewIdNEeyL-IL0Rp4ISQ"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_8T8ewYdNEeyL-IL0Rp4ISQ">
                 <namedReference xsi:type="stoex:VariableReference" referenceName="ccd"/>
               </rhs>
             </variableCharacterisation_VariableUsage>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_9Wz-0Dl1EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_8T8ewodNEeyL-IL0Rp4ISQ">
                 <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_t51CoQcQEeuCO_LUOeqqZQ"/>
                 <literal href="CharacteristicTypeDictionary.xmi#_rIUkUAcQEeuCO_LUOeqqZQ"/>
               </lhs>
-              <rhs xsi:type="expressions:True" id="_94-3xjl1EeunY9-OetIYyA"/>
+              <rhs xsi:type="expressions:True" id="_8T8ew4dNEeyL-IL0Rp4ISQ"/>
             </variableCharacterisation_VariableUsage>
             <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="ccd"/>
           </inputParameterUsages_EntryLevelSystemCall>
           <inputParameterUsages_EntryLevelSystemCall>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_FznzEDl2EeunY9-OetIYyA"/>
-              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_Gwo08zl2EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_9Rco0IdNEeyL-IL0Rp4ISQ"/>
+              <rhs xsi:type="expression:NamedEnumCharacteristicReference" id="_9Rco0YdNEeyL-IL0Rp4ISQ">
                 <namedReference xsi:type="stoex:VariableReference" referenceName="flights"/>
               </rhs>
             </variableCharacterisation_VariableUsage>
@@ -123,11 +139,19 @@
           <inputParameterUsages_EntryLevelSystemCall>
             <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
               <specification_VariableCharacterisation specification="false"/>
-              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_STmXQDl1EeunY9-OetIYyA">
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_L-eQMIdJEeyL-IL0Rp4ISQ">
                 <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_t51CoQcQEeuCO_LUOeqqZQ"/>
                 <literal href="CharacteristicTypeDictionary.xmi#_qmC9sAcQEeuCO_LUOeqqZQ"/>
               </lhs>
-              <rhs xsi:type="expressions:True" id="_X9leljl1EeunY9-OetIYyA"/>
+              <rhs xsi:type="expressions:True" id="_L-eQMYdJEeyL-IL0Rp4ISQ"/>
+            </variableCharacterisation_VariableUsage>
+            <variableCharacterisation_VariableUsage xsi:type="confidentiality:ConfidentialityVariableCharacterisation">
+              <specification_VariableCharacterisation specification="false"/>
+              <lhs xsi:type="expression:LhsEnumCharacteristicReference" id="_L-eQModJEeyL-IL0Rp4ISQ">
+                <characteristicType xsi:type="DataDictionaryCharacterized:EnumCharacteristicType" href="CharacteristicTypeDictionary.xmi#_si9bUT8AEeulRPEeT0f8DQ"/>
+                <literal href="CharacteristicTypeDictionary.xmi#_NNdBQIdIEey9YbrOxxUv-Q"/>
+              </lhs>
+              <rhs xsi:type="expressions:True" id="_L-eQM4dJEeyL-IL0Rp4ISQ"/>
             </variableCharacterisation_VariableUsage>
             <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="ccd"/>
           </inputParameterUsages_EntryLevelSystemCall>
@@ -140,19 +164,19 @@
   </usagemodel:UsageModel>
   <emfprofileapplication:ProfileApplication>
     <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_z9AeMDlyEeunY9-OetIYyA">
-      <extension href="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_J-nJYBCQEeu-b9hKjizy9g"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_ZqISYBdnEeu98bd9ogearw"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_1TSBcD8AEeulRPEeT0f8DQ"/>
     </stereotypeApplications>
     <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="_1C4hIDlyEeunY9-OetIYyA">
-      <extension href="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_WU60MBCPEeuDPuyaiSQSEA"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_Ut2loBdnEeu98bd9ogearw"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_1TSBcD8AEeulRPEeT0f8DQ"/>
     </stereotypeApplications>
     <stereotypeApplications xsi:type="org.palladiosimulator.dataflow.confidentiality.pcm.model.profile:Characterisable" appliedTo="__iiW4DlyEeunY9-OetIYyA">
-      <extension href="platform:/plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
+      <extension href="../../plugin/org.palladiosimulator.dataflow.confidentiality.pcm.model.profile/profile.emfprofile_diagram#_yqyHQBBzEeucCo3FRAS_1w"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_WU60MBCPEeuDPuyaiSQSEA"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_Ut2loBdnEeu98bd9ogearw"/>
       <characteristics xsi:type="characteristics:EnumCharacteristic" href="Characteristics.xmi#_1TSBcD8AEeulRPEeT0f8DQ"/>

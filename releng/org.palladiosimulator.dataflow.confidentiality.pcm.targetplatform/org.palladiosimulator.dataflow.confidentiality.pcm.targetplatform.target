@@ -84,7 +84,7 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release">
 			<unit id="org.palladiosimulator.supporting.prolog.ui.feature.feature.group" version="0.0.0"/>
-			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/releases/latest/release"/>
+			<repository location="https://updatesite.palladio-simulator.com/fluidtrust/palladio-supporting-prolog/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
 			<unit id="org.palladiosimulator.dataflow.diagram.editor.sirius.feature.feature.group" version="0.0.0"/>
